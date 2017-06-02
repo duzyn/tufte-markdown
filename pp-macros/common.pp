@@ -88,7 +88,7 @@
 \comment(
 // 6. Colored text
 // Usage:
-// \abbr(Text)
+// \textcolor(Text)
 // Need to install xecolor package.
 )
 
@@ -104,7 +104,7 @@
 )
 
 \comment(
-// 7. Left-align text
+// 7. Left-aligned text
 // Usage:
 // \textleft(Text)
 )
@@ -123,7 +123,7 @@
 )
 
 \comment(
-// 8. Right-align text
+// 8. Right-aligned text
 // Usage:
 // \textright(Text)
 )
