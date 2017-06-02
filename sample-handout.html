@@ -256,7 +256,7 @@ date:   2017-06-02
 --template=./templates/tufte-handout.html -c tufte-css/latex.css -c tufte-css/tufte.css</code></pre></div>
 <p>Convert Markdown to PDF：</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pp</span> -pdf sample-handout.md <span class="kw">|</span> <span class="ex">pandoc</span> -o sample-handout.pdf -f markdown+raw_tex \
---latex-engine=xelatex.exe --template=./templates/tufte-handout.tex -V documentclass:tufte-handout</code></pre></div>
+--latex-engine=xelatex --template=./templates/tufte-handout.tex -V documentclass:tufte-handout</code></pre></div>
 <h1 id="acknowledgements">Acknowledgements</h1>
 <ul>
 <li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>
