@@ -23,6 +23,15 @@ You should download and install [Pandoc] and [pp] first. We get a HTML or PDF fi
 4.  Use a HTML template and Tufte CSS to get a HTML article.
 5.  Use a LaTeX template and Tufte LaTeX to get a PDF article with a TeX document production system, like MiKTeX, Tex Live or ConTeXt. You can also generate a HTML file to PDF with wkhtmltopdf.
 
+## Download
+
+You can download it by Git:
+
+```
+git clone https://github.com/duzyn/tufte-markdown
+```
+or download the [archive release](https://github.com/duzyn/tufte-markdown/releases/latest).
+
 ## pp Macros
 
 1\. New thoughts
