@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 % ams
 \usepackage{amssymb,amsmath}
@@ -49,7 +49,7 @@ $endif$
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 
 % booktabs
-\usepackage{booktabs}
+\usepackage{longtable,booktabs}
 
 % url
 \usepackage{url}
@@ -113,7 +113,7 @@ $endif$
 \usepackage{morefloats}
 
 $if(ctex)$
-\usepackage{ctexcap}
+\usepackage{ctex}
 $endif$
 
 % tightlist macro required by pandoc >= 1.14

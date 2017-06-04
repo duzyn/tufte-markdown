@@ -71,7 +71,7 @@
 \comment(
 // 5. Abbr.
 // Usage:
-// \abbr(Text)
+// \abbr(title)(text)
 )
 
 \ifeq(\format)(html)(
@@ -88,7 +88,7 @@
 \comment(
 // 6. Colored text
 // Usage:
-// \textcolor(Text)
+// \textcolor(color)(text)
 // Need to install xecolor package.
 )
 
@@ -174,5 +174,90 @@
 \ifeq(\format)(pdf)(
 \define(a)(
 \raw(\href){\2}{\1}
+)
+)
+
+\comment(
+// 11. New page
+// Usage:
+// \newpage
+)
+
+\ifeq(\format)(html)(
+\define(newpage)(
+<div style="page-break-after: always"></div>
+)
+)
+\ifeq(\format)(pdf)(
+\define(newpage)(
+\raw(\newpage)
+)
+)
+
+\comment(
+// 12. Today
+// Usage:
+// \today
+)
+
+\ifeq(\format)(html)(
+\define(today)(
+\bash(date +%Y-%m-%d)
+)
+)
+\ifeq(\format)(pdf)(
+\define(today)(
+\raw(\today)
+)
+)
+
+\comment(
+// 13. Keyboard
+// Usage:
+// \today
+)
+
+\ifeq(\format)(html)(
+\define(kbd)(
+<kbd>\1</kbd>\ifdef(2)(+<kbd>\2</kbd>)\ifdef(3)(+<kbd>\3</kbd>)\ifdef(4)(+<kbd>\4</kbd>)
+)
+)
+\ifeq(\format)(pdf)(
+\define(kbd)(
+\raw(\texttt){\1}\ifdef(2)(+\raw(\texttt){\2})\ifdef(3)(+\raw(\texttt){\3})\ifdef(4)(+\raw(\texttt){\4})
+)
+)
+
+\comment(
+// 14. Strike out
+// Usage:
+// \strike(Text)
+)
+
+\ifeq(\format)(html)(
+\define(strike)(
+<strike>\1</strike>
+)
+)
+\ifeq(\format)(pdf)(
+\define(strike)(
+\raw(\sout){\1}
+)
+)
+
+\comment(
+// 15. Mark
+// Usage:
+// \mark(Text)
+)
+
+\ifeq(\format)(html)(
+\define(mark)(
+<mark>\1</mark>
+)
+)
+\ifeq(\format)(pdf)(
+\define(mark)(
+
 )
 )

@@ -1,7 +1,7 @@
 ---
 title: Tufte Handout Sample
 author: David Peng
-date: 2017-06-02
+date: \today
 ---
 
 \include(pp-macros/common.pp)
