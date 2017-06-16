@@ -1,3 +1,6 @@
+\include(../pp-macros/common.pp)
+\include(../pp-macros/todo.pp)
+
 ---
 title: Test
 author: David Peng
@@ -8,10 +11,6 @@ colorlinks: true
 graphics: true
 strikeout: true
 ---
-
-\include(../pp-macros/common.pp)
-
-\include(../pp-macros/todo.pp)
 
 \include(common.md)
 

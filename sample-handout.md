@@ -1,12 +1,12 @@
+\include(pp-macros/common.pp)
+\include(pp-macros/tufte-handout.pp)
+\include(pp-macros/latex.pp)
+
 ---
 title: Tufte Handout Sample
 author: David Peng
 date: \today
 ---
-
-\include(pp-macros/common.pp)
-\include(pp-macros/tufte-handout.pp)
-\include(pp-macros/latex.pp)
 
 This sample text is from Dave Liepmann's [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
 
