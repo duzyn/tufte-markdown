@@ -1,10 +1,8 @@
+# Common
+
 1\. Image
 
 You can include a image file like this:
-
-```
-\raw(\img(This is a alt text)(./path/to/image.jpg))
-```
 
 \img(Avatar)(avatar.png)
 
@@ -61,3 +59,7 @@ Copy text with \kbd(Ctrl)(C). Save web image in Photoshop with \kbd(Ctrl)(Alt)(S
 14\. Strike out
 
 This is a \strike(strike out) text.
+
+15\. Highlight
+
+This ia a \mark(HIGHLIGHTED) text.

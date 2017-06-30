@@ -1,1 +1,1 @@
-pp -html test.md | pandoc -o test.html -t html5 -c ../css/todo.css
+pp -html -import=../pp-macros/common.pp common.md | pandoc -o common.html -t html5 -s

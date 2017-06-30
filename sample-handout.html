@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="David Peng">
-  <meta name="dcterms.date" content="2017-06-02">
+  <meta name="dcterms.date" content="2017-06-30">
   <title>Tufte Handout Sample</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -55,7 +55,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <header>
 <h1 class="title">Tufte Handout Sample</h1>
 <p class="subtitle author">David Peng</p>
-<p class="subtitle date">2017-06-02</p>
+<p class="subtitle date">2017-06-30</p>
 </header>
 <p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
 <p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
@@ -83,12 +83,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>One of the most distinctive features of Tufte’s style is his extensive use of sidenotes.<label for="sidenote-3" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-3" class="margin-toggle"/> <span class="sidenote">This is a sidenote.</span> Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page, but instead display off to the side in the margin. Perhaps you have noticed their use in this document already. You are very astute.</p>
 <p>Sidenotes are a great example of the web not being like print. On sufficiently large viewports, Tufte CSS uses the margin for sidenotes, margin notes, and small figures. On smaller viewports, elements that would go in the margin are hidden until the user toggles them into view. The goal is to present related but not necessary information such as asides or citations <em>as close as possible</em> to the text that references them. At the same time, this secondary information should stay out of the way of the eye, not interfering with the progression of ideas in the main text.</p>
 <p>Sidenotes consist of two elements: a superscript reference number that goes inline with the text, and a sidenote with content. To add the former, just put a label and dummy checkbox into the text where you want the reference to go, like so:</p>
-<pre><code>&lt;label for=&quot;sn-demo&quot;
-       class=&quot;margin-toggle sidenote-number&quot;&gt;
-&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot;
-       id=&quot;sn-demo&quot;
-       class=&quot;margin-toggle&quot;/&gt;</code></pre>
+<pre><code>&lt;label for=&quot;sn-demo&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;sn-demo&quot; class=&quot;margin-toggle&quot;/&gt;</code></pre>
 <p>You must manually assign a reference <code>id</code> to each side or margin note, replacing “sn-demo” in the <code>for</code> and the <code>id</code> attribute values with an appropriate descriptor. It is useful to use prefixes like <code>sn-</code> for sidenotes and <code>mn-</code> for margin notes.</p>
 <p>Immediately adjacent to that sidenote reference in the main text goes the sidenote content itself, in a <code>span</code> with class <code>sidenote</code>. This tag is also inserted directly in the middle of the body text, but is either pushed into the margin or hidden by default. Make sure to position your sidenotes correctly by keeping the sidenote-number label close to the sidenote itself.</p>
 <p>If you want a sidenote without footnote-style numberings, then you want a margin note. <label for="marginnote-2" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-2" class="margin-toggle"/> <span class="marginnote">This is a margin note. Notice there isn’t a number preceding the note.</span> On large screens, a margin note is just a sidenote that omits the reference number. This lessens the distracting effect taking away from the flow of the main text, but can increase the cognitive load of matching a margin note to its referent text. However, on small screens, a margin note is like a sidenote except its viewability-toggle is a symbol rather than a reference number. This document currently uses the symbol (<code>&amp;#8853;</code>), but it’s up to you.</p>
@@ -96,7 +92,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>&lt;label for=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;/&gt;
 &lt;span class=&quot;marginnote&quot;&gt;
-  This is a margin note. Notice there isn’t a number preceding the note.
+    This is a margin note. Notice there isn’t a number preceding the note.
 &lt;/span&gt;</code></pre>
 <p>Figures in the margin are created as margin notes, as demonstrated in the next section.</p>
 <h1 id="figures">Figures</h1>
@@ -115,148 +111,40 @@ Russian campaign, 1812-1813">
 <pre><code>\comment(
 title:  Tufte Markdown
 author: David Peng
-date:   2017-06-02
+date:   2017-06-30
 )
 
-\define(SIDENOTE)(1)
-\define(MARGINNOTE)(1)
-\define(FIGURE)(1)
-\define(MARGINFIGURE)(1)
-
-\comment(
-// 1. New Thoughts
-// Usage:
-// \newthought(This is a new thought)
+\ifeq(\format)(html)
+(
+\import(html/tufte/newthought.html.pp)
+\import(html/tufte/sidenote.html.pp)
+\import(html/tufte/marginnote.html.pp)
+\import(html/tufte/figure.html.pp)
+\import(html/tufte/marginfigure.html.pp)
+\import(html/tufte/fullwidthfigure.html.pp)
 )
 
-\ifeq(\format)(html)(
-\define(newthought)(
-&lt;span class=&quot;newthought&quot;&gt;\1&lt;/span&gt;
-)
-)
-\ifeq(\format)(pdf)(
-\define(newthought)(
-\raw(\newthought){\1}
-)
-)
-
-\comment(
-// 2. Sidenotes
-// Usage:
-// \sidenote(This is a new sidenote)
-)
-
-\ifeq(\format)(html)(
-\define(sidenote)(
-&lt;label for=&quot;sidenote-\SIDENOTE&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;sidenote-\SIDENOTE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;sidenote&quot;&gt;\1&lt;/span&gt;
-\add(SIDENOTE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(sidenote)(
-\raw(\sidenote){\1}
-)
-)
-
-\comment(
-// 3. Margin notes
-// Usage:
-// \marginnote(This is a new margin note)
-)
-
-\ifeq(\format)(html)(
-\define(marginnote)(
-&lt;label for=&quot;marginnote-\MARGINNOTE&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;marginnote-\MARGINNOTE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;marginnote&quot;&gt;\1&lt;/span&gt;
-\add(MARGINNOTE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(marginnote)(
-\raw(\marginnote){\1}
-)
-)
-
-\comment(
-// 4. Figures
-// Usage:
-// \figure(This is a figure caption)(./image/path/image.jpg)
-)
-
-\ifeq(\format)(html)(
-\define(figure)(
-&lt;figure&gt;
-&lt;label for=&quot;figure-\FIGURE&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;figure-\FIGURE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;marginnote&quot;&gt;\1&lt;/span&gt;
-&lt;img src=&quot;\2&quot; alt=&quot;\1&quot; /&gt;
-&lt;/figure&gt;
-\add(FIGURE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(figure)(
-\raw(\begin{figure})
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end{figure})
-)
-)
-
-\comment(
-// 5. Margin figures
-// Usage:
-// \marginfigure(This is a margin figure caption)(./image/path/image.jpg)
-)
-
-\ifeq(\format)(html)(
-\define(marginfigure)(
-&lt;label for=&quot;marginfigure-\MARGINFIGURE&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;marginfigure-\MARGINFIGURE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;marginnote&quot;&gt;&lt;img src=&quot;\2&quot; alt=&quot;\1&quot;/&gt;\1&lt;/span&gt;
-\add(MARGINFIGURE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(marginfigure)(
-\raw(\begin{marginfigure})
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end{marginfigure})
-)
-)
-
-\comment(
-// 6. Full-width figures
-// Usage:
-// \fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
-)
-\ifeq(\format)(html)(
-\define(fullwidthfigure)(
-&lt;figure class=&quot;fullwidth&quot;&gt;
-&lt;img src=&quot;\2&quot; alt=&quot;\1&quot;&gt;
-&lt;/figure&gt;
-)
-)
-\ifeq(\format)(pdf)(
-\define(fullwidthfigure)(
-\raw(\begin{figure*}
-\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end{figure*})
-)
+\ifeq(\format)(pdf)
+(
+\import(pdf/tufte/newthought.pdf.pp)
+\import(pdf/tufte/sidenote.pdf.pp)
+\import(pdf/tufte/marginnote.pdf.pp)
+\import(pdf/tufte/figure.pdf.pp)
+\import(pdf/tufte/marginfigure.pdf.pp)
+\import(pdf/tufte/fullwidthfigure.pdf.pp)
 )
 </code></pre>
 <h1 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to convert Markdown to HTML and PDF</h1>
 <p>Convert Markdown to HTML：</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pp</span> -html sample-handout.md <span class="kw">|</span> <span class="ex">pandoc</span> -o sample-handout.html -t html5 -s \
---template=./templates/tufte-handout.html -c tufte-css/latex.css -c tufte-css/tufte.css</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pp</span> -html -import=pp-macros/all.pp sample-handout.md <span class="kw">|</span> <span class="kw">\</span>
+<span class="ex">pandoc</span> -o sample-handout.html -t html5 -s \
+--template=./templates/tufte-handout.html \
+-c tufte-css/latex.css -c tufte-css/tufte.css</code></pre></div>
 <p>Convert Markdown to PDF：</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pp</span> -pdf sample-handout.md <span class="kw">|</span> <span class="ex">pandoc</span> -o sample-handout.pdf -f markdown+raw_tex \
---latex-engine=xelatex --template=./templates/tufte-handout.tex -V documentclass:tufte-handout</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pp</span> -pdf sample-handout.md <span class="kw">|</span> <span class="kw">\</span>
+<span class="ex">pandoc</span> -o sample-handout.pdf -f markdown+raw_tex \
+--latex-engine=xelatex --template=./templates/tufte-handout.tex \
+-V documentclass:tufte-handout</code></pre></div>
 <h1 id="acknowledgements">Acknowledgements</h1>
 <ul>
 <li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>

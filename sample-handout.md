@@ -1,7 +1,3 @@
-\include(pp-macros/common.pp)
-\include(pp-macros/tufte-handout.pp)
-\include(pp-macros/latex.pp)
-
 ---
 title: Tufte Handout Sample
 author: David Peng
@@ -153,12 +149,8 @@ former, just put a label and dummy checkbox into the text where you want
 the reference to go, like so:
 
 ```
-<label for="sn-demo"
-       class="margin-toggle sidenote-number">
-</label>
-<input type="checkbox"
-       id="sn-demo"
-       class="margin-toggle"/>
+<label for="sn-demo" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sn-demo" class="margin-toggle"/>
 ```
 
 You must manually assign a reference `id` to each side or margin note,
@@ -192,7 +184,7 @@ in the previous paragraph:
 <label for="mn-demo" class="margin-toggle">&#8853;</label>
 <input type="checkbox" id="mn-demo" class="margin-toggle"/>
 <span class="marginnote">
-  This is a margin note. Notice there isn’t a number preceding the note.
+    This is a margin note. Notice there isn’t a number preceding the note.
 </span>
 ```
 
@@ -243,18 +235,18 @@ Russian campaign, 1812-1813)(tufte-css/img/napoleons-march.png)
 We can use a list of macros defined below to generate a HTML or \latex file depend on the format.
 
 ```
-\rawinclude(pp-macros/tufte-handout.pp)
+\rawinclude(pp-macros/tufte.pp)
 ```
 
 # Use Pandoc to convert Markdown to HTML and PDF
 
 Convert Markdown to HTML：
 
-\src(build-html.sh)
+\source(build-html.sh)
 
 Convert Markdown to PDF：
 
-\src(build-pdf.sh)
+\source(build-pdf.sh)
 
 # Acknowledgements
 

@@ -27,9 +27,8 @@ You should download and install [Pandoc] and [pp] first. We get a HTML or PDF fi
 
 You can download it by Git:
 
-```
-git clone https://github.com/duzyn/tufte-markdown
-```
+    git clone https://github.com/duzyn/tufte-markdown
+
 or download the [archive release](https://github.com/duzyn/tufte-markdown/releases/latest).
 
 ## pp Macros
@@ -40,15 +39,23 @@ or download the [archive release](https://github.com/duzyn/tufte-markdown/releas
 
 HTML macro:
 
-    \define(newthought)(
-    <span class="newthought">\1</span>
-    )
+```
+\define(newthought)
+(
+<span class="newthought">\1</span>
+)
+
+```
 
 LaTeX macro:
 
-    \define(newthought)(
-    \raw(\newthought){\1}
-    )
+```
+\define(newthought)
+(
+\raw(\newthought){\1}
+)
+
+```
 
 Usage:
 
@@ -60,18 +67,28 @@ Usage:
 
 HTML macro:
 
-    \define(sidenote)(
-    <label for="sidenote-\SIDENOTE" class="margin-toggle sidenote-number"></label>
-    <input type="checkbox" id="sidenote-\SIDENOTE" class="margin-toggle"/>
-    <span class="sidenote">\1</span>
-    \add(SIDENOTE)
-    )
+```
+\define(SIDENOTE)(1)
+
+\define(sidenote)
+(
+<label for="sidenote-\SIDENOTE" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sidenote-\SIDENOTE" class="margin-toggle"/>
+<span class="sidenote">\1</span>
+\add(SIDENOTE)
+)
+
+```
 
 LaTeX macro:
 
-    \define(sidenote)(
-    \raw(\sidenote){\1}
-    )
+```
+\define(sidenote)
+(
+\raw(\sidenote){\1}
+)
+
+```
 
 Usage:
 
@@ -83,18 +100,28 @@ Usage:
 
 HTML macro:
 
-    \define(marginnote)(
-    <label for="marginnote-\MARGINNOTE" class="margin-toggle">&#8853;</label>
-    <input type="checkbox" id="marginnote-\MARGINNOTE" class="margin-toggle"/>
-    <span class="marginnote">\1</span>
-    \add(MARGINNOTE)
-    )
+```
+\define(MARGINNOTE)(1)
+
+\define(marginnote)
+(
+<label for="marginnote-\MARGINNOTE" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="marginnote-\MARGINNOTE" class="margin-toggle"/>
+<span class="marginnote">\1</span>
+\add(MARGINNOTE)
+)
+
+```
 
 LaTeX macro:
 
-    \define(marginnote)(
-    \raw(\marginnote){\1}
-    )
+```
+\define(marginnote)
+(
+\raw(\marginnote){\1}
+)
+
+```
 
 Usage:
 
@@ -106,24 +133,34 @@ Usage:
 
 HTML macro:
 
-    \define(figure)(
-    <figure>
-    <label for="figure-\FIGURE" class="margin-toggle">&#8853;</label>
-    <input type="checkbox" id="figure-\FIGURE" class="margin-toggle"/>
-    <span class="marginnote">\1</span>
-    <img src="\2" alt="\1" />
-    </figure>
-    \add(FIGURE)
-    )
+```
+\define(FIGURE)(1)
+
+\define(figure)
+(
+<figure>
+<label for="figure-\FIGURE" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="figure-\FIGURE" class="margin-toggle"/>
+<span class="marginnote">\1</span>
+<img src="\2" alt="\1" />
+</figure>
+\add(FIGURE)
+)
+
+```
 
 LaTeX macro:
 
-    \define(figure)(
-    \raw(\begin{figure})
-    \raw(\includegraphics){\2}
-    \raw(\caption){\1}
-    \raw(\end{figure})
-    )
+```
+\define(figure)
+(
+\raw(\begin){figure}
+\raw(\includegraphics){\2}
+\raw(\caption){\1}
+\raw(\end){figure}
+)
+
+```
 
 Usage:
 
@@ -135,21 +172,32 @@ Usage:
 
 HTML macro:
 
-    \define(marginfigure)(
-    <label for="marginfigure-\MARGINFIGURE" class="margin-toggle">&#8853;</label>
-    <input type="checkbox" id="marginfigure-\MARGINFIGURE" class="margin-toggle"/>
-    <span class="marginnote"><img src="\2" alt="\2"/>\1</span>
-    \add(MARGINFIGURE)
-    )
+```
+\define(MARGINFIGURE)(1)
+
+\define(marginfigure)
+(
+<label for="marginfigure-\MARGINFIGURE" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="marginfigure-\MARGINFIGURE" class="margin-toggle"/>
+<span class="marginnote"><img src="\2" alt="\1"/>\1</span>
+\add(MARGINFIGURE)
+)
+
+```
 
 LaTeX macro:
 
-    \define(marginfigure)(
-    \raw(\begin{marginfigure})
-    \raw(\includegraphics){\2}
-    \raw(\caption){\1}
-    \raw(\end{marginfigure})
-    )
+```
+\define(marginfigure)
+(
+\raw(\begin){marginfigure}
+\raw(\includegraphics){\2}
+\raw(\caption){\1}
+\raw(\end){marginfigure}
+)
+
+```
+
 
 Usage:
 
@@ -161,20 +209,28 @@ Usage:
 
 HTML macro:
 
-    \define(fullwidthfigure)(
-    <figure class="fullwidth">
-    <img src="\2" alt="\1">
-    </figure>
-    )
+```
+\define(fullwidthfigure)
+(
+<figure class="fullwidth">
+<img src="\2" alt="\1">
+</figure>
+)
+
+```
 
 LaTeX macro:
 
-    \define(fullwidthfigure)(
-    \raw(\begin{figure*}
-    \includegraphics){\2}
-    \raw(\caption){\1}
-    \raw(\end{figure*})
-    )
+```
+\define(fullwidthfigure)
+(
+\raw(\begin){figure*}
+\raw(\includegraphics){\2}
+\raw(\caption){\1}
+\raw(\end){figure*}
+)
+
+```
 
 Usage:
 
@@ -182,146 +238,35 @@ Usage:
 
 # Use pp to preprocess Markdown
 
-We can use a list of macros defined below to generate a HTML or \latex file depend on the format.
+We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.
 
 ```
 \comment(
 title:  Tufte Markdown
 author: David Peng
-date:   2017-06-02
+date:   2017-06-30
 )
 
-\define(SIDENOTE)(1)
-\define(MARGINNOTE)(1)
-\define(FIGURE)(1)
-\define(MARGINFIGURE)(1)
-
-\comment(
-// 1. New Thoughts
-// Usage:
-// \newthought(This is a new thought)
+\ifeq(\format)(html)
+(
+\import(html/tufte/newthought.html.pp)
+\import(html/tufte/sidenote.html.pp)
+\import(html/tufte/marginnote.html.pp)
+\import(html/tufte/figure.html.pp)
+\import(html/tufte/marginfigure.html.pp)
+\import(html/tufte/fullwidthfigure.html.pp)
 )
 
-\ifeq(\format)(html)(
-\define(newthought)(
-<span class="newthought">\1</span>
-)
-)
-\ifeq(\format)(pdf)(
-\define(newthought)(
-\raw(\newthought){\1}
-)
-)
-
-\comment(
-// 2. Sidenotes
-// Usage:
-// \sidenote(This is a new sidenote)
+\ifeq(\format)(pdf)
+(
+\import(pdf/tufte/newthought.pdf.pp)
+\import(pdf/tufte/sidenote.pdf.pp)
+\import(pdf/tufte/marginnote.pdf.pp)
+\import(pdf/tufte/figure.pdf.pp)
+\import(pdf/tufte/marginfigure.pdf.pp)
+\import(pdf/tufte/fullwidthfigure.pdf.pp)
 )
 
-\ifeq(\format)(html)(
-\define(sidenote)(
-<label for="sidenote-\SIDENOTE" class="margin-toggle sidenote-number"></label>
-<input type="checkbox" id="sidenote-\SIDENOTE" class="margin-toggle"/>
-<span class="sidenote">\1</span>
-\add(SIDENOTE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(sidenote)(
-\raw(\sidenote){\1}
-)
-)
-
-\comment(
-// 3. Margin notes
-// Usage:
-// \marginnote(This is a new margin note)
-)
-
-\ifeq(\format)(html)(
-\define(marginnote)(
-<label for="marginnote-\MARGINNOTE" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="marginnote-\MARGINNOTE" class="margin-toggle"/>
-<span class="marginnote">\1</span>
-\add(MARGINNOTE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(marginnote)(
-\raw(\marginnote){\1}
-)
-)
-
-\comment(
-// 4. Figures
-// Usage:
-// \figure(This is a figure caption)(./image/path/image.jpg)
-)
-
-\ifeq(\format)(html)(
-\define(figure)(
-<figure>
-<label for="figure-\FIGURE" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="figure-\FIGURE" class="margin-toggle"/>
-<span class="marginnote">\1</span>
-<img src="\2" alt="\1" />
-</figure>
-\add(FIGURE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(figure)(
-\raw(\begin{figure})
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end{figure})
-)
-)
-
-\comment(
-// 5. Margin figures
-// Usage:
-// \marginfigure(This is a margin figure caption)(./image/path/image.jpg)
-)
-
-\ifeq(\format)(html)(
-\define(marginfigure)(
-<label for="marginfigure-\MARGINFIGURE" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="marginfigure-\MARGINFIGURE" class="margin-toggle"/>
-<span class="marginnote"><img src="\2" alt="\1"/>\1</span>
-\add(MARGINFIGURE)
-)
-)
-\ifeq(\format)(pdf)(
-\define(marginfigure)(
-\raw(\begin{marginfigure})
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end{marginfigure})
-)
-)
-
-\comment(
-// 6. Full-width figures
-// Usage:
-// \fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
-)
-\ifeq(\format)(html)(
-\define(fullwidthfigure)(
-<figure class="fullwidth">
-<img src="\2" alt="\1">
-</figure>
-)
-)
-\ifeq(\format)(pdf)(
-\define(fullwidthfigure)(
-\raw(\begin{figure*}
-\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end{figure*})
-)
-)
 ```
 
 # Use Pandoc to convert Markdown to HTML and PDF
@@ -329,15 +274,21 @@ date:   2017-06-02
 Convert Markdown to HTML：
 
 ```
-pp -html sample-handout.md | pandoc -o sample-handout.html -t html5 -s \
---template=./templates/tufte-handout.html -c tufte-css/latex.css -c tufte-css/tufte.css
+pp -html -import=pp-macros/all.pp sample-handout.md | \
+pandoc -o sample-handout.html -t html5 -s \
+--template=./templates/tufte-handout.html \
+-c tufte-css/latex.css -c tufte-css/tufte.css
+
 ```
 
 Convert Markdown to PDF：
 
 ```
-pp -pdf sample-handout.md | pandoc -o sample-handout.pdf -f markdown+raw_tex \
---latex-engine=xelatex --template=./templates/tufte-handout.tex -V documentclass:tufte-handout
+pp -pdf -import=pp-macros/all.pp sample-handout.md | \
+pandoc -o sample-handout.pdf -f markdown+raw_tex \
+--latex-engine=xelatex --template=./templates/tufte-handout.tex \
+-V documentclass:tufte-handout
+
 ```
 
 # Acknowledgements

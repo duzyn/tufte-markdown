@@ -1,0 +1,16 @@
+\define(kbd)
+(
+<kbd>\1</kbd>
+\ifdef(2)
+(
++<kbd>\2</kbd>
+)
+\ifdef(3)
+(
++<kbd>\3</kbd>
+)
+\ifdef(4)
+(
++<kbd>\4</kbd>
+)
+)

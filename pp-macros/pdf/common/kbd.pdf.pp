@@ -1,0 +1,16 @@
+\define(kbd)
+(
+\raw(\texttt){\1}
+\ifdef(2)
+(
++\raw(\texttt){\2}
+)
+\ifdef(3)
+(
++\raw(\texttt){\3}
+)
+\ifdef(4)
+(
++\raw(\texttt){\4}
+)
+)
