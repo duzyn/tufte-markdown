@@ -1,6 +1,6 @@
-\comment(Need to install xecolor package.)
+\comment(Need to install color package.)
 
 \define(textcolor)
 (
-\raw(\textxecolor){\1}{\2}
+\raw(\textcolor){\1}{\2}
 )

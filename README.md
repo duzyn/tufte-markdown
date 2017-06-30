@@ -44,7 +44,6 @@ HTML macro:
 (
 <span class="newthought">\1</span>
 )
-
 ```
 
 LaTeX macro:
@@ -54,7 +53,6 @@ LaTeX macro:
 (
 \raw(\newthought){\1}
 )
-
 ```
 
 Usage:
@@ -77,7 +75,6 @@ HTML macro:
 <span class="sidenote">\1</span>
 \add(SIDENOTE)
 )
-
 ```
 
 LaTeX macro:
@@ -87,7 +84,6 @@ LaTeX macro:
 (
 \raw(\sidenote){\1}
 )
-
 ```
 
 Usage:
@@ -110,7 +106,6 @@ HTML macro:
 <span class="marginnote">\1</span>
 \add(MARGINNOTE)
 )
-
 ```
 
 LaTeX macro:
@@ -120,7 +115,6 @@ LaTeX macro:
 (
 \raw(\marginnote){\1}
 )
-
 ```
 
 Usage:
@@ -146,7 +140,6 @@ HTML macro:
 </figure>
 \add(FIGURE)
 )
-
 ```
 
 LaTeX macro:
@@ -159,7 +152,6 @@ LaTeX macro:
 \raw(\caption){\1}
 \raw(\end){figure}
 )
-
 ```
 
 Usage:
@@ -182,7 +174,6 @@ HTML macro:
 <span class="marginnote"><img src="\2" alt="\1"/>\1</span>
 \add(MARGINFIGURE)
 )
-
 ```
 
 LaTeX macro:
@@ -195,7 +186,6 @@ LaTeX macro:
 \raw(\caption){\1}
 \raw(\end){marginfigure}
 )
-
 ```
 
 
@@ -216,7 +206,6 @@ HTML macro:
 <img src="\2" alt="\1">
 </figure>
 )
-
 ```
 
 LaTeX macro:
@@ -229,7 +218,6 @@ LaTeX macro:
 \raw(\caption){\1}
 \raw(\end){figure*}
 )
-
 ```
 
 Usage:
@@ -266,7 +254,6 @@ date:   2017-06-30
 \import(pdf/tufte/marginfigure.pdf.pp)
 \import(pdf/tufte/fullwidthfigure.pdf.pp)
 )
-
 ```
 
 # Use Pandoc to convert Markdown to HTML and PDF
@@ -278,7 +265,6 @@ pp -html -import=pp-macros/all.pp sample-handout.md | \
 pandoc -o sample-handout.html -t html5 -s \
 --template=./templates/tufte-handout.html \
 -c tufte-css/latex.css -c tufte-css/tufte.css
-
 ```
 
 Convert Markdown to PDF：
@@ -288,7 +274,6 @@ pp -pdf -import=pp-macros/all.pp sample-handout.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex \
 --latex-engine=xelatex --template=./templates/tufte-handout.tex \
 -V documentclass:tufte-handout
-
 ```
 
 # Acknowledgements
