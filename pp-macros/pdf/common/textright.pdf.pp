@@ -1,6 +1,6 @@
-\define(textright)
+!define(textright)
 (
-\raw(\begin){flushright}
-\1
-\raw(\end){flushright}
+\begin{flushright}
+!1
+\end{flushright}
 )

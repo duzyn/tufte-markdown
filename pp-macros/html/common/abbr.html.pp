@@ -1,4 +1,4 @@
-\define(abbr)
+!define(abbr)
 (
-<abbr title="\1">\2</abbr>
+<abbr title="!1">!2</abbr>
 )

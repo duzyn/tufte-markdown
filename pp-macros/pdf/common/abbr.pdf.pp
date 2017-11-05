@@ -1,4 +1,4 @@
-\define(abbr)
+!define(abbr)
 (
-\2\raw(\footnote){\1}
+!2\footnote{!1}
 )

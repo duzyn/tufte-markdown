@@ -1,4 +1,4 @@
-\define(latex)
+!define(latex)
 (
 \LaTeX
 )

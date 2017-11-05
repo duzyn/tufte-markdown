@@ -1,7 +1,7 @@
-\define(marginfigure)
+!define(marginfigure)
 (
-\raw(\begin){marginfigure}
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end){marginfigure}
+\begin{marginfigure}
+\includegraphics{!2}
+\caption{!1}
+\end{marginfigure}
 )

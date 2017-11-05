@@ -1,4 +1,4 @@
-\define(u)
+!define(u)
 (
-\raw(\underline){\1}
+\underline{!1}
 )

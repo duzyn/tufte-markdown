@@ -1,4 +1,4 @@
-\define(textcolor)
+!define(textcolor)
 (
-<span style="color:\1">\2</span>
+<span style="color:!1">!2</span>
 )

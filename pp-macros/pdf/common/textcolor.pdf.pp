@@ -1,6 +1,6 @@
 \comment(Need to install color package.)
 
-\define(textcolor)
+!define(textcolor)
 (
-\raw(\textcolor){\1}{\2}
+\textcolor{!1}{!2}
 )

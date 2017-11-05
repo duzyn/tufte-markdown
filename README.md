@@ -40,24 +40,24 @@ or download the [archive release](https://github.com/duzyn/tufte-markdown/releas
 HTML macro:
 
 ```
-\define(newthought)
+!define(newthought)
 (
-<span class="newthought">\1</span>
+<span class="newthought">!1</span>
 )
 ```
 
 LaTeX macro:
 
 ```
-\define(newthought)
+!define(newthought)
 (
-\raw(\newthought){\1}
+\newthought{!1}
 )
 ```
 
 Usage:
 
-    \newthought(This is a new thought)
+    !newthought(This is a new thought)
 
 2\. Sidenotes
 
@@ -66,29 +66,29 @@ Usage:
 HTML macro:
 
 ```
-\define(SIDENOTE)(1)
+!define(SIDENOTE)(1)
 
-\define(sidenote)
+!define(sidenote)
 (
-<label for="sidenote-\SIDENOTE" class="margin-toggle sidenote-number"></label>
-<input type="checkbox" id="sidenote-\SIDENOTE" class="margin-toggle"/>
-<span class="sidenote">\1</span>
-\add(SIDENOTE)
+<label for="sidenote-!SIDENOTE" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sidenote-!SIDENOTE" class="margin-toggle"/>
+<span class="sidenote">!1</span>
+!add(SIDENOTE)
 )
 ```
 
 LaTeX macro:
 
 ```
-\define(sidenote)
+!define(sidenote)
 (
-\raw(\sidenote){\1}
+\sidenote{!1}
 )
 ```
 
 Usage:
 
-    \sidenote(This is a new sidenote)
+    !sidenote(This is a new sidenote)
 
 3\. Margin notes
 
@@ -97,29 +97,29 @@ Usage:
 HTML macro:
 
 ```
-\define(MARGINNOTE)(1)
+!define(MARGINNOTE)(1)
 
-\define(marginnote)
+!define(marginnote)
 (
-<label for="marginnote-\MARGINNOTE" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="marginnote-\MARGINNOTE" class="margin-toggle"/>
-<span class="marginnote">\1</span>
-\add(MARGINNOTE)
+<label for="marginnote-!MARGINNOTE" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="marginnote-!MARGINNOTE" class="margin-toggle"/>
+<span class="marginnote">!1</span>
+!add(MARGINNOTE)
 )
 ```
 
 LaTeX macro:
 
 ```
-\define(marginnote)
+!define(marginnote)
 (
-\raw(\marginnote){\1}
+\marginnote{!1}
 )
 ```
 
 Usage:
 
-    \marginnote(This is a new margin note)
+    !marginnote(This is a new margin note)
 
 4\. Figures
 
@@ -128,35 +128,35 @@ Usage:
 HTML macro:
 
 ```
-\define(FIGURE)(1)
+!define(FIGURE)(1)
 
-\define(figure)
+!define(figure)
 (
 <figure>
-<label for="figure-\FIGURE" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="figure-\FIGURE" class="margin-toggle"/>
-<span class="marginnote">\1</span>
-<img src="\2" alt="\1" />
+<label for="figure-!FIGURE" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="figure-!FIGURE" class="margin-toggle"/>
+<span class="marginnote">!1</span>
+<img src="!2" alt="!1" />
 </figure>
-\add(FIGURE)
+!add(FIGURE)
 )
 ```
 
 LaTeX macro:
 
 ```
-\define(figure)
+!define(figure)
 (
-\raw(\begin){figure}
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end){figure}
+\begin{figure}
+\includegraphics{!2}
+\caption{!1}
+\end{figure}
 )
 ```
 
 Usage:
 
-    \figure(This is a figure caption)(./image/path/image.jpg)
+    !figure(This is a figure caption)(./image/path/image.jpg)
 
 5\. Margin figures
 
@@ -165,33 +165,33 @@ Usage:
 HTML macro:
 
 ```
-\define(MARGINFIGURE)(1)
+!define(MARGINFIGURE)(1)
 
-\define(marginfigure)
+!define(marginfigure)
 (
-<label for="marginfigure-\MARGINFIGURE" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="marginfigure-\MARGINFIGURE" class="margin-toggle"/>
-<span class="marginnote"><img src="\2" alt="\1"/>\1</span>
-\add(MARGINFIGURE)
+<label for="marginfigure-!MARGINFIGURE" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="marginfigure-!MARGINFIGURE" class="margin-toggle"/>
+<span class="marginnote"><img src="!2" alt="!1"/>!1</span>
+!add(MARGINFIGURE)
 )
 ```
 
 LaTeX macro:
 
 ```
-\define(marginfigure)
+!define(marginfigure)
 (
-\raw(\begin){marginfigure}
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end){marginfigure}
+\begin{marginfigure}
+\includegraphics{!2}
+\caption{!1}
+\end{marginfigure}
 )
 ```
 
 
 Usage:
 
-    \marginfigure(This is a margin figure caption)(./image/path/image.jpg)
+    !marginfigure(This is a margin figure caption)(./image/path/image.jpg)
 
 6\. Full-width figures
 
@@ -200,10 +200,10 @@ Usage:
 HTML macro:
 
 ```
-\define(fullwidthfigure)
+!define(fullwidthfigure)
 (
 <figure class="fullwidth">
-<img src="\2" alt="\1">
+<img src="!2" alt="!1">
 </figure>
 )
 ```
@@ -211,48 +211,48 @@ HTML macro:
 LaTeX macro:
 
 ```
-\define(fullwidthfigure)
+!define(fullwidthfigure)
 (
-\raw(\begin){figure*}
-\raw(\includegraphics){\2}
-\raw(\caption){\1}
-\raw(\end){figure*}
+\begin{figure*}
+\includegraphics{!2}
+\caption{!1}
+\end{figure*}
 )
 ```
 
 Usage:
 
-    \fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
+    !fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
 
 # Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.
 
 ```
-\comment(
+!comment(
 title:  Tufte Markdown
 author: David Peng
 date:   2017-06-30
 )
 
-\ifeq(\format)(html)
+!ifeq(!format)(html)
 (
-\import(html/tufte/newthought.html.pp)
-\import(html/tufte/sidenote.html.pp)
-\import(html/tufte/marginnote.html.pp)
-\import(html/tufte/figure.html.pp)
-\import(html/tufte/marginfigure.html.pp)
-\import(html/tufte/fullwidthfigure.html.pp)
+!import(html/tufte/newthought.html.pp)
+!import(html/tufte/sidenote.html.pp)
+!import(html/tufte/marginnote.html.pp)
+!import(html/tufte/figure.html.pp)
+!import(html/tufte/marginfigure.html.pp)
+!import(html/tufte/fullwidthfigure.html.pp)
 )
 
-\ifeq(\format)(pdf)
+!ifeq(!format)(pdf)
 (
-\import(pdf/tufte/newthought.pdf.pp)
-\import(pdf/tufte/sidenote.pdf.pp)
-\import(pdf/tufte/marginnote.pdf.pp)
-\import(pdf/tufte/figure.pdf.pp)
-\import(pdf/tufte/marginfigure.pdf.pp)
-\import(pdf/tufte/fullwidthfigure.pdf.pp)
+!import(pdf/tufte/newthought.pdf.pp)
+!import(pdf/tufte/sidenote.pdf.pp)
+!import(pdf/tufte/marginnote.pdf.pp)
+!import(pdf/tufte/figure.pdf.pp)
+!import(pdf/tufte/marginfigure.pdf.pp)
+!import(pdf/tufte/fullwidthfigure.pdf.pp)
 )
 ```
 
@@ -272,7 +272,7 @@ Convert Markdown to PDF：
 ```
 pp -pdf -import=pp-macros/all.pp sample-handout.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex \
---latex-engine=xelatex --template=./templates/tufte-handout.tex \
+--pdf-engine=xelatex --template=./templates/tufte-handout.tex \
 -V documentclass:tufte-handout
 ```
 

@@ -1,4 +1,4 @@
-\define(today)
+!define(today)
 (
-\bash(date +%Y-%m-%d)
+!bash(date +%Y-%m-%d)
 )

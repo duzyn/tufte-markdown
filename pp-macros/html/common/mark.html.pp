@@ -1,4 +1,4 @@
-\define(mark)
+!define(mark)
 (
-<mark>\1</mark>
+<mark>!1</mark>
 )

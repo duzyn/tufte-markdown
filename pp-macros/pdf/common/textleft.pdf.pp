@@ -1,6 +1,6 @@
-\define(textleft)
+!define(textleft)
 (
-\raw(\begin){flushleft}
-\1
-\raw(\end){flushleft}
+\begin{flushleft}
+!1
+\end{flushleft}
 )

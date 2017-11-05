@@ -1,4 +1,4 @@
-\define(em)
+!define(em)
 (
-\raw(\emph){\1}
+\emph{!1}
 )

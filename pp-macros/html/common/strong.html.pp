@@ -1,4 +1,4 @@
-\define(strong)
+!define(strong)
 (
-<strong>\1</strong>
+<strong>!1</strong>
 )

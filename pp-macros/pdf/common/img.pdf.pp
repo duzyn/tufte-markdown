@@ -1,4 +1,4 @@
-\define(img)
+!define(img)
 (
-\raw(\includegraphics){\2}
+\includegraphics{!2}
 )

@@ -1,4 +1,4 @@
-\define(strike)
+!define(strike)
 (
-\raw(\sout){\1}
+\sout{!1}
 )

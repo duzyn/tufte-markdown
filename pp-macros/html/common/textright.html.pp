@@ -1,4 +1,4 @@
-\define(textright)
+!define(textright)
 (
-<div style="text-align: right">\1</div>
+<div style="text-align: right">!1</div>
 )

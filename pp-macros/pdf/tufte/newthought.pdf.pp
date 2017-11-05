@@ -1,4 +1,4 @@
-\define(newthought)
+!define(newthought)
 (
-\raw(\newthought){\1}
+\newthought{!1}
 )

@@ -1,4 +1,4 @@
-\define(mark)
+!define(mark)
 (
-\raw(\hl){\1}
+\hl{!1}
 )

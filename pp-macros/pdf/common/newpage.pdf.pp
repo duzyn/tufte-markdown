@@ -1,4 +1,4 @@
-\define(newpage)
+!define(newpage)
 (
-\raw(\newpage)
+\newpage
 )

@@ -1,4 +1,4 @@
-\define(today)
+!define(today)
 (
-\raw(\today)
+\today
 )

@@ -1,7 +1,7 @@
 ---
 title: Tufte Handout Sample
 author: David Peng
-date: \today
+date: !today
 ---
 
 This sample text is from Dave Liepmann's [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
@@ -13,7 +13,7 @@ of graphics with text, and carefully chosen typography.
 
 Tufte CSS was created by [Dave Liepmann](http://www.daveliepmann.com)
 and is now an Edward Tufte project. The original idea was cribbed from
-[Tufte-\latex](https://tufte-latex.github.io/tufte-latex/)
+[Tufte-!latex](https://tufte-latex.github.io/tufte-latex/)
 and [R Markdown's Tufte Handout
 format](http://rmarkdown.rstudio.com/tufte_handout_format.html). We give
 hearty thanks to all the people who have contributed to those projects.
@@ -69,7 +69,7 @@ page 20 of [The Visual Display of Quantitative
 Information](https://www.edwardtufte.com/tufte/books_vdqi) for an
 example in print.
 
-\newthought(In his later books)\sidenote(\em(\a(Beautiful Evidence)(http://www.edwardtufte.com/tufte/books_be))), Tufte
+!newthought(In his later books)!sidenote(!em(!a(Beautiful Evidence)(http://www.edwardtufte.com/tufte/books_be))), Tufte
 starts each section with a bit of vertical space, a non-indented
 paragraph, and the first few words of the sentence set in small caps.
 For this we use a span with the class `newthought`, as demonstrated at
@@ -88,8 +88,8 @@ indistinguishable from their ‘pure' cousins, but dial down the harsh
 contrast. We stick to the greyscale for text, reserving color for
 specific, careful use in figures and images.
 
-In print, Tufte has used the proprietary Monotype Bembo \sidenote(See Tufte's
-comment in the \a(Tufte book
+In print, Tufte has used the proprietary Monotype Bembo !sidenote(See Tufte's
+comment in the !a(Tufte book
 fonts)(http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt)
 thread.) font. A similar effect is achieved in digital
 formats with the now open-source
@@ -108,7 +108,7 @@ Tufte's sans-serif font of choice.
 Links in Tufte CSS match the body text in color and do not change on
 mouseover or when clicked. Here is a [dummy example](#) that goes
 nowhere. These links are underlined, since this is the most widely
-recognized indicator of clickable text. \marginnote(Blue text, while also a widely
+recognized indicator of clickable text. !marginnote(Blue text, while also a widely
 recognizable clickable-text indicator, is crass and distracting.
 Luckily, it is also rendered unnecessary by the use of
 underlining.) However, because most browsers' default
@@ -127,7 +127,7 @@ immediately identifiable even by casual web users.
 # Sidenotes: Footnotes and Marginal Notes
 
 One of the most distinctive features of Tufte's style is his extensive
-use of sidenotes.\sidenote(This is a sidenote.) Sidenotes are like
+use of sidenotes.!sidenote(This is a sidenote.) Sidenotes are like
 footnotes, except they don't force the reader to jump their eye to the
 bottom of the page, but instead display off to the side in the margin.
 Perhaps you have noticed their use in this document already. You are
@@ -166,7 +166,7 @@ sidenotes correctly by keeping the sidenote-number label close to the
 sidenote itself.
 
 If you want a sidenote without footnote-style numberings, then you want
-a margin note.  \marginnote(This is a margin note. Notice there isn't a number
+a margin note.  !marginnote(This is a margin note. Notice there isn't a number
 preceding the note.) On large screens, a margin note is
 just a sidenote that omits the reference number. This lessens the
 distracting effect taking away from the flow of the main text, but can
@@ -205,15 +205,15 @@ Any label or margin note goes in a regular margin note inside the
 figure. For example, most of the time one should introduce a figure
 directly into the main flow of discussion, like so:
 
-\marginnote(From Edward Tufte, \em(Visual Display of Quantitative Information), page
-92.) \img(Exports and Imports to and from Denmark & Norway
+!marginnote(From Edward Tufte, !em(Visual Display of Quantitative Information), page
+92.) !img(Exports and Imports to and from Denmark & Norway
 from 1700 to 1780)(tufte-css/img/exports-imports.png)
 
-\marginnote(\img(Image of a Rhinoceros)(tufte-css/img/rhino.png)F.J. Cole, “The History of
-Albrecht Dürer's Rhinoceros in Zooological Literature,” \em(Science,
+!marginnote(!img(Image of a Rhinoceros)(tufte-css/img/rhino.png)F.J. Cole, “The History of
+Albrecht Dürer's Rhinoceros in Zooological Literature,” !em(Science,
 Medicine, and History: Essays on the Evolution of Scientific Thought and
 Medical Practice) (London, 1953), ed. E. Ashworth Underwood, 337-356.
-From page 71 of Edward Tufte's \em(Visual Explanations).) But
+From page 71 of Edward Tufte's !em(Visual Explanations).) But
 tight integration of graphics with text is central to Tufte's work even
 when those graphics are ancillary to the main body of a text. In many of
 those cases, a margin figure may be most appropriate. To place figures
@@ -226,27 +226,27 @@ width of the screen. This approach is demonstrated below using Edward
 Tufte's English translation of the Napoleon's March data visualization.
 From *Beautiful Evidence*, page 122-124.
 
-\fullwidthfigure(Figurative map of the successive losses of the French Army in the
+!fullwidthfigure(Figurative map of the successive losses of the French Army in the
 Russian campaign, 1812-1813)(tufte-css/img/napoleons-march.png)
 
 
 # Use pp to preprocess Markdown
 
-We can use a list of macros defined below to generate a HTML or \latex file depend on the format.
+We can use a list of macros defined below to generate a HTML or !latex file depend on the format.
 
 ```
-\rawinclude(pp-macros/tufte.pp)
+!rawinclude(pp-macros/tufte.pp)
 ```
 
 # Use Pandoc to convert Markdown to HTML and PDF
 
 Convert Markdown to HTML：
 
-\source(build-html.sh)
+!source(build-html.sh)
 
 Convert Markdown to PDF：
 
-\source(build-pdf.sh)
+!source(build-pdf.sh)
 
 # Acknowledgements
 

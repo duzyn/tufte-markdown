@@ -1,4 +1,4 @@
-\define(strike)
+!define(strike)
 (
-<strike>\1</strike>
+<strike>!1</strike>
 )

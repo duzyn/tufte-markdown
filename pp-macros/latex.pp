@@ -1,9 +1,9 @@
-\ifeq(\format)(html)
+!ifeq(!format)(html)
 (
-\import(html/latex/latex.html.pp)
+!import(html/latex/latex.html.pp)
 )
 
-\ifeq(\format)(pdf)
+!ifeq(!format)(pdf)
 (
-\import(pdf/latex/latex.pdf.pp)
+!import(pdf/latex/latex.pdf.pp)
 )

@@ -1,4 +1,4 @@
-\define(a)
+!define(a)
 (
-<a href="\2">\1</a>
+<a href="!2">!1</a>
 )

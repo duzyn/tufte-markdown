@@ -1,4 +1,4 @@
-\define(marginnote)
+!define(marginnote)
 (
-\raw(\marginnote){\1}
+\marginnote{!1}
 )

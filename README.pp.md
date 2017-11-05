@@ -40,18 +40,18 @@ or download the [archive release](https://github.com/duzyn/tufte-markdown/releas
 HTML macro:
 
 ```
-\rawinclude(pp-macros/html/tufte/newthought.html.pp)
+!rawinclude(pp-macros/html/tufte/newthought.html.pp)
 ```
 
 LaTeX macro:
 
 ```
-\rawinclude(pp-macros/pdf/tufte/newthought.pdf.pp)
+!rawinclude(pp-macros/pdf/tufte/newthought.pdf.pp)
 ```
 
 Usage:
 
-    \newthought(This is a new thought)
+    !newthought(This is a new thought)
 
 2\. Sidenotes
 
@@ -60,18 +60,18 @@ Usage:
 HTML macro:
 
 ```
-\rawinclude(pp-macros/html/tufte/sidenote.html.pp)
+!rawinclude(pp-macros/html/tufte/sidenote.html.pp)
 ```
 
 LaTeX macro:
 
 ```
-\rawinclude(pp-macros/pdf/tufte/sidenote.pdf.pp)
+!rawinclude(pp-macros/pdf/tufte/sidenote.pdf.pp)
 ```
 
 Usage:
 
-    \sidenote(This is a new sidenote)
+    !sidenote(This is a new sidenote)
 
 3\. Margin notes
 
@@ -80,18 +80,18 @@ Usage:
 HTML macro:
 
 ```
-\rawinclude(pp-macros/html/tufte/marginnote.html.pp)
+!rawinclude(pp-macros/html/tufte/marginnote.html.pp)
 ```
 
 LaTeX macro:
 
 ```
-\rawinclude(pp-macros/pdf/tufte/marginnote.pdf.pp)
+!rawinclude(pp-macros/pdf/tufte/marginnote.pdf.pp)
 ```
 
 Usage:
 
-    \marginnote(This is a new margin note)
+    !marginnote(This is a new margin note)
 
 4\. Figures
 
@@ -100,18 +100,18 @@ Usage:
 HTML macro:
 
 ```
-\rawinclude(pp-macros/html/tufte/figure.html.pp)
+!rawinclude(pp-macros/html/tufte/figure.html.pp)
 ```
 
 LaTeX macro:
 
 ```
-\rawinclude(pp-macros/pdf/tufte/figure.pdf.pp)
+!rawinclude(pp-macros/pdf/tufte/figure.pdf.pp)
 ```
 
 Usage:
 
-    \figure(This is a figure caption)(./image/path/image.jpg)
+    !figure(This is a figure caption)(./image/path/image.jpg)
 
 5\. Margin figures
 
@@ -120,19 +120,19 @@ Usage:
 HTML macro:
 
 ```
-\rawinclude(pp-macros/html/tufte/marginfigure.html.pp)
+!rawinclude(pp-macros/html/tufte/marginfigure.html.pp)
 ```
 
 LaTeX macro:
 
 ```
-\rawinclude(pp-macros/pdf/tufte/marginfigure.pdf.pp)
+!rawinclude(pp-macros/pdf/tufte/marginfigure.pdf.pp)
 ```
 
 
 Usage:
 
-    \marginfigure(This is a margin figure caption)(./image/path/image.jpg)
+    !marginfigure(This is a margin figure caption)(./image/path/image.jpg)
 
 6\. Full-width figures
 
@@ -141,25 +141,25 @@ Usage:
 HTML macro:
 
 ```
-\rawinclude(pp-macros/html/tufte/fullwidthfigure.html.pp)
+!rawinclude(pp-macros/html/tufte/fullwidthfigure.html.pp)
 ```
 
 LaTeX macro:
 
 ```
-\rawinclude(pp-macros/pdf/tufte/fullwidthfigure.pdf.pp)
+!rawinclude(pp-macros/pdf/tufte/fullwidthfigure.pdf.pp)
 ```
 
 Usage:
 
-    \fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
+    !fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
 
 # Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.
 
 ```
-\rawinclude(pp-macros/tufte.pp)
+!rawinclude(pp-macros/tufte.pp)
 ```
 
 # Use Pandoc to convert Markdown to HTML and PDF
@@ -167,13 +167,13 @@ We can use a list of macros defined below to generate a HTML or LaTeX file depen
 Convert Markdown to HTML：
 
 ```
-\rawinclude(build-html.sh)
+!rawinclude(build-html.sh)
 ```
 
 Convert Markdown to PDF：
 
 ```
-\rawinclude(build-pdf.sh)
+!rawinclude(build-pdf.sh)
 ```
 
 # Acknowledgements

@@ -1,4 +1,4 @@
-\define(sidenote)
+!define(sidenote)
 (
-\raw(\sidenote){\1}
+\sidenote{!1}
 )

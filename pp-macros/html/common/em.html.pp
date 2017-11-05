@@ -1,4 +1,4 @@
-\define(em)
+!define(em)
 (
-<em>\1</em>
+<em>!1</em>
 )

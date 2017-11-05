@@ -1,4 +1,4 @@
-\define(a)
+!define(a)
 (
-\raw(\href){\2}{\1}
+\href{!2}{!1}
 )

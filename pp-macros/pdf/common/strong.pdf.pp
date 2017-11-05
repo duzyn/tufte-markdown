@@ -1,4 +1,4 @@
-\define(strong)
+!define(strong)
 (
-\raw(\textbf){\1}
+\textbf{!1}
 )

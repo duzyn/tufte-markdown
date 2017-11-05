@@ -1,6 +1,6 @@
-\define(textcenter)
+!define(textcenter)
 (
-\raw(\begin){center}
-\1
-\raw(\end){center}
+\begin{center}
+!1
+\end{center}
 )
