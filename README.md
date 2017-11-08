@@ -1,3 +1,9 @@
+---
+title: Tufet Markdown
+author: David Peng
+date: 2017-11-08
+---
+
 # Tufte Markdown
 
 Tufte Markdown prodives tools to style web articles or paper handouts using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.
@@ -29,7 +35,7 @@ You can download it by Git:
 
     git clone https://github.com/duzyn/tufte-markdown
 
-or download the [archive release](https://github.com/duzyn/tufte-markdown/releases/latest).
+or download the [archive](https://github.com/duzyn/tufte-markdown/archive/master.zip).
 
 ## pp Macros
 
@@ -88,7 +94,7 @@ LaTeX macro:
 
 Usage:
 
-    !sidenote(This is a new sidenote)
+    !sidenote(This is a sidenote)
 
 3\. Margin notes
 
@@ -119,7 +125,7 @@ LaTeX macro:
 
 Usage:
 
-    !marginnote(This is a new margin note)
+    !marginnote(This is a margin note)
 
 4\. Figures
 
@@ -258,22 +264,57 @@ date:   2017-06-30
 
 # Use Pandoc to convert Markdown to HTML and PDF
 
-Convert Markdown to HTML：
+I use build tasks in Visual Studio Code：
 
 ```
-pp -html -import=pp-macros/all.pp sample-handout.md | \
-pandoc -o sample-handout.html -t html5 -s \
---template=./templates/tufte-handout.html \
--c tufte-css/latex.css -c tufte-css/tufte.css
-```
-
-Convert Markdown to PDF：
-
-```
-pp -pdf -import=pp-macros/all.pp sample-handout.md | \
-pandoc -o sample-handout.pdf -f markdown+raw_tex \
---pdf-engine=xelatex --template=./templates/tufte-handout.tex \
--V documentclass:tufte-handout
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "Build sample handout PDF",
+            "command": "pp -pdf -import=pp-macros/all.pp sample-handout.md | \
+            pandoc -o sample-handout.pdf -f markdown+raw_tex \
+            --pdf-engine=xelatex --template=./templates/tufte-handout.tex \
+            -V documentclass:tufte-handout",
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "taskName": "Build sample handout HTML",
+            "command": "pp -html -import=pp-macros/all.pp sample-handout.md | \
+            pandoc -o sample-handout.html -t html5 -s \
+            --template=./templates/tufte-handout.html \
+            -c tufte-css/latex.css -c tufte-css/tufte.css",
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "taskName": "Build common PDF",
+            "command": "cd test && pp -pdf -import=../pp-macros/common.pp common.md | \
+            pandoc -o common.pdf -f markdown+raw_tex --template=default.latex \
+            --pdf-engine=xelatex -V graphics:true -V strikeout:true \
+            -V header-includes:\"\\usepackage{soul}\" -V header-includes:\"\\usepackage{color}\"",
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "taskName": "Build common HTML",
+            "command": "cd test && pp -html -import=../pp-macros/common.pp common.md | \
+            pandoc -o common.html -t html5 -s",
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "taskName": "Build README",
+            "command": "pp -html -import=pp-macros/html/common/today.html.pp \
+            README.pp.md >README.md",
+            "type": "shell",
+            "problemMatcher": []
+        },
+    ]
+}
 ```
 
 # Acknowledgements

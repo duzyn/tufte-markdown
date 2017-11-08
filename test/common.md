@@ -1,3 +1,9 @@
+---
+title: Common Macros Test
+author: David Peng
+date: !today
+---
+
 # Common
 
 1\. Image

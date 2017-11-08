@@ -1,3 +1,9 @@
+---
+title: Tufet Markdown
+author: David Peng
+date: !today
+---
+
 # Tufte Markdown
 
 Tufte Markdown prodives tools to style web articles or paper handouts using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.
@@ -29,7 +35,7 @@ You can download it by Git:
 
     git clone https://github.com/duzyn/tufte-markdown
 
-or download the [archive release](https://github.com/duzyn/tufte-markdown/releases/latest).
+or download the [archive](https://github.com/duzyn/tufte-markdown/archive/master.zip).
 
 ## pp Macros
 
@@ -71,7 +77,7 @@ LaTeX macro:
 
 Usage:
 
-    !sidenote(This is a new sidenote)
+    !sidenote(This is a sidenote)
 
 3\. Margin notes
 
@@ -91,7 +97,7 @@ LaTeX macro:
 
 Usage:
 
-    !marginnote(This is a new margin note)
+    !marginnote(This is a margin note)
 
 4\. Figures
 
@@ -164,16 +170,10 @@ We can use a list of macros defined below to generate a HTML or LaTeX file depen
 
 # Use Pandoc to convert Markdown to HTML and PDF
 
-Convert Markdown to HTML：
+I use build tasks in Visual Studio Code：
 
 ```
-!rawinclude(build-html.sh)
-```
-
-Convert Markdown to PDF：
-
-```
-!rawinclude(build-pdf.sh)
+!rawinclude(.vscode/tasks.json)
 ```
 
 # Acknowledgements

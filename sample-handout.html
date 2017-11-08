@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="David Peng">
-  <meta name="dcterms.date" content="2017-11-05">
+  <meta name="dcterms.date" content="2017-11-08">
   <title>Tufte Handout Sample</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -71,7 +71,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <header>
 <h1 class="title">Tufte Handout Sample</h1>
 <p class="subtitle author">David Peng</p>
-<p class="subtitle date">2017-11-05</p>
+<p class="subtitle date">2017-11-08</p>
 </header>
 <p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
 <p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
@@ -150,16 +150,54 @@ date:   2017-06-30
 !import(pdf/tufte/fullwidthfigure.pdf.pp)
 )</code></pre>
 <h1 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to convert Markdown to HTML and PDF</h1>
-<p>Convert Markdown to HTML：</p>
-<pre class="sourceCode bash" id="cb5"><code class="sourceCode bash"><div class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">pp</span> -html -import=pp-macros/all.pp sample-handout.md <span class="kw">|</span> <span class="kw">\</span></div>
-<div class="sourceLine" id="cb5-2" data-line-number="2"><span class="ex">pandoc</span> -o sample-handout.html -t html5 -s \</div>
-<div class="sourceLine" id="cb5-3" data-line-number="3">--template=./templates/tufte-handout.html \</div>
-<div class="sourceLine" id="cb5-4" data-line-number="4">-c tufte-css/latex.css -c tufte-css/tufte.css</div></code></pre>
-<p>Convert Markdown to PDF：</p>
-<pre class="sourceCode bash" id="cb6"><code class="sourceCode bash"><div class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">pp</span> -pdf -import=pp-macros/all.pp sample-handout.md <span class="kw">|</span> <span class="kw">\</span></div>
-<div class="sourceLine" id="cb6-2" data-line-number="2"><span class="ex">pandoc</span> -o sample-handout.pdf -f markdown+raw_tex \</div>
-<div class="sourceLine" id="cb6-3" data-line-number="3">--latex-engine=xelatex --template=./templates/tufte-handout.tex \</div>
-<div class="sourceLine" id="cb6-4" data-line-number="4">-V documentclass:tufte-handout</div></code></pre>
+<pre class="sourceCode json" id="cb5"><code class="sourceCode json"><div class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">{</span></div>
+<div class="sourceLine" id="cb5-2" data-line-number="2">    <span class="er">//</span> <span class="er">See</span> <span class="er">https</span><span class="fu">:</span><span class="er">//go.microsoft.com/fwlink/?LinkId=</span><span class="dv">733558</span></div>
+<div class="sourceLine" id="cb5-3" data-line-number="3">    <span class="er">//</span> <span class="er">for</span> <span class="er">the</span> <span class="er">documentation</span> <span class="er">about</span> <span class="er">the</span> <span class="er">tasks.json</span> <span class="er">format</span></div>
+<div class="sourceLine" id="cb5-4" data-line-number="4">    <span class="st">&quot;version&quot;</span><span class="er">:</span> <span class="st">&quot;2.0.0&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-5" data-line-number="5">    <span class="dt">&quot;tasks&quot;</span><span class="fu">:</span> <span class="ot">[</span></div>
+<div class="sourceLine" id="cb5-6" data-line-number="6">        <span class="fu">{</span></div>
+<div class="sourceLine" id="cb5-7" data-line-number="7">            <span class="dt">&quot;taskName&quot;</span><span class="fu">:</span> <span class="st">&quot;Build sample handout PDF&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-8" data-line-number="8">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pp -pdf -import=pp-macros/all.pp sample-handout.md | \</span></div>
+<div class="sourceLine" id="cb5-9" data-line-number="9"><span class="st">            pandoc -o sample-handout.pdf -f markdown+raw_tex \</span></div>
+<div class="sourceLine" id="cb5-10" data-line-number="10"><span class="st">            --pdf-engine=xelatex --template=./templates/tufte-handout.tex \</span></div>
+<div class="sourceLine" id="cb5-11" data-line-number="11"><span class="st">            -V documentclass:tufte-handout&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-12" data-line-number="12">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-13" data-line-number="13">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
+<div class="sourceLine" id="cb5-14" data-line-number="14">        <span class="fu">}</span><span class="ot">,</span></div>
+<div class="sourceLine" id="cb5-15" data-line-number="15">        <span class="fu">{</span></div>
+<div class="sourceLine" id="cb5-16" data-line-number="16">            <span class="dt">&quot;taskName&quot;</span><span class="fu">:</span> <span class="st">&quot;Build sample handout HTML&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-17" data-line-number="17">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pp -html -import=pp-macros/all.pp sample-handout.md | \</span></div>
+<div class="sourceLine" id="cb5-18" data-line-number="18"><span class="st">            pandoc -o sample-handout.html -t html5 -s \</span></div>
+<div class="sourceLine" id="cb5-19" data-line-number="19"><span class="st">            --template=./templates/tufte-handout.html \</span></div>
+<div class="sourceLine" id="cb5-20" data-line-number="20"><span class="st">            -c tufte-css/latex.css -c tufte-css/tufte.css&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-21" data-line-number="21">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-22" data-line-number="22">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
+<div class="sourceLine" id="cb5-23" data-line-number="23">        <span class="fu">}</span><span class="ot">,</span></div>
+<div class="sourceLine" id="cb5-24" data-line-number="24">        <span class="fu">{</span></div>
+<div class="sourceLine" id="cb5-25" data-line-number="25">            <span class="dt">&quot;taskName&quot;</span><span class="fu">:</span> <span class="st">&quot;Build common PDF&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-26" data-line-number="26">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;cd test &amp;&amp; pp -pdf -import=../pp-macros/common.pp common.md | \</span></div>
+<div class="sourceLine" id="cb5-27" data-line-number="27"><span class="st">            pandoc -o common.pdf -f markdown+raw_tex --template=default.latex \</span></div>
+<div class="sourceLine" id="cb5-28" data-line-number="28"><span class="st">            --pdf-engine=xelatex -V graphics:true -V strikeout:true \</span></div>
+<div class="sourceLine" id="cb5-29" data-line-number="29"><span class="st">            -V header-includes:</span><span class="ch">\&quot;\\</span><span class="st">usepackage{soul}</span><span class="ch">\&quot;</span><span class="st"> -V header-includes:</span><span class="ch">\&quot;\\</span><span class="st">usepackage{color}</span><span class="ch">\&quot;</span><span class="st">&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-30" data-line-number="30">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-31" data-line-number="31">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
+<div class="sourceLine" id="cb5-32" data-line-number="32">        <span class="fu">}</span><span class="ot">,</span></div>
+<div class="sourceLine" id="cb5-33" data-line-number="33">        <span class="fu">{</span></div>
+<div class="sourceLine" id="cb5-34" data-line-number="34">            <span class="dt">&quot;taskName&quot;</span><span class="fu">:</span> <span class="st">&quot;Build common HTML&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-35" data-line-number="35">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;cd test &amp;&amp; pp -html -import=../pp-macros/common.pp common.md | \</span></div>
+<div class="sourceLine" id="cb5-36" data-line-number="36"><span class="st">            pandoc -o common.html -t html5 -s&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-37" data-line-number="37">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-38" data-line-number="38">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
+<div class="sourceLine" id="cb5-39" data-line-number="39">        <span class="fu">}</span><span class="ot">,</span></div>
+<div class="sourceLine" id="cb5-40" data-line-number="40">        <span class="fu">{</span></div>
+<div class="sourceLine" id="cb5-41" data-line-number="41">            <span class="dt">&quot;taskName&quot;</span><span class="fu">:</span> <span class="st">&quot;Build README&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-42" data-line-number="42">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pp -html -import=pp-macros/html/common/today.html.pp \</span></div>
+<div class="sourceLine" id="cb5-43" data-line-number="43"><span class="st">            README.pp.md &gt;README.md&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-44" data-line-number="44">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
+<div class="sourceLine" id="cb5-45" data-line-number="45">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
+<div class="sourceLine" id="cb5-46" data-line-number="46">        <span class="fu">}</span><span class="ot">,</span></div>
+<div class="sourceLine" id="cb5-47" data-line-number="47">    <span class="ot">]</span></div>
+<div class="sourceLine" id="cb5-48" data-line-number="48"><span class="fu">}</span></div></code></pre>
 <h1 id="acknowledgements">Acknowledgements</h1>
 <ul>
 <li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>

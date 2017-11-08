@@ -240,13 +240,7 @@ We can use a list of macros defined below to generate a HTML or !latex file depe
 
 # Use Pandoc to convert Markdown to HTML and PDF
 
-Convert Markdown to HTML：
-
-!source(build-html.sh)
-
-Convert Markdown to PDF：
-
-!source(build-pdf.sh)
+!source(.vscode/tasks.json)
 
 # Acknowledgements
 
