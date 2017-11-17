@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Untitled</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../tufte-css/latex.css">
+  <link rel="stylesheet" href="../tufte-css/tufte.css">
+<style type="text/css">
+  table {
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+    font-size: 1.1rem;
+  }
+  th {
+    border-bottom: 1px solid #111;
+  }
+</style>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>7. Full-width tables</p>
+<table class="fullwidth">
+<tr>
+<th>
+Tables
+</th>
+<th>
+Are
+</th>
+<th>
+Cool
+</th>
+</tr>
+<tr>
+<td>
+This is a full-width table and is very very long table. col 3 is
+</td>
+<td>
+right-aligned
+</td>
+<td>
+$1,600
+</td>
+</tr>
+<tr>
+<td>
+col 2 is
+</td>
+<td>
+centered
+</td>
+<td>
+$12
+</td>
+</tr>
+<tr>
+<td>
+zebra stripes
+</td>
+<td>
+are neat
+</td>
+<td>
+$1
+</td>
+</tr>
+</table>
+<p>This is a example about fullwidth tables in Tufte Handout.</p>
+<p>You can build PDF file with:</p>
+<pre><code>pp -pdf test.md | pandoc -o test.pdf -f markdown+raw_tex --pdf-engine=xelatex \
+--template=../templates/tufte-handout.tex -V documentclass:tufte-handout</code></pre>
+<p>You can build HTML file with:</p>
+<pre><code>pp -html test.md | pandoc -o test.html -f markdown+raw_tex -t html5 -s \
+--template=../templates/tufte-handout.html -c ../tufte-css/latex.css -c ../tufte-css/tufte.css</code></pre>
+</body>
+</html>
