@@ -4,45 +4,34 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "Build sample handout PDF",
-            "command": "pp -pdf -import=pp-macros/all.pp sample-handout.md | \
-            pandoc -o sample-handout.pdf -f markdown+raw_tex \
-            --pdf-engine=xelatex --template=./templates/tufte-handout.tex \
-            -V documentclass:tufte-handout",
+            "label": "Build sample handout PDF",
+            "command": "pp -pdf -import=pp-macros/all.pp sample-handout.md | pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex --template=./templates/tufte-handout.tex -V documentclass:tufte-handout",
             "type": "shell",
             "problemMatcher": []
         },
         {
-            "taskName": "Build sample handout HTML",
-            "command": "pp -html -import=pp-macros/all.pp sample-handout.md | \
-            pandoc -o sample-handout.html -t html5 -s \
-            --template=./templates/tufte-handout.html \
-            -c tufte-css/latex.css -c tufte-css/tufte.css",
+            "label": "Build sample handout HTML",
+            "command": "pp -html -import=pp-macros/all.pp sample-handout.md | pandoc -o sample-handout.html -s --template=./templates/tufte.html5",
             "type": "shell",
             "problemMatcher": []
         },
         {
-            "taskName": "Build common PDF",
-            "command": "cd test && pp -pdf -import=../pp-macros/common.pp common.md | \
-            pandoc -o common.pdf -f markdown+raw_tex --template=default.latex \
-            --pdf-engine=xelatex -V graphics:true -V strikeout:true \
-            -V header-includes:\"\\usepackage{soul}\" -V header-includes:\"\\usepackage{color}\"",
+            "label": "Build common PDF",
+            "command": "cd test && pp -pdf -import=../pp-macros/common.pp common.md | pandoc -o common.pdf -f markdown+raw_tex --template=default.latex --pdf-engine=xelatex -V graphics:true -V strikeout:true -V header-includes:\"\\usepackage{soul}\" -V header-includes:\"\\usepackage{color}\"",
             "type": "shell",
             "problemMatcher": []
         },
         {
-            "taskName": "Build common HTML",
-            "command": "cd test && pp -html -import=../pp-macros/common.pp common.md | \
-            pandoc -o common.html -t html5 -s",
+            "label": "Build common HTML",
+            "command": "cd test && pp -html -import=../pp-macros/common.pp common.md | pandoc -o common.html -t html5 -s",
             "type": "shell",
             "problemMatcher": []
         },
         {
-            "taskName": "Build README",
-            "command": "pp -html -import=pp-macros/html/common/today.html.pp \
-            README.pp.md >README.md",
+            "label": "Build README",
+            "command": "pp -html -import=pp-macros/html/common/today.html.pp README.pp.md >README.md",
             "type": "shell",
             "problemMatcher": []
-        },
+        }
     ]
 }
