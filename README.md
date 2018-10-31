@@ -1,7 +1,7 @@
 ---
-title: Tufet Markdown
+title: Tufte Handout Sample
 author: David Peng
-date: 2017-11-08
+date: 2018-10-31
 ---
 
 # Tufte Markdown
@@ -14,20 +14,20 @@ You can simply write your articles with Markdown, then you can convert them to b
 
 I combined these tools to archive Tufte Markdown:
 
--   Markdown
--   [Pandoc]
--   [pp]: a powerful preprocessor with pandoc in mind
--   [Tufte CSS]
--   [Tufte LaTeX]
--   [MiKTeX] or [TeX Live] or [wkhtmltopdf]
+- Markdown
+- [Pandoc]
+- [pp]: a powerful preprocessor with pandoc in mind
+- [Tufte CSS]
+- [Tufte LaTeX]
+- [MiKTeX] or [TeX Live] or [wkhtmltopdf]
 
 You should download and install [Pandoc] and [pp] first. We get a HTML or PDF file with this process:
 
-1.  Write a markdown article including pp macros.
-2.  Use pp to preprocess the markdown and get a normal markdown file with HTML or LaTeX.
-3.  Stream the markdown to Pandoc.
-4.  Use a HTML template and Tufte CSS to get a HTML article.
-5.  Use a LaTeX template and Tufte LaTeX to get a PDF article with a TeX document production system, like MiKTeX, Tex Live or ConTeXt. You can also generate a HTML file to PDF with wkhtmltopdf.
+1. Write a markdown article including pp macros.
+2. Use pp to preprocess the markdown and get a normal markdown file with HTML or LaTeX.
+3. Stream the markdown to Pandoc.
+4. Use a HTML template and Tufte CSS to get a HTML article.
+5. Use a LaTeX template and Tufte LaTeX to get a PDF article with a TeX document production system, like MiKTeX, Tex Live or ConTeXt. You can also generate a HTML file to PDF with wkhtmltopdf.
 
 ## Download
 
@@ -45,7 +45,7 @@ or download the [archive](https://github.com/duzyn/tufte-markdown/archive/master
 
 HTML macro:
 
-```
+```c
 !define(newthought)
 (
 <span class="newthought">!1</span>
@@ -54,7 +54,7 @@ HTML macro:
 
 LaTeX macro:
 
-```
+```c
 !define(newthought)
 (
 \newthought{!1}
@@ -71,7 +71,7 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !define(SIDENOTE)(1)
 
 !define(sidenote)
@@ -85,7 +85,7 @@ HTML macro:
 
 LaTeX macro:
 
-```
+```c
 !define(sidenote)
 (
 \sidenote{!1}
@@ -102,7 +102,7 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !define(MARGINNOTE)(1)
 
 !define(marginnote)
@@ -116,7 +116,7 @@ HTML macro:
 
 LaTeX macro:
 
-```
+```c
 !define(marginnote)
 (
 \marginnote{!1}
@@ -133,7 +133,7 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !define(FIGURE)(1)
 
 !define(figure)
@@ -150,7 +150,7 @@ HTML macro:
 
 LaTeX macro:
 
-```
+```c
 !define(figure)
 (
 \begin{figure}
@@ -170,7 +170,7 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !define(MARGINFIGURE)(1)
 
 !define(marginfigure)
@@ -184,7 +184,7 @@ HTML macro:
 
 LaTeX macro:
 
-```
+```c
 !define(marginfigure)
 (
 \begin{marginfigure}
@@ -193,7 +193,6 @@ LaTeX macro:
 \end{marginfigure}
 )
 ```
-
 
 Usage:
 
@@ -205,7 +204,7 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !define(fullwidthfigure)
 (
 <figure class="fullwidth">
@@ -216,7 +215,7 @@ HTML macro:
 
 LaTeX macro:
 
-```
+```c
 !define(fullwidthfigure)
 (
 \begin{figure*}
@@ -230,11 +229,11 @@ Usage:
 
     !fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
 
-# Use pp to preprocess Markdown
+## Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.
 
-```
+```c
 !comment(
 title:  Tufte Markdown
 author: David Peng
@@ -262,68 +261,50 @@ date:   2017-06-30
 )
 ```
 
-# Use Pandoc to convert Markdown to HTML and PDF
+## Use Pandoc to convert Markdown to HTML and PDF
 
-I use build tasks in Visual Studio Code：
+Use like this in bash：
 
-```
-{
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "taskName": "Build sample handout PDF",
-            "command": "pp -pdf -import=pp-macros/all.pp sample-handout.md | \
-            pandoc -o sample-handout.pdf -f markdown+raw_tex \
-            --pdf-engine=xelatex --template=./templates/tufte-handout.tex \
-            -V documentclass:tufte-handout",
-            "type": "shell",
-            "problemMatcher": []
-        },
-        {
-            "taskName": "Build sample handout HTML",
-            "command": "pp -html -import=pp-macros/all.pp sample-handout.md | \
-            pandoc -o sample-handout.html -t html5 -s \
-            --template=./templates/tufte-handout.html \
-            -c tufte-css/latex.css -c tufte-css/tufte.css",
-            "type": "shell",
-            "problemMatcher": []
-        },
-        {
-            "taskName": "Build common PDF",
-            "command": "cd test && pp -pdf -import=../pp-macros/common.pp common.md | \
-            pandoc -o common.pdf -f markdown+raw_tex --template=default.latex \
-            --pdf-engine=xelatex -V graphics:true -V strikeout:true \
-            -V header-includes:\"\\usepackage{soul}\" -V header-includes:\"\\usepackage{color}\"",
-            "type": "shell",
-            "problemMatcher": []
-        },
-        {
-            "taskName": "Build common HTML",
-            "command": "cd test && pp -html -import=../pp-macros/common.pp common.md | \
-            pandoc -o common.html -t html5 -s",
-            "type": "shell",
-            "problemMatcher": []
-        },
-        {
-            "taskName": "Build README",
-            "command": "pp -html -import=pp-macros/html/common/today.html.pp \
-            README.pp.md >README.md",
-            "type": "shell",
-            "problemMatcher": []
-        },
-    ]
-}
+```sh
+#!/bin/bash
+
+# Build README
+pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md
+
+# Build sample handout PDF
+pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
+pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
+--template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
+--no-highlight
+
+# Build sample handout HTML
+pp -html -import=./pp-macros/all.pp sample-handout.md | \
+pandoc -o sample-handout.html -s --template=./templates/tufte.html5 \
+--no-highlight
+
+# Build common PDF
+pp -pdf -import=./pp-macros/common.pp ./test/common.md | \
+pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
+--pdf-engine=xelatex -V graphics=true \
+-V strikeout=true -V header-includes="\usepackage{soul}" \
+-V header-includes="\usepackage{color}"
+
+
+# Build common HTML
+pp -html -import=./pp-macros/common.pp ./test/common.md | \
+pandoc -o ./test/common.html -t html5 -s
 ```
 
-# Acknowledgements
+## Acknowledgements
 
--   [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
--   [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
--   [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
--   [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
+- [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
+- [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
+- [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
+- [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
 
+## License
+
+Released under the MIT license. See [LICENSE](LICENSE).
 
 [Pandoc]: http://pandoc.org
 [pp]: https://github.com/CDSoft/pp

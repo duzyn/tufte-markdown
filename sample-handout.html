@@ -5,63 +5,10 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="David Peng">
-  <meta name="dcterms.date" content="2017-11-18">
+  <meta name="dcterms.date" content="2018-10-31">
   <title>Tufte Handout Sample</title>
   <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-div.sourceLine, a.sourceLine { display: inline-block; min-height: 1.25em; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; }
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-div.sourceLine, a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource div.sourceLine, .numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource div.sourceLine::before, .numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em; }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; color: #aaaaaa;  padding-left: 4px; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; color: initial; }
-}
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.bn { color: #40a070; } /* BaseN */
-code span.fl { color: #40a070; } /* Float */
-code span.ch { color: #4070a0; } /* Char */
-code span.st { color: #4070a0; } /* String */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.ot { color: #007020; } /* Other */
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.fu { color: #06287e; } /* Function */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code span.cn { color: #880000; } /* Constant */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.im { } /* Import */
-code span.va { color: #19177c; } /* Variable */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.op { color: #666666; } /* Operator */
-code span.bu { } /* BuiltIn */
-code span.ex { } /* Extension */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.at { color: #7d9029; } /* Attribute */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.3/tufte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.4/tufte.min.css">
   <style type="text/css">
     .latex-sub, .latex-sup { text-transform: uppercase;
                          font-size: smaller;
@@ -81,7 +28,10 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 
     .latex::-moz-selection, .latex span:not(.latex-sup)::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
     background: #b4d5fe; }
-
+    pre { font-size: 0.9rem;
+           width: 52.5%;
+           margin-left: 2.5%;
+           overflow-x: auto; }
     table {
       border-top: 2px solid #111;
       border-bottom: 2px solid #111;
@@ -96,10 +46,12 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
   <![endif]-->
 </head>
 <body>
+<article>
+<section>
 <header>
 <h1 class="title">Tufte Handout Sample</h1>
 <p class="author">David Peng</p>
-<p class="date">2017-11-18</p>
+<p class="date">2018-10-31</p>
 </header>
 <p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
 <p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
@@ -108,7 +60,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <p>Finally, a reminder about the goal of this project. The web is not print. Webpages are not books. Therefore, the goal of Tufte CSS is not to say “websites should look like this interpretation of Tufte’s books” but rather “here are some techniques Tufte developed that we’ve found useful in print; maybe you can find a way to make them useful on the web”. Tufte CSS is merely a sketch of one way to implement this particular set of ideas. It should be a starting point, not a design goal, because any project should present their information as best suits their particular circumstances.</p>
 <h1 id="getting-started">Getting Started</h1>
 <p>To use Tufte CSS, copy <code>tufte.css</code> and the <code>et-book</code> directory of font files to your project directory, then add the following to your HTML document’s <code>head</code> block:</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;tufte.css&quot;/&gt;</code></pre>
+<pre class="html"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;tufte.css&quot;/&gt;</code></pre>
 <p>Now you just have to use the provided CSS rules, and the Tufte CSS conventions described in this document. For best results, View Source and Inspect Element frequently.</p>
 <h1 id="fundamentals">Fundamentals</h1>
 <h2 id="sections-and-headings">Sections and Headings</h2>
@@ -121,19 +73,19 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <p>In print, Tufte has used the proprietary Monotype Bembo <label for="sidenote-2" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-2" class="margin-toggle"/> <span class="sidenote">See Tufte’s comment in the <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt">Tufte book fonts</a> thread.</span> font. A similar effect is achieved in digital formats with the now open-source <a href="https://github.com/edwardtufte/et-book">ETBook</a>, which Tufte CSS supplies with a <code>@font-face</code> reference to a .ttf file. In case ETBook somehow doesn’t work, Tufte CSS shifts gracefully to other serif fonts like Palatino and Georgia.</p>
 <p>Also notice how Tufte CSS includes separate font files for bold (strong) and italic (emphasis), instead of relying on the browser to mechanically transform the text. This is typographic best practice.</p>
 <p>If you prefer sans-serifs, use the <code>sans</code> class. It relies on Gill Sans, Tufte’s sans-serif font of choice.</p>
-<p>Links in Tufte CSS match the body text in color and do not change on mouseover or when clicked. Here is a <a href="#">dummy example</a> that goes nowhere. These links are underlined, since this is the most widely recognized indicator of clickable text. <label for="marginnote-1" class="margin-toggle">&#8853;</label> <input type="checkbox" id="marginnote-1" class="margin-toggle"/> <span class="marginnote">Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.</span> However, because most browsers’ default underlining does not clear descenders and is so thick and distracting, the underline effect is instead achieved using CSS trickery involving background gradients instead of standard <code>text-decoration</code>. Credit goes to Adam Schwartz for that technique.</p>
+<p>Links in Tufte CSS match the body text in color and do not change on mouseover or when clicked. Here is a <a href="#">dummy example</a> that goes nowhere. These links are underlined, since this is the most widely recognized indicator of clickable text. <label for="marginnote-1" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-1" class="margin-toggle"/> <span class="marginnote">Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.</span> However, because most browsers’ default underlining does not clear descenders and is so thick and distracting, the underline effect is instead achieved using CSS trickery involving background gradients instead of standard <code>text-decoration</code>. Credit goes to Adam Schwartz for that technique.</p>
 <p>As always, these design choices are merely one approach that Tufte CSS provides by default. Other approaches, such as changing color on click or mouseover, or using highlighting or color instead of underlining to denote links, could also be made to work. The goal is to make sentences readable without interference from links, as well as to make links immediately identifiable even by casual web users.</p>
 <h1 id="sidenotes-footnotes-and-marginal-notes">Sidenotes: Footnotes and Marginal Notes</h1>
 <p>One of the most distinctive features of Tufte’s style is his extensive use of sidenotes.<label for="sidenote-3" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-3" class="margin-toggle"/> <span class="sidenote">This is a sidenote.</span> Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page, but instead display off to the side in the margin. Perhaps you have noticed their use in this document already. You are very astute.</p>
 <p>Sidenotes are a great example of the web not being like print. On sufficiently large viewports, Tufte CSS uses the margin for sidenotes, margin notes, and small figures. On smaller viewports, elements that would go in the margin are hidden until the user toggles them into view. The goal is to present related but not necessary information such as asides or citations <em>as close as possible</em> to the text that references them. At the same time, this secondary information should stay out of the way of the eye, not interfering with the progression of ideas in the main text.</p>
 <p>Sidenotes consist of two elements: a superscript reference number that goes inline with the text, and a sidenote with content. To add the former, just put a label and dummy checkbox into the text where you want the reference to go, like so:</p>
-<pre><code>&lt;label for=&quot;sn-demo&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
+<pre class="html"><code>&lt;label for=&quot;sn-demo&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;sn-demo&quot; class=&quot;margin-toggle&quot;/&gt;</code></pre>
 <p>You must manually assign a reference <code>id</code> to each side or margin note, replacing “sn-demo” in the <code>for</code> and the <code>id</code> attribute values with an appropriate descriptor. It is useful to use prefixes like <code>sn-</code> for sidenotes and <code>mn-</code> for margin notes.</p>
 <p>Immediately adjacent to that sidenote reference in the main text goes the sidenote content itself, in a <code>span</code> with class <code>sidenote</code>. This tag is also inserted directly in the middle of the body text, but is either pushed into the margin or hidden by default. Make sure to position your sidenotes correctly by keeping the sidenote-number label close to the sidenote itself.</p>
-<p>If you want a sidenote without footnote-style numberings, then you want a margin note. <label for="marginnote-2" class="margin-toggle">&#8853;</label> <input type="checkbox" id="marginnote-2" class="margin-toggle"/> <span class="marginnote">This is a margin note. Notice there isn’t a number preceding the note.</span> On large screens, a margin note is just a sidenote that omits the reference number. This lessens the distracting effect taking away from the flow of the main text, but can increase the cognitive load of matching a margin note to its referent text. However, on small screens, a margin note is like a sidenote except its viewability-toggle is a symbol rather than a reference number. This document currently uses the symbol (<code>&amp;#8853;</code>), but it’s up to you.</p>
+<p>If you want a sidenote without footnote-style numberings, then you want a margin note. <label for="marginnote-2" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-2" class="margin-toggle"/> <span class="marginnote">This is a margin note. Notice there isn’t a number preceding the note.</span> On large screens, a margin note is just a sidenote that omits the reference number. This lessens the distracting effect taking away from the flow of the main text, but can increase the cognitive load of matching a margin note to its referent text. However, on small screens, a margin note is like a sidenote except its viewability-toggle is a symbol rather than a reference number. This document currently uses the symbol (<code>&amp;#8853;</code>), but it’s up to you.</p>
 <p>Margin notes are created just like sidenotes, but with the <code>marginnote</code> class for the content and the <code>margin-toggle</code> class for the label and dummy checkbox. For instance, here is the code for the margin note used in the previous paragraph:</p>
-<pre><code>&lt;label for=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+<pre class="html"><code>&lt;label for=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;/&gt;
 &lt;span class=&quot;marginnote&quot;&gt;
     This is a margin note. Notice there isn’t a number preceding the note.
@@ -142,9 +94,9 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <h1 id="figures">Figures</h1>
 <p>Tufte emphasizes tight integration of graphics with text. Data, graphs, and figures are kept with the text that discusses them. In print, this means they are not relegated to a separate page. On the web, that means readability of graphics and their accompanying text without extra clicks, tab-switching, or scrolling.</p>
 <p>Figures should try to use the <code>figure</code> element, which by default are constrained to the main column. Don’t wrap figures in a paragraph tag. Any label or margin note goes in a regular margin note inside the figure. For example, most of the time one should introduce a figure directly into the main flow of discussion, like so:</p>
-<p><label for="marginnote-3" class="margin-toggle">&#8853;</label> <input type="checkbox" id="marginnote-3" class="margin-toggle"/> <span class="marginnote">From Edward Tufte, <em>Visual Display of Quantitative Information</em>, page 92.</span> <img src="tufte-css/img/exports-imports.png" alt="Exports and Imports to and from Denmark & Norway
+<p><label for="marginnote-3" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-3" class="margin-toggle"/> <span class="marginnote">From Edward Tufte, <em>Visual Display of Quantitative Information</em>, page 92.</span> <img src="tufte-css/img/exports-imports.png" alt="Exports and Imports to and from Denmark & Norway
 from 1700 to 1780" /></p>
-<p><label for="marginnote-4" class="margin-toggle">&#8853;</label> <input type="checkbox" id="marginnote-4" class="margin-toggle"/> <span class="marginnote"><img src="tufte-css/img/rhino.png" alt="Image of a Rhinoceros" />F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological Literature,” <em>Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice</em>, ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s <em>Visual Explanations</em>.</span> But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate. To place figures in the margin, just wrap an image (or whatever) in a margin note inside a <code>p</code> tag, as seen to the right of this paragraph.</p>
+<p><label for="marginnote-4" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-4" class="margin-toggle"/> <span class="marginnote"><img src="tufte-css/img/rhino.png" alt="Image of a Rhinoceros" />F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological Literature,” <em>Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice</em>, ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s <em>Visual Explanations</em>.</span> But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate. To place figures in the margin, just wrap an image (or whatever) in a margin note inside a <code>p</code> tag, as seen to the right of this paragraph.</p>
 <p>If you need a full-width figure, give it the <code>fullwidth</code> class. Make sure that’s inside an <code>article</code>, and it will take up (almost) the full width of the screen. This approach is demonstrated below using Edward Tufte’s English translation of the Napoleon’s March data visualization. From <em>Beautiful Evidence</em>, page 122-124.</p>
 <figure class="fullwidth">
 <img src="tufte-css/img/napoleons-march.png" alt="Figurative map of the successive losses of the French Army in the
@@ -152,7 +104,7 @@ Russian campaign, 1812-1813">
 </figure>
 <h1 id="use-pp-to-preprocess-markdown">Use pp to preprocess Markdown</h1>
 <p>We can use a list of macros defined below to generate a HTML or <span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span> file depend on the format.</p>
-<pre><code>!comment(
+<pre class="c"><code>!comment(
 title:  Tufte Markdown
 author: David Peng
 date:   2017-06-30
@@ -178,43 +130,33 @@ date:   2017-06-30
 !import(pdf/tufte/fullwidthfigure.pdf.pp)
 )</code></pre>
 <h1 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to convert Markdown to HTML and PDF</h1>
-<pre class="sourceCode json" id="cb5"><code class="sourceCode json"><div class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">{</span></div>
-<div class="sourceLine" id="cb5-2" data-line-number="2">    <span class="er">//</span> <span class="er">See</span> <span class="er">https</span><span class="fu">:</span><span class="er">//go.microsoft.com/fwlink/?LinkId=</span><span class="dv">733558</span></div>
-<div class="sourceLine" id="cb5-3" data-line-number="3">    <span class="er">//</span> <span class="er">for</span> <span class="er">the</span> <span class="er">documentation</span> <span class="er">about</span> <span class="er">the</span> <span class="er">tasks.json</span> <span class="er">format</span></div>
-<div class="sourceLine" id="cb5-4" data-line-number="4">    <span class="st">&quot;version&quot;</span><span class="er">:</span> <span class="st">&quot;2.0.0&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-5" data-line-number="5">    <span class="dt">&quot;tasks&quot;</span><span class="fu">:</span> <span class="ot">[</span></div>
-<div class="sourceLine" id="cb5-6" data-line-number="6">        <span class="fu">{</span></div>
-<div class="sourceLine" id="cb5-7" data-line-number="7">            <span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Build sample handout PDF&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-8" data-line-number="8">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pp -pdf -import=pp-macros/all.pp sample-handout.md | pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex --template=./templates/tufte-handout.tex -V documentclass:tufte-handout&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-9" data-line-number="9">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-10" data-line-number="10">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
-<div class="sourceLine" id="cb5-11" data-line-number="11">        <span class="fu">}</span><span class="ot">,</span></div>
-<div class="sourceLine" id="cb5-12" data-line-number="12">        <span class="fu">{</span></div>
-<div class="sourceLine" id="cb5-13" data-line-number="13">            <span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Build sample handout HTML&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-14" data-line-number="14">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pp -html -import=pp-macros/all.pp sample-handout.md | pandoc -o sample-handout.html -s --template=./templates/tufte.html5&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-15" data-line-number="15">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-16" data-line-number="16">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
-<div class="sourceLine" id="cb5-17" data-line-number="17">        <span class="fu">}</span><span class="ot">,</span></div>
-<div class="sourceLine" id="cb5-18" data-line-number="18">        <span class="fu">{</span></div>
-<div class="sourceLine" id="cb5-19" data-line-number="19">            <span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Build common PDF&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-20" data-line-number="20">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;cd test &amp;&amp; pp -pdf -import=../pp-macros/common.pp common.md | pandoc -o common.pdf -f markdown+raw_tex --template=default.latex --pdf-engine=xelatex -V graphics:true -V strikeout:true -V header-includes:</span><span class="ch">\&quot;\\</span><span class="st">usepackage{soul}</span><span class="ch">\&quot;</span><span class="st"> -V header-includes:</span><span class="ch">\&quot;\\</span><span class="st">usepackage{color}</span><span class="ch">\&quot;</span><span class="st">&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-21" data-line-number="21">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-22" data-line-number="22">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
-<div class="sourceLine" id="cb5-23" data-line-number="23">        <span class="fu">}</span><span class="ot">,</span></div>
-<div class="sourceLine" id="cb5-24" data-line-number="24">        <span class="fu">{</span></div>
-<div class="sourceLine" id="cb5-25" data-line-number="25">            <span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Build common HTML&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-26" data-line-number="26">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;cd test &amp;&amp; pp -html -import=../pp-macros/common.pp common.md | pandoc -o common.html -t html5 -s&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-27" data-line-number="27">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-28" data-line-number="28">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
-<div class="sourceLine" id="cb5-29" data-line-number="29">        <span class="fu">}</span><span class="ot">,</span></div>
-<div class="sourceLine" id="cb5-30" data-line-number="30">        <span class="fu">{</span></div>
-<div class="sourceLine" id="cb5-31" data-line-number="31">            <span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Build README&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-32" data-line-number="32">            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;pp -html -import=pp-macros/html/common/today.html.pp README.pp.md &gt;README.md&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-33" data-line-number="33">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;shell&quot;</span><span class="fu">,</span></div>
-<div class="sourceLine" id="cb5-34" data-line-number="34">            <span class="dt">&quot;problemMatcher&quot;</span><span class="fu">:</span> <span class="ot">[]</span></div>
-<div class="sourceLine" id="cb5-35" data-line-number="35">        <span class="fu">}</span></div>
-<div class="sourceLine" id="cb5-36" data-line-number="36">    <span class="ot">]</span></div>
-<div class="sourceLine" id="cb5-37" data-line-number="37"><span class="fu">}</span></div></code></pre>
+<pre class="bash"><code>#!/bin/bash
+
+# Build README
+pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md &gt;README.md
+
+# Build sample handout PDF
+pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
+pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
+--template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
+--no-highlight
+
+# Build sample handout HTML
+pp -html -import=./pp-macros/all.pp sample-handout.md | \
+pandoc -o sample-handout.html -s --template=./templates/tufte.html5 \
+--no-highlight
+
+# Build common PDF
+pp -pdf -import=./pp-macros/common.pp ./test/common.md | \
+pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
+--pdf-engine=xelatex -V graphics=true \
+-V strikeout=true -V header-includes=&quot;\usepackage{soul}&quot; \
+-V header-includes=&quot;\usepackage{color}&quot;
+
+
+# Build common HTML
+pp -html -import=./pp-macros/common.pp ./test/common.md | \
+pandoc -o ./test/common.html -t html5 -s</code></pre>
 <h1 id="acknowledgements">Acknowledgements</h1>
 <ul>
 <li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>
@@ -222,5 +164,7 @@ date:   2017-06-30
 <li><a href="https://rstudio.github.io/tufte/cn/">R Markdown Tufte Style</a></li>
 <li><a href="https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex">RStudio Pandoc template: tufte-handout.tex</a></li>
 </ul>
+</section>
+</article>
 </body>
 </html>

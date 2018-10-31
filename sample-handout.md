@@ -40,7 +40,7 @@ To use Tufte CSS, copy `tufte.css` and the `et-book` directory of font
 files to your project directory, then add the following to your HTML
 document's `head` block:
 
-```
+```html
 <link rel="stylesheet" href="tufte.css"/>
 ```
 
@@ -148,7 +148,7 @@ goes inline with the text, and a sidenote with content. To add the
 former, just put a label and dummy checkbox into the text where you want
 the reference to go, like so:
 
-```
+```html
 <label for="sn-demo" class="margin-toggle sidenote-number"></label>
 <input type="checkbox" id="sn-demo" class="margin-toggle"/>
 ```
@@ -180,7 +180,7 @@ class for the content and the `margin-toggle` class for the label and
 dummy checkbox. For instance, here is the code for the margin note used
 in the previous paragraph:
 
-```
+```html
 <label for="mn-demo" class="margin-toggle">&#8853;</label>
 <input type="checkbox" id="mn-demo" class="margin-toggle"/>
 <span class="marginnote">
@@ -229,22 +229,21 @@ From *Beautiful Evidence*, page 122-124.
 !fullwidthfigure(Figurative map of the successive losses of the French Army in the
 Russian campaign, 1812-1813)(tufte-css/img/napoleons-march.png)
 
-
 # Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or !latex file depend on the format.
 
-```
+```c
 !rawinclude(pp-macros/tufte.pp)
 ```
 
 # Use Pandoc to convert Markdown to HTML and PDF
 
-!source(.vscode/tasks.json)
+!source(build-sample.sh)
 
 # Acknowledgements
 
--   [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
--   [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
--   [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
--   [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
+- [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
+- [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
+- [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
+- [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)

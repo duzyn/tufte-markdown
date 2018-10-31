@@ -10,7 +10,7 @@ date: !today
 
 You can include a image file like this:
 
-!img(Avatar)(avatar.png)
+!img(Rhino)(../tufte-css/img/rhino.png)
 
 2\. Strong
 

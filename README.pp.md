@@ -1,5 +1,5 @@
 ---
-title: Tufet Markdown
+title: Tufte Handout Sample
 author: David Peng
 date: !today
 ---
@@ -45,13 +45,13 @@ or download the [archive](https://github.com/duzyn/tufte-markdown/archive/master
 
 HTML macro:
 
-```
+```c
 !rawinclude(pp-macros/html/tufte/newthought.html.pp)
 ```
 
 LaTeX macro:
 
-```
+```c
 !rawinclude(pp-macros/pdf/tufte/newthought.pdf.pp)
 ```
 
@@ -65,13 +65,13 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !rawinclude(pp-macros/html/tufte/sidenote.html.pp)
 ```
 
 LaTeX macro:
 
-```
+```c
 !rawinclude(pp-macros/pdf/tufte/sidenote.pdf.pp)
 ```
 
@@ -85,13 +85,13 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !rawinclude(pp-macros/html/tufte/marginnote.html.pp)
 ```
 
 LaTeX macro:
 
-```
+```c
 !rawinclude(pp-macros/pdf/tufte/marginnote.pdf.pp)
 ```
 
@@ -105,13 +105,13 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !rawinclude(pp-macros/html/tufte/figure.html.pp)
 ```
 
 LaTeX macro:
 
-```
+```c
 !rawinclude(pp-macros/pdf/tufte/figure.pdf.pp)
 ```
 
@@ -125,16 +125,15 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !rawinclude(pp-macros/html/tufte/marginfigure.html.pp)
 ```
 
 LaTeX macro:
 
-```
+```c
 !rawinclude(pp-macros/pdf/tufte/marginfigure.pdf.pp)
 ```
-
 
 Usage:
 
@@ -146,13 +145,13 @@ Usage:
 
 HTML macro:
 
-```
+```c
 !rawinclude(pp-macros/html/tufte/fullwidthfigure.html.pp)
 ```
 
 LaTeX macro:
 
-```
+```c
 !rawinclude(pp-macros/pdf/tufte/fullwidthfigure.pdf.pp)
 ```
 
@@ -160,29 +159,32 @@ Usage:
 
     !fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
 
-# Use pp to preprocess Markdown
+## Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.
 
-```
+```c
 !rawinclude(pp-macros/tufte.pp)
 ```
 
-# Use Pandoc to convert Markdown to HTML and PDF
+## Use Pandoc to convert Markdown to HTML and PDF
 
-I use build tasks in Visual Studio Code：
+Use like this in bash：
 
+```sh
+!rawinclude(build-sample.sh)
 ```
-!rawinclude(.vscode/tasks.json)
-```
 
-# Acknowledgements
+## Acknowledgements
 
 - [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
 - [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
 - [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
 - [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
 
+## License
+
+Released under the MIT license. See [LICENSE](LICENSE).
 
 [Pandoc]: http://pandoc.org
 [pp]: https://github.com/CDSoft/pp
