@@ -14,20 +14,20 @@ You can simply write your articles with Markdown, then you can convert them to b
 
 I combined these tools to archive Tufte Markdown:
 
--   Markdown
--   [Pandoc]
--   [pp]: a powerful preprocessor with pandoc in mind
--   [Tufte CSS]
--   [Tufte LaTeX]
--   [MiKTeX] or [TeX Live] or [wkhtmltopdf]
+- Markdown
+- [Pandoc]
+- [pp]: a powerful preprocessor with pandoc in mind
+- [Tufte CSS]
+- [Tufte LaTeX]
+- [MiKTeX] or [TeX Live] or [wkhtmltopdf]
 
 You should download and install [Pandoc] and [pp] first. We get a HTML or PDF file with this process:
 
-1.  Write a markdown article including pp macros.
-2.  Use pp to preprocess the markdown and get a normal markdown file with HTML or LaTeX.
-3.  Stream the markdown to Pandoc.
-4.  Use a HTML template and Tufte CSS to get a HTML article.
-5.  Use a LaTeX template and Tufte LaTeX to get a PDF article with a TeX document production system, like MiKTeX, Tex Live or ConTeXt. You can also generate a HTML file to PDF with wkhtmltopdf.
+1. Write a markdown article including pp macros.
+2. Use pp to preprocess the markdown and get a normal markdown file with HTML or LaTeX.
+3. Stream the markdown to Pandoc.
+4. Use a HTML template and Tufte CSS to get a HTML article.
+5. Use a LaTeX template and Tufte LaTeX to get a PDF article with a TeX document production system, like MiKTeX, Tex Live or ConTeXt. You can also generate a HTML file to PDF with wkhtmltopdf.
 
 ## Download
 
@@ -178,10 +178,10 @@ I use build tasks in Visual Studio Code：
 
 # Acknowledgements
 
--   [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
--   [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
--   [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
--   [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
+- [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
+- [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
+- [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
+- [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
 
 
 [Pandoc]: http://pandoc.org
