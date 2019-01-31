@@ -159,6 +159,26 @@ Usage:
 
     !fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
 
+7\. Full-width text blocks
+
+> Many thanks go to Edward Tufte for leading the way with his work. It is only through his kind and careful editing that this project accomplishes what it does. All errors of implementation are of course mine.
+
+HTML macro:
+
+```c
+!rawinclude(pp-macros/html/tufte/fullwidth.html.pp)
+```
+
+LaTeX macro:
+
+```c
+!rawinclude(pp-macros/pdf/tufte/fullwidth.pdf.pp)
+```
+
+Usage:
+
+    !fullwidth(This is a full-width text block)
+
 ## Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.

@@ -1,4 +1,4 @@
 !define(textleft)
 (
-<div style="text-align: left">!1</div>
+<p style="text-align: left">!1</p>
 )

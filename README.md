@@ -1,7 +1,7 @@
 ---
 title: Tufte Handout Sample
 author: David Peng
-date: 2018-10-31
+date: 2019-01-31
 ---
 
 # Tufte Markdown
@@ -229,6 +229,34 @@ Usage:
 
     !fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
 
+7\. Full-width text blocks
+
+> Many thanks go to Edward Tufte for leading the way with his work. It is only through his kind and careful editing that this project accomplishes what it does. All errors of implementation are of course mine.
+
+HTML macro:
+
+```c
+!define(fullwidth)
+(
+<div class="fullwidth">!1</div>
+)
+```
+
+LaTeX macro:
+
+```c
+!define(fullwidth)
+(
+\begin{fullwidth}
+!1
+\end{fullwidth}
+)
+```
+
+Usage:
+
+    !fullwidth(This is a full-width text block)
+
 ## Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or LaTeX file depend on the format.
@@ -248,6 +276,7 @@ date:   2017-06-30
 !import(html/tufte/figure.html.pp)
 !import(html/tufte/marginfigure.html.pp)
 !import(html/tufte/fullwidthfigure.html.pp)
+!import(html/tufte/fullwidth.html.pp)
 )
 
 !ifeq(!format)(pdf)
@@ -258,6 +287,7 @@ date:   2017-06-30
 !import(pdf/tufte/figure.pdf.pp)
 !import(pdf/tufte/marginfigure.pdf.pp)
 !import(pdf/tufte/fullwidthfigure.pdf.pp)
+!import(pdf/tufte/fullwidth.pdf.pp)
 )
 ```
 
@@ -286,13 +316,15 @@ pandoc -o sample-handout.html -s --template=./templates/tufte.html5 \
 pp -pdf -import=./pp-macros/common.pp ./test/common.md | \
 pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
 --pdf-engine=xelatex -V graphics=true \
--V strikeout=true -V header-includes="\usepackage{soul}" \
--V header-includes="\usepackage{color}"
+-V strikeout=true -V "header-includes=\usepackage{soul}" \
+-V "header-includes=\usepackage{color}"
 
 
 # Build common HTML
 pp -html -import=./pp-macros/common.pp ./test/common.md | \
-pandoc -o ./test/common.html -t html5 -s
+pandoc -o ./test/common.html -t html5 -s \
+-c https://cdnjs.cloudflare.com/ajax/libs/marx/3.0.3/marx.min.css \
+-V "include-before=<main>" -V "include-after=<//main>"
 ```
 
 ## Acknowledgements

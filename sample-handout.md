@@ -229,6 +229,10 @@ From *Beautiful Evidence*, page 122-124.
 !fullwidthfigure(Figurative map of the successive losses of the French Army in the
 Russian campaign, 1812-1813)(tufte-css/img/napoleons-march.png)
 
+# Full-width text blocks
+
+!fullwidth(Many thanks go to Edward Tufte for leading the way with his work. It is only through his kind and careful editing that this project accomplishes what it does. All errors of implementation are of course mine.)
+
 # Use pp to preprocess Markdown
 
 We can use a list of macros defined below to generate a HTML or !latex file depend on the format.

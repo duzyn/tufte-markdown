@@ -12,6 +12,7 @@ date:   2017-06-30
 !import(html/tufte/figure.html.pp)
 !import(html/tufte/marginfigure.html.pp)
 !import(html/tufte/fullwidthfigure.html.pp)
+!import(html/tufte/fullwidth.html.pp)
 )
 
 !ifeq(!format)(pdf)
@@ -22,4 +23,5 @@ date:   2017-06-30
 !import(pdf/tufte/figure.pdf.pp)
 !import(pdf/tufte/marginfigure.pdf.pp)
 !import(pdf/tufte/fullwidthfigure.pdf.pp)
+!import(pdf/tufte/fullwidth.pdf.pp)
 )

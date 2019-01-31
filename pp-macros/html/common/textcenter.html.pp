@@ -1,4 +1,4 @@
 !define(textcenter)
 (
-<div style="text-align: center">!1</div>
+<p style="text-align: center">!1</p>
 )

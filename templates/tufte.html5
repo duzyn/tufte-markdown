@@ -14,42 +14,32 @@ $if(keywords)$
   <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style>code{white-space: pre;}</style>
 $if(quotes)$
-  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+  <style>q { quotes: "“" "”" "‘" "’"; }</style>
 $endif$
 $if(highlighting-css)$
-  <style type="text/css">
+  <style>
 $highlighting-css$
   </style>
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$">
 $endfor$
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.4/tufte.min.css">
-  <style type="text/css">
-    .latex-sub, .latex-sup { text-transform: uppercase;
-                         font-size: smaller;
-                         position: relative; }
-
-    .latex-sub { top: 0.2rem;
-                margin-left: -0.1667rem;
-                margin-right: -0.125rem; }
-
-    .latex-sup { top: -0.2rem;
-                margin-left: -0.36rem;
-                margin-right: -0.15rem;
-                text-shadow: none; }
-
-    .latex::selection, .latex span:not(.latex-sup)::selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-                        background: #b4d5fe; }
-
-    .latex::-moz-selection, .latex span:not(.latex-sup)::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-    background: #b4d5fe; }
-    pre { font-size: 0.9rem;
-           width: 52.5%;
-           margin-left: 2.5%;
-           overflow-x: auto; }
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/tufte.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/latex.css">
+  <style>
+    pre {
+      font-size: 0.9rem;
+      width: 52.5%;
+      margin-left: 2.5%;
+      overflow-x: auto;
+    }
+    @media (max-width: 760px) {
+      pre {
+        width: 97%;
+      }
+    }
     table {
       border-top: 2px solid #111;
       border-bottom: 2px solid #111;
