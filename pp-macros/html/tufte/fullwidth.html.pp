@@ -1,4 +1,6 @@
 !define(fullwidth)
 (
-<div class="fullwidth">!1</div>
+<div class="fullwidth">
+  <p>!1</p>
+</div>
 )

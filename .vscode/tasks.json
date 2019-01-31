@@ -6,11 +6,17 @@
         {
             "label": "Build README",
             "type": "shell",
-            "command": "pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md",
+            "command": "sh build-sample.sh",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build README",
+            "type": "shell",
+            "command": "pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md",
             "problemMatcher": []
         },
         {
