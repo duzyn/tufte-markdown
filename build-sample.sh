@@ -21,7 +21,6 @@ pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
 -V strikeout=true -V "header-includes=\usepackage{soul}" \
 -V "header-includes=\usepackage{color}"
 
-
 # Build common HTML
 pp -html -import=./pp-macros/common.pp ./test/common.md | \
 pandoc -o ./test/common.html -t html5 -s \
