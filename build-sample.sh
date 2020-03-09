@@ -7,7 +7,7 @@ pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md
 pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
 --template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
---no-highlight
+--no-highlight -V CJKmainfont="Noto Serif CJK SC"
 
 # Build sample handout HTML
 pp -html -import=./pp-macros/all.pp sample-handout.md | \

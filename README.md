@@ -1,7 +1,7 @@
 ---
 title: Tufte Handout Sample
 author: David Peng
-date: 2019-01-31
+date: 2020-03-09
 ---
 
 # Tufte Markdown
@@ -307,7 +307,7 @@ pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md
 pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
 --template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
---no-highlight
+--no-highlight -V CJKmainfont="Noto Serif CJK SC"
 
 # Build sample handout HTML
 pp -html -import=./pp-macros/all.pp sample-handout.md | \
@@ -320,7 +320,6 @@ pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
 --pdf-engine=xelatex -V graphics=true \
 -V strikeout=true -V "header-includes=\usepackage{soul}" \
 -V "header-includes=\usepackage{color}"
-
 
 # Build common HTML
 pp -html -import=./pp-macros/common.pp ./test/common.md | \

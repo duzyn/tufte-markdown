@@ -5,12 +5,19 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="David Peng">
-  <meta name="dcterms.date" content="2019-01-31">
+  <meta name="dcterms.date" content="2020-03-09">
   <title>Tufte Handout Sample</title>
   <style>code{white-space: pre;}</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/tufte.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/latex.css">
   <style>
+    body {
+      font-family: "Noto Serif CJK SC", et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    }
+
+    .sans { font-family: "Noto Sans CJK SC", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+        letter-spacing: .03em; }
+
     pre {
       font-size: 0.9rem;
       width: 52.5%;
@@ -41,7 +48,7 @@
 <header>
 <h1 class="title">Tufte Handout Sample</h1>
 <p class="author">David Peng</p>
-<p class="date">2019-01-31</p>
+<p class="date">2020-03-09</p>
 </header>
 <p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
 <p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
@@ -137,7 +144,7 @@ pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md &gt;README.m
 pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
 --template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
---no-highlight
+--no-highlight -V CJKmainfont=&quot;Noto Serif CJK SC&quot;
 
 # Build sample handout HTML
 pp -html -import=./pp-macros/all.pp sample-handout.md | \
@@ -151,12 +158,13 @@ pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
 -V strikeout=true -V &quot;header-includes=\usepackage{soul}&quot; \
 -V &quot;header-includes=\usepackage{color}&quot;
 
-
 # Build common HTML
 pp -html -import=./pp-macros/common.pp ./test/common.md | \
 pandoc -o ./test/common.html -t html5 -s \
 -c https://cdnjs.cloudflare.com/ajax/libs/marx/3.0.3/marx.min.css \
 -V &quot;include-before=&lt;main&gt;&quot; -V &quot;include-after=&lt;//main&gt;&quot;</code></pre>
+<h1 id="chinese">Chinese</h1>
+<p>春江潮水连海平，海上明月共潮生。 滟滟随波千万里，何处春江无月明！ 江流宛转绕芳甸，月照花林皆似霰。 空里流霜不觉飞，汀上白沙看不见。 江天一色无纤尘，皎皎空中孤月轮。 江畔何人初见月？江月何年初照人？ 人生代代无穷已，江月年年望相似。 不知江月待何人，但见长江送流水。 白云一片去悠悠，青枫浦上不胜愁。 谁家今夜扁舟子？何处相思明月楼？ 可怜楼上月徘徊，应照离人妆镜台。 玉户帘中卷不去，捣衣砧上拂还来。 此时相望不相闻，愿逐月华流照君。 鸿雁长飞光不度，鱼龙潜跃水成文。 昨夜闲潭梦落花，可怜春半不还家。 江水流春去欲尽，江潭落月复西斜。 斜月沉沉藏海雾，碣石潇湘无限路。 不知乘月几人归，落月摇情满江树。</p>
 <h1 id="acknowledgements">Acknowledgements</h1>
 <ul>
 <li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>
