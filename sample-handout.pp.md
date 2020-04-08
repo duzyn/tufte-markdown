@@ -4,7 +4,8 @@ author: David Peng
 date: !today
 ---
 
-This sample text is from Dave Liepmann's [Tufte CSS](https://edwardtufte.github.io/tufte-css/).
+This sample text is from Dave Liepmann's [Tufte
+CSS](https://edwardtufte.github.io/tufte-css/).
 
 Tufte CSS provides tools to style web articles using the ideas
 demonstrated by Edward Tufte's books and handouts. Tufte's style is

@@ -22,13 +22,13 @@
         {
             "label": "Build sample handout PDF",
             "type": "shell",
-            "command": "pp -pdf -import=./pp-macros/all.pp sample-handout.md | pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex --template=https://cdn.jsdelivr.net/gh/rstudio/tufte/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex -V documentclass=tufte-handout --no-highlight",
+            "command": "pp -pdf -import=./pp-macros/all.pp sample-handout.pp.md | pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex --template=https://cdn.jsdelivr.net/gh/rstudio/tufte/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex -V documentclass=tufte-handout --no-highlight",
             "problemMatcher": []
         },
         {
             "label": "Build sample handout HTML",
             "type": "shell",
-            "command": "pp -html -import=./pp-macros/all.pp sample-handout.md | pandoc -o sample-handout.html -s --template=./templates/tufte.html5 --no-highlight",
+            "command": "pp -html -import=./pp-macros/all.pp sample-handout.pp.md | pandoc -o sample-handout.html -s --template=./templates/tufte.html5 --no-highlight",
             "problemMatcher": []
         },
         {

@@ -4,13 +4,13 @@
 pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md
 
 # Build sample handout PDF
-pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
+pp -pdf -import=./pp-macros/all.pp sample-handout.pp.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
 --template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
 --no-highlight -V CJKmainfont="Noto Serif CJK SC"
 
 # Build sample handout HTML
-pp -html -import=./pp-macros/all.pp sample-handout.md | \
+pp -html -import=./pp-macros/all.pp sample-handout.pp.md | \
 pandoc -o sample-handout.html -s --template=./templates/tufte.html5 \
 --no-highlight
 

@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="author" content="David Peng">
-  <meta name="dcterms.date" content="2020-03-09">
+  <meta name="dcterms.date" content="2020-04-08">
   <title>Tufte Handout Sample</title>
   <style>code{white-space: pre;}</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/tufte.css">
@@ -48,7 +48,7 @@
 <header>
 <h1 class="title">Tufte Handout Sample</h1>
 <p class="author">David Peng</p>
-<p class="date">2020-03-09</p>
+<p class="date">2020-04-08</p>
 </header>
 <p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
 <p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
@@ -64,16 +64,17 @@
 <p>Organize your document with an <code>article</code> element inside your <code>body</code> tag. Inside that, use <code>section</code> tags around each logical grouping of text and headings.</p>
 <p>Tufte CSS uses <code>h1</code> for the document title, <code>p</code> with class <code>subtitle</code> for the document subtitle, <code>h2</code> for section headings, and <code>h3</code> for low-level headings. More specific headings are not supported. If you feel the urge to reach for a heading of level 4 or greater, consider redesigning your document.</p>
 <p>As a bonus, this excerpt regarding the use of headings provides an example of block quotes. In Tufte CSS they are just lightly styled, semantically correct HTML using <code>blockquote</code> and <code>footer</code> elements. See page 20 of <a href="https://www.edwardtufte.com/tufte/books_vdqi">The Visual Display of Quantitative Information</a> for an example in print.</p>
-<p><span class="newthought">In his later books</span><label for="sidenote-1" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-1" class="margin-toggle"/> <span class="sidenote"><em><a href="http://www.edwardtufte.com/tufte/books_be">Beautiful Evidence</a></em></span>, Tufte starts each section with a bit of vertical space, a non-indented paragraph, and the first few words of the sentence set in small caps. For this we use a span with the class <code>newthought</code>, as demonstrated at the beginning of this paragraph. Vertical spacing is accomplished separately through <code>&lt;section&gt;</code> tags. Be consistent: though we do so in this paragraph for the purpose of demonstration, do not alternate use of header elements and the <code>newthought</code> technique. Pick one approach and stick to it.</p>
+<p><span class="newthought">In his later books</span><label for="sidenote-1" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-1" class="margin-toggle"/> <span class="sidenote"><em><a href="http://www.edwardtufte.com/tufte/books_be">Beautiful Evidence</a></em></span></p>
+<p><span class="newthought">In his later books</span><label for="sidenote-2" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-2" class="margin-toggle"/> <span class="sidenote"><em><a href="http://www.edwardtufte.com/tufte/books_be">Beautiful Evidence</a></em></span>, Tufte starts each section with a bit of vertical space, a non-indented paragraph, and the first few words of the sentence set in small caps. For this we use a span with the class <code>newthought</code>, as demonstrated at the beginning of this paragraph. Vertical spacing is accomplished separately through <code>&lt;section&gt;</code> tags. Be consistent: though we do so in this paragraph for the purpose of demonstration, do not alternate use of header elements and the <code>newthought</code> technique. Pick one approach and stick to it.</p>
 <h2 id="text">Text</h2>
 <p>Although paper handouts obviously have a pure white background, the web is better served by the use of slightly off-white and off-black colors. Tufte CSS uses <code>#fffff8</code> and <code>#111111</code> because they are nearly indistinguishable from their ‘pure’ cousins, but dial down the harsh contrast. We stick to the greyscale for text, reserving color for specific, careful use in figures and images.</p>
-<p>In print, Tufte has used the proprietary Monotype Bembo <label for="sidenote-2" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-2" class="margin-toggle"/> <span class="sidenote">See Tufte’s comment in the <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt">Tufte book fonts</a> thread.</span> font. A similar effect is achieved in digital formats with the now open-source <a href="https://github.com/edwardtufte/et-book">ETBook</a>, which Tufte CSS supplies with a <code>@font-face</code> reference to a .ttf file. In case ETBook somehow doesn’t work, Tufte CSS shifts gracefully to other serif fonts like Palatino and Georgia.</p>
+<p>In print, Tufte has used the proprietary Monotype Bembo <label for="sidenote-3" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-3" class="margin-toggle"/> <span class="sidenote">See Tufte’s comment in the <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt">Tufte book fonts</a> thread.</span> font. A similar effect is achieved in digital formats with the now open-source <a href="https://github.com/edwardtufte/et-book">ETBook</a>, which Tufte CSS supplies with a <code>@font-face</code> reference to a .ttf file. In case ETBook somehow doesn’t work, Tufte CSS shifts gracefully to other serif fonts like Palatino and Georgia.</p>
 <p>Also notice how Tufte CSS includes separate font files for bold (strong) and italic (emphasis), instead of relying on the browser to mechanically transform the text. This is typographic best practice.</p>
 <p>If you prefer sans-serifs, use the <code>sans</code> class. It relies on Gill Sans, Tufte’s sans-serif font of choice.</p>
 <p>Links in Tufte CSS match the body text in color and do not change on mouseover or when clicked. Here is a <a href="#">dummy example</a> that goes nowhere. These links are underlined, since this is the most widely recognized indicator of clickable text. <label for="marginnote-1" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-1" class="margin-toggle"/> <span class="marginnote">Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.</span> However, because most browsers’ default underlining does not clear descenders and is so thick and distracting, the underline effect is instead achieved using CSS trickery involving background gradients instead of standard <code>text-decoration</code>. Credit goes to Adam Schwartz for that technique.</p>
 <p>As always, these design choices are merely one approach that Tufte CSS provides by default. Other approaches, such as changing color on click or mouseover, or using highlighting or color instead of underlining to denote links, could also be made to work. The goal is to make sentences readable without interference from links, as well as to make links immediately identifiable even by casual web users.</p>
 <h1 id="sidenotes-footnotes-and-marginal-notes">Sidenotes: Footnotes and Marginal Notes</h1>
-<p>One of the most distinctive features of Tufte’s style is his extensive use of sidenotes.<label for="sidenote-3" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-3" class="margin-toggle"/> <span class="sidenote">This is a sidenote.</span> Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page, but instead display off to the side in the margin. Perhaps you have noticed their use in this document already. You are very astute.</p>
+<p>One of the most distinctive features of Tufte’s style is his extensive use of sidenotes.<label for="sidenote-4" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-4" class="margin-toggle"/> <span class="sidenote">This is a sidenote.</span> Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page, but instead display off to the side in the margin. Perhaps you have noticed their use in this document already. You are very astute.</p>
 <p>Sidenotes are a great example of the web not being like print. On sufficiently large viewports, Tufte CSS uses the margin for sidenotes, margin notes, and small figures. On smaller viewports, elements that would go in the margin are hidden until the user toggles them into view. The goal is to present related but not necessary information such as asides or citations <em>as close as possible</em> to the text that references them. At the same time, this secondary information should stay out of the way of the eye, not interfering with the progression of ideas in the main text.</p>
 <p>Sidenotes consist of two elements: a superscript reference number that goes inline with the text, and a sidenote with content. To add the former, just put a label and dummy checkbox into the text where you want the reference to go, like so:</p>
 <pre class="html"><code>&lt;label for=&quot;sn-demo&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
@@ -141,13 +142,13 @@ date:   2017-06-30
 pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md &gt;README.md
 
 # Build sample handout PDF
-pp -pdf -import=./pp-macros/all.pp sample-handout.md | \
+pp -pdf -import=./pp-macros/all.pp sample-handout.pp.md | \
 pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex \
 --template=./templates/tufte-handout.tex -V documentclass=tufte-handout \
 --no-highlight -V CJKmainfont=&quot;Noto Serif CJK SC&quot;
 
 # Build sample handout HTML
-pp -html -import=./pp-macros/all.pp sample-handout.md | \
+pp -html -import=./pp-macros/all.pp sample-handout.pp.md | \
 pandoc -o sample-handout.html -s --template=./templates/tufte.html5 \
 --no-highlight
 
@@ -162,7 +163,8 @@ pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex \
 pp -html -import=./pp-macros/common.pp ./test/common.md | \
 pandoc -o ./test/common.html -t html5 -s \
 -c https://cdnjs.cloudflare.com/ajax/libs/marx/3.0.3/marx.min.css \
--V &quot;include-before=&lt;main&gt;&quot; -V &quot;include-after=&lt;//main&gt;&quot;</code></pre>
+-V &quot;include-before=&lt;main&gt;&quot; -V &quot;include-after=&lt;//main&gt;&quot;
+</code></pre>
 <h1 id="chinese">Chinese</h1>
 <p>春江潮水连海平，海上明月共潮生。 滟滟随波千万里，何处春江无月明！ 江流宛转绕芳甸，月照花林皆似霰。 空里流霜不觉飞，汀上白沙看不见。 江天一色无纤尘，皎皎空中孤月轮。 江畔何人初见月？江月何年初照人？ 人生代代无穷已，江月年年望相似。 不知江月待何人，但见长江送流水。 白云一片去悠悠，青枫浦上不胜愁。 谁家今夜扁舟子？何处相思明月楼？ 可怜楼上月徘徊，应照离人妆镜台。 玉户帘中卷不去，捣衣砧上拂还来。 此时相望不相闻，愿逐月华流照君。 鸿雁长飞光不度，鱼龙潜跃水成文。 昨夜闲潭梦落花，可怜春半不还家。 江水流春去欲尽，江潭落月复西斜。 斜月沉沉藏海雾，碣石潇湘无限路。 不知乘月几人归，落月摇情满江树。</p>
 <h1 id="acknowledgements">Acknowledgements</h1>
