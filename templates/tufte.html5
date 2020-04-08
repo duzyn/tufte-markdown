@@ -30,10 +30,10 @@ $endfor$
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/latex.css">
   <style>
     body {
-      font-family: "Noto Serif CJK SC", et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+      font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif CJK SC", serif;
     }
 
-    .sans { font-family: "Noto Sans CJK SC", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans CJK SC", sans-serif;
         letter-spacing: .03em; }
 
     pre {
