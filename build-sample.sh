@@ -27,7 +27,7 @@ pp \
 pandoc \
     --from=markdown+raw_tex \
     --pdf-engine=xelatex \
-    --template=templates/tufte-handout.tex \
+    --template=templates/tufte-handout.latex \
     --no-highlight \
     --shift-heading-level-by=-1 \
     --metadata=documentclass:tufte-handout \

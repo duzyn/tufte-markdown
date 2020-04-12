@@ -113,7 +113,7 @@ $endif$
 \usepackage{morefloats}
 
 $if(ctex)$
-\usepackage{ctex}
+\usepackage[]{ctex}
 $endif$
 
 % tightlist macro required by pandoc >= 1.14
