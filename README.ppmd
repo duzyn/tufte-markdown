@@ -1,9 +1,3 @@
----
-title: Tufte Handout Sample
-author: David Peng
-date: !today
----
-
 # Tufte Markdown
 
 Tufte Markdown providers tools to style web articles or paper handouts using the
@@ -30,10 +24,10 @@ file with this process:
 
 1. Write a markdown article including pp macros.
 2. Use pp to preprocess the markdown and get a normal markdown file with HTML or
-   LaTeX.
+   !latex.
 3. Stream the markdown to Pandoc.
 4. Use a HTML template and Tufte CSS to get a HTML article.
-5. Use a LaTeX template and Tufte LaTeX to get a PDF article with a TeX document
+5. Use a !latex template and Tufte !latex to get a PDF article with a TeX document
    production system, like MiKTeX, Tex Live or ConTeXt. You can also generate a
    HTML file to PDF with wkhtmltopdf.
 
@@ -50,31 +44,19 @@ or download the
 
 ## pp Macros
 
-1\. New thoughts
+### New thoughts
 
 > In his later books _Beautiful Evidence_, Tufte starts each section with a bit
 > of vertical space, a non-indented paragraph, and the first few words of the
 > sentence set in small caps.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/newthought.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/newthought.pdf.pp)
-```
-
 Usage:
 
 ```c
-!newthought(This is a new thought)
+!raw(!newthought(This is a new thought))
 ```
 
-2\. Sidenotes
+### Sidenotes
 
 > One of the most distinctive features of Tufte's style is his extensive use of
 > sidenotes. Sidenotes are like footnotes, except they don’t force the reader to
@@ -82,25 +64,13 @@ Usage:
 > in the margin. Perhaps you have noticed their use in this document already.
 > You are very astute.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/sidenote.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/sidenote.pdf.pp)
-```
-
 Usage:
 
 ```c
-!sidenote(This is a sidenote)
+!raw(!sidenote(This is a sidenote))
 ```
 
-3\. Margin notes
+### Margin notes
 
 > If you want a sidenote without footnote-style numberings, then you want a
 > margin note. On large screens, a margin note is just a sidenote that omits the
@@ -108,25 +78,13 @@ Usage:
 > flow of the main text, but can increase the cognitive load of matching a
 > margin note to its referent text.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/marginnote.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/marginnote.pdf.pp)
-```
-
 Usage:
 
 ```c
-!marginnote(This is a margin note)
+!raw(!marginnote(This is a margin note))
 ```
 
-4\. Figures
+### Figures
 
 > Tufte emphasizes tight integration of graphics with text. Data, graphs, and
 > figures are kept with the text that discusses them. In print, this means they
@@ -134,25 +92,13 @@ Usage:
 > graphics and their accompanying text without extra clicks, tab-switching, or
 > scrolling.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/figure.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/figure.pdf.pp)
-```
-
 Usage:
 
 ```c
-    !figure(This is a figure caption)(./image/path/image.jpg)
+!raw(!figure(This is a figure caption)(./image/path/image.jpg))
 ```
 
-5\. Margin figures
+### Margin figures
 
 > But tight integration of graphics with text is central to Tufte's work even
 > when those graphics are ancillary to the main body of a text. In many of those
@@ -160,25 +106,13 @@ Usage:
 > margin, just wrap an image (or whatever) in a margin note inside a p tag, as
 > seen to the right of this paragraph.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/marginfigure.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/marginfigure.pdf.pp)
-```
-
 Usage:
 
 ```c
-!marginfigure(This is a margin figure caption)(./image/path/image.jpg)
+!raw(!marginfigure(This is a margin figure caption)(./image/path/image.jpg))
 ```
 
-6\. Full-width figures
+### Full-width figures
 
 > If you need a full-width figure, give it the fullwidth class. Make sure that’s
 > inside an article, and it will take up (almost) the full width of the screen.
@@ -186,64 +120,32 @@ Usage:
 > of the Napoleon’s March data visualization. From Beautiful Evidence, page
 > 122-124.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/fullwidthfigure.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/fullwidthfigure.pdf.pp)
-```
-
 Usage:
 
 ```c
-!fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg)
+!raw(!fullwidthfigure(This is a full-width figure caption)(./image/path/image.jpg))
 ```
 
-7\. Full-width text blocks
+### Full-width text blocks
 
 > Many thanks go to Edward Tufte for leading the way with his work. It is only
 > through his kind and careful editing that this project accomplishes what it
 > does. All errors of implementation are of course mine.
 
-HTML macro:
-
-```c
-!rawinclude(pp-macros/html/tufte/fullwidth.html.pp)
-```
-
-LaTeX macro:
-
-```c
-!rawinclude(pp-macros/pdf/tufte/fullwidth.pdf.pp)
-```
-
 Usage:
 
 ```c
-!fullwidth(This is a full-width text block)
+!raw(!fullwidth(This is a full-width text block))
 ```
 
 ## Use pp to preprocess Markdown
 
-We can use a list of macros defined below to generate a HTML or LaTeX file
-depend on the format.
-
-```c
-!rawinclude(pp-macros/tufte.pp)
-```
+We can use a list of macros defined below to generate a HTML or !latex file
+depend on the format. See [tufte-markdown.pp](pp-macros/tufte-markdown.pp)
 
 ## Use Pandoc to convert Markdown to HTML and PDF
 
-Use like this in bash：
-
-```sh
-!rawinclude(build-sample.sh)
-```
+See [build-sample.sh](build-sample.sh)
 
 ## Acknowledgements
 
@@ -251,10 +153,6 @@ Use like this in bash：
 - [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
 - [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
 - [RStudio Pandoc template: tufte-handout.tex](https://raw.githubusercontent.com/rstudio/tufte/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
-
-## License
-
-Released under the MIT license. See [LICENSE](LICENSE).
 
 [Pandoc]: http://pandoc.org
 [pp]: https://github.com/CDSoft/pp

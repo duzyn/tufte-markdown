@@ -26,34 +26,24 @@ $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$">
 $endfor$
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/tufte.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.4/latex.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.7.2/tufte.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.7.2/latex.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif CJK SC", serif;
+    html {
+      font-size: 16px;
     }
 
-    .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans CJK SC", sans-serif;
+    body {
+      font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif SC", serif;
+    }
+
+    .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
         letter-spacing: .03em; }
 
-    pre {
-      font-size: 0.9rem;
-      width: 52.5%;
-      margin-left: 2.5%;
-      overflow-x: auto;
-    }
-    @media (max-width: 760px) {
-      pre {
-        width: 97%;
-      }
-    }
-    table {
-      border-top: 2px solid #111;
-      border-bottom: 2px solid #111;
-      font-size: 1.1rem;
-    }
-    th {
-      border-bottom: 1px solid #111;
+    .fullwidth table {
+      width: 100%; 
     }
   </style>
 $if(math)$
@@ -79,7 +69,7 @@ $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
 $for(author)$
-<p class="author">$author$</p>
+<p class="subtitle author">$author$</p>
 $endfor$
 $if(date)$
 <p class="date">$date$</p>

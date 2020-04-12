@@ -1,15 +1,27 @@
 {
     "cSpell.words": [
         "Tufte's",
+        "flushleft",
+        "flushright",
         "fullwidth",
         "fullwidthfigure",
+        "fullwidthtable",
+        "ifdef",
+        "ifeq",
+        "includegraphics",
         "liepmann",
         "marginfigure",
         "marginnote",
+        "newpage",
         "newthought",
         "rawinclude",
+        "sidenote",
         "sidenotes",
+        "textbf",
+        "textcolor",
+        "texttt",
         "tufte",
+        "usepackage",
         "wkhtmltopdf"
     ]
 }

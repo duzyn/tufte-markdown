@@ -4,43 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build All",
+            "label": "Build sample",
             "type": "shell",
             "command": "sh build-sample.sh",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": []
-        },
-        {
-            "label": "Build README",
-            "type": "shell",
-            "command": "pp -html -import=./pp-macros/html/common/today.html.pp README.pp.md >README.md",
-            "problemMatcher": []
-        },
-        {
-            "label": "Build sample handout PDF",
-            "type": "shell",
-            "command": "pp -pdf -import=./pp-macros/all.pp sample-handout.pp.md | pandoc -o sample-handout.pdf -f markdown+raw_tex --pdf-engine=xelatex --template=https://cdn.jsdelivr.net/gh/rstudio/tufte/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex -V documentclass=tufte-handout --no-highlight",
-            "problemMatcher": []
-        },
-        {
-            "label": "Build sample handout HTML",
-            "type": "shell",
-            "command": "pp -html -import=./pp-macros/all.pp sample-handout.pp.md | pandoc -o sample-handout.html -s --template=./templates/tufte.html5 --no-highlight",
-            "problemMatcher": []
-        },
-        {
-            "label": "Build common PDF",
-            "type": "shell",
-            "command": "pp -pdf -import=./pp-macros/common.pp ./test/common.md | pandoc -o ./test/common.pdf -f markdown+raw_tex --template=default.latex --pdf-engine=xelatex -V graphics=true -V strikeout=true -V header-includes=\"\\usepackage{soul}\" -V header-includes=\"\\usepackage{color}\"",
-            "problemMatcher": []
-        },
-        {
-            "label": "Build common HTML",
-            "type": "shell",
-            "command": "pp -html -import=./pp-macros/common.pp ./test/common.md | pandoc -o ./test/common.html -t html5 -s -c https://cdnjs.cloudflare.com/ajax/libs/marx/3.0.3/marx.min.css -V \"include-before=<main>\" -V \"include-after=<//main>\"",
             "problemMatcher": []
         }
     ]
