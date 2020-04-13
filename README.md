@@ -15,7 +15,9 @@ then use pp to preprocess the markdown and pipe it to
 
 See example [build-sample.sh](build-sample.sh).
 
-You can see a full list of macros in [tufte-markdown.pp](tufte-markdown.pp)
+You can see a full list of macros in [tufte-markdown.pp](tufte-markdown.pp).
+
+See example [sample-handout.html](sample-handout.html) and [sample-handout.pdf](sample-handout.pdf).
 
 ## Read more
 
