@@ -39,8 +39,10 @@ $endfor$
       font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif SC", serif;
     }
 
-    .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
-        letter-spacing: .03em; }
+    .sans { 
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
+      letter-spacing: 0.03em; 
+      }
 
     .fullwidth table {
       width: 100%; 

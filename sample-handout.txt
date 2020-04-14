@@ -258,7 +258,7 @@ See example below:
 
 See example below:
 
-!source(build-sample.sh)(sh)
+!source(build.sh)(sh)
 
 ## Chinese
 
@@ -368,6 +368,7 @@ This ia a !mark(HIGHLIGHTED) text.
 ## Read more
 
 - [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
+- [Tufte-!latex](https://tufte-latex.github.io/tufte-latex/)
 - [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
 - [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
 - [RStudio Pandoc template: tufte-handout.tex](https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)

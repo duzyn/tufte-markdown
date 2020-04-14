@@ -443,24 +443,24 @@ WMIC.EXE Alias /? >NUL 2>&1 || GOTO Syntax
 :: Use WMIC to retrieve date and time
 FOR /F "skip=1 tokens=1-6" %%G IN ('WMIC Path Win32_LocalTime Get Day^,Hour^,Minute^,Month^,Second^,Year /Format:table') DO (
     IF NOT "%%~L"=="" (
-        SET Year=%%L
-        SET Month=00%%J
-        SET Day=00%%G
-        SET Hour=00%%H
-        SET Minute=00%%I
+        SET year=%%L
+        SET month=00%%J
+        SET day=00%%G
+        SET hour=00%%H
+        SET minute=00%%I
     )
 )
 
 :: Pad digits with leading zeros
-SET Month=%Month:~-2%
-SET Day=%Day:~-2%
-SET Hour=%Hour:~-2%
-SET Minute=%Minute:~-2%
+SET month=%month:~-2%
+SET day=%day:~-2%
+SET hour=%hour:~-2%
+SET minute=%minute:~-2%
 
 :: Display the date/time in ISO 8601 format:
-:: SET IsoDate=%Year%-%Month%-%Day% %Hour%:%Minute%
-SET IsoDate=%Year%-%Month%-%Day%
-ECHO %IsoDate%
+:: SET isoDate=%year%-%month%-%day% %hour%:%minute%
+SET isoDate=%year%-%month%-%day%
+ECHO %isoDate%
 
 :: Done
 GOTO:EOF

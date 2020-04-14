@@ -13,15 +13,14 @@ Write a markdown article including [pp](https://github.com/CDSoft/pp) macros,
 then use pp to preprocess the markdown and pipe it to
 [Pandoc](http://pandoc.org), Pandoc convert Markdown to HTML or LaTeX document.
 
-See example [build-sample.sh](build-sample.sh).
+See example [build.sh](build.sh).
 
-You can see a full list of macros in [tufte-markdown.pp](tufte-markdown.pp).
-
-See example [sample-handout.html](sample-handout.html) and [sample-handout.pdf](sample-handout.pdf).
+You can see a full list of macros in [tufte-markdown.pp](tufte-markdown.pp)
 
 ## Read more
 
 - [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
+- [Tufte-<span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span>](https://tufte-latex.github.io/tufte-latex/)
 - [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
 - [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
 - [RStudio Pandoc template: tufte-handout.tex](https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)

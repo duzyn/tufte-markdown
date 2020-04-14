@@ -20,8 +20,10 @@
       font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif SC", serif;
     }
 
-    .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
-        letter-spacing: .03em; }
+    .sans { 
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
+      letter-spacing: 0.03em; 
+      }
 
     .fullwidth table {
       width: 100%; 
@@ -632,24 +634,24 @@ WMIC.EXE Alias /? &gt;NUL 2&gt;&amp;1 || GOTO Syntax
 :: Use WMIC to retrieve date and time
 FOR /F &quot;skip=1 tokens=1-6&quot; %%G IN (&#39;WMIC Path Win32_LocalTime Get Day^,Hour^,Minute^,Month^,Second^,Year /Format:table&#39;) DO (
     IF NOT &quot;%%~L&quot;==&quot;&quot; (
-        SET Year=%%L
-        SET Month=00%%J
-        SET Day=00%%G
-        SET Hour=00%%H
-        SET Minute=00%%I
+        SET year=%%L
+        SET month=00%%J
+        SET day=00%%G
+        SET hour=00%%H
+        SET minute=00%%I
     )
 )
 
 :: Pad digits with leading zeros
-SET Month=%Month:~-2%
-SET Day=%Day:~-2%
-SET Hour=%Hour:~-2%
-SET Minute=%Minute:~-2%
+SET month=%month:~-2%
+SET day=%day:~-2%
+SET hour=%hour:~-2%
+SET minute=%minute:~-2%
 
 :: Display the date/time in ISO 8601 format:
-:: SET IsoDate=%Year%-%Month%-%Day% %Hour%:%Minute%
-SET IsoDate=%Year%-%Month%-%Day%
-ECHO %IsoDate%
+:: SET isoDate=%year%-%month%-%day% %hour%:%minute%
+SET isoDate=%year%-%month%-%day%
+ECHO %isoDate%
 
 :: Done
 GOTO:EOF
@@ -698,17 +700,19 @@ ECHO.
 <pre class="sh"><code>#!/bin/bash
 
 # Build README
+echo &quot;README.txt -&gt; README.md&quot;
 pp \
     -html \
     -import=tufte-markdown.pp \
-    README.ppmd \
+    README.txt \
     &gt;README.md
 
 # Build sample handout HTML
+echo &quot;sample-handout.txt -&gt; sample-handout.html&quot;
 pp \
     -html \
     -import=tufte-markdown.pp \
-    sample-handout.ppmd | \
+    sample-handout.txt | \
 pandoc \
     --standalone \
     --template=templates/tufte.html5 \
@@ -717,14 +721,15 @@ pandoc \
 
 # Build sample handout PDF
 # tufte-handout supports section and subsection only
+echo &quot;sample-handout.txt -&gt; sample-handout.pdf&quot;
 pp \
     -pdf \
     -import=tufte-markdown.pp \
-    sample-handout.ppmd | \
+    sample-handout.txt | \
 pandoc \
     --from=markdown+raw_tex \
     --pdf-engine=xelatex \
-    --template=templates/tufte-handout.tex \
+    --template=templates/tufte-handout.latex \
     --no-highlight \
     --shift-heading-level-by=-1 \
     --metadata=documentclass:tufte-handout \
@@ -803,7 +808,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 </div>
 <h3 id="today">Today</h3>
-<p>Today is 2020-04-12.</p>
+<p>Today is 2020-04-14.</p>
 <h3 id="keyboard">Keyboard</h3>
 <p>Copy text with <kbd>Ctrl</kbd>+<kbd>C</kbd>. Save web image in Photoshop with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.</p>
 <h3 id="strike-out">Strike out</h3>
@@ -813,6 +818,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <h2 id="read-more">Read more</h2>
 <ul>
 <li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>
+<li><a href="https://tufte-latex.github.io/tufte-latex/">Tufte-<span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span></a></li>
 <li><a href="https://rstudio.github.io/tufte/">RStudio Tufte Handout</a></li>
 <li><a href="https://rstudio.github.io/tufte/cn/">R Markdown Tufte Style</a></li>
 <li><a href="https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex">RStudio Pandoc template: tufte-handout.tex</a></li>

@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build sample",
+            "label": "Build",
             "type": "shell",
-            "command": "sh build-sample.sh",
+            "command": "watchexec -r -e txt,pp,csv,html5,latex,sh -w . sh build.sh",
             "group": {
                 "kind": "build",
                 "isDefault": true

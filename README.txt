@@ -1,6 +1,6 @@
 # Tufte Markdown
 
-[中文](https://www.pengdaiwu.com/2020/04/11/tufte-markdown.html)
+[中文](https://www.pengdaiwu.com/articles/tufte-markdown)
 
 Tufte Markdown providers tools to style web articles or paper handouts using the
 ideas demonstrated by Edward Tufte's books and handouts. Tufte's style is known
@@ -13,13 +13,14 @@ Write a markdown article including [pp](https://github.com/CDSoft/pp) macros,
 then use pp to preprocess the markdown and pipe it to
 [Pandoc](http://pandoc.org), Pandoc convert Markdown to HTML or LaTeX document.
 
-See example [build-sample.sh](build-sample.sh).
+See example [build.sh](build.sh).
 
 You can see a full list of macros in [tufte-markdown.pp](tufte-markdown.pp)
 
 ## Read more
 
 - [Tufte CSS](https://edwardtufte.github.io/tufte-css/)
+- [Tufte-!latex](https://tufte-latex.github.io/tufte-latex/)
 - [RStudio Tufte Handout](https://rstudio.github.io/tufte/)
 - [R Markdown Tufte Style](https://rstudio.github.io/tufte/cn/)
 - [RStudio Pandoc template: tufte-handout.tex](https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex)
