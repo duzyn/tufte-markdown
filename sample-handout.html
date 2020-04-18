@@ -87,8 +87,9 @@
 <p>If you need a full-width figure, give it the <code>fullwidth</code> class. Make sure that’s inside an <code>article</code>, and it will take up (almost) the full width of the screen. This approach is demonstrated below using Edward Tufte’s English translation of the Napoleon’s March data visualization. From <em>Beautiful Evidence</em>, page 122-124.</p>
 <figure class="fullwidth">
 <img src="img/napoleons-march.png" alt="Figurative map of the successive losses of the French Army in
-the Russian campaign, 1812-1813">
+the Russian campaign, 1812-1813"/>
 </figure>
+<p><span class="marginnote">Figurative map of the successive losses of the French Army in the Russian campaign, 1812-1813</span></p>
 <h2 id="full-width-text-blocks">Full-width text blocks</h2>
 <div class="fullwidth">
 <p>
@@ -97,7 +98,7 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 </div>
 <h2 id="tables">Tables</h2>
 <p>Normal table example:</p>
-<section>
+<div>
 <p><span class="marginnote">Some cars</span></p>
 <table>
 <thead>
@@ -140,7 +141,7 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <p>Fullwidth table example:</p>
 <div class="fullwidth">
 <table>
@@ -306,8 +307,9 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 !define(fullwidthfigure)(
 !ifeq(!format)(html)(
 &lt;figure class=&quot;fullwidth&quot;&gt;
-&lt;img src=&quot;!2&quot; alt=&quot;!1&quot;&gt;
+&lt;img src=&quot;!2&quot; alt=&quot;!1&quot;/&gt;
 &lt;/figure&gt;
+&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
 )
 
 !ifeq(!format)(pdf)(
@@ -338,17 +340,88 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 
 
 !comment(
+// Video (Only for HTML)
+// Usage: !video(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
+// Use html5media: https://github.com/etianen/html5media
+// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;&lt;/script&gt;
+)
+
+!define(VIDEO)(1)
+!define(video)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+    &lt;label for=&quot;video-!VIDEO&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;video-!VIDEO&quot; class=&quot;margin-toggle&quot;/&gt;
+    &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+    &lt;video controls&gt;
+        &lt;source src=&quot;!2&quot;&gt;
+        !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
+        !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
+        !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
+    &lt;/video&gt;
+&lt;/div&gt;
+!add(VIDEO)
+)
+)
+
+
+!comment(
+// Fullwidth Video (Only for HTML)
+// Usage: !fullwidthvideo(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
+)
+
+!define(fullwidthvideo)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+    &lt;video controls class=&quot;fullwidth&quot;&gt;
+        &lt;source src=&quot;!2&quot;&gt;
+        !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
+        !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
+        !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
+    &lt;/video&gt;
+&lt;/div&gt;
+&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+)
+)
+
+
+!comment(
+// Audio (Only for HTML)
+// Usage: !audio(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
+// Use html5media: https://github.com/etianen/html5media
+// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;&lt;/script&gt;
+)
+
+!define(AUDIO)(1)
+!define(audio)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+    &lt;label for=&quot;audio-!AUDIO&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;audio-!AUDIO&quot; class=&quot;margin-toggle&quot;/&gt;
+    &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+    &lt;audio controls&gt;
+        &lt;source src=&quot;!2&quot;&gt;
+        !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
+        !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
+        !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
+    &lt;/audio&gt;
+&lt;/div&gt;
+!add(AUDIO)
+)
+)
+
+!comment(
 // Table
 // Usage: !table(CSV_FILENAME)(CAPTION)
 )
 
 !define(table)(
 !ifeq(!format)(html)(
-&lt;section&gt;
+&lt;div&gt;
 &lt;span class=&quot;marginnote&quot;&gt;!2&lt;/span&gt;
 
 !csv(!1)
-&lt;/section&gt;
+&lt;/div&gt;
 )
 
 !ifeq(!format)(pdf)(
@@ -808,7 +881,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 </div>
 <h3 id="today">Today</h3>
-<p>Today is 2020-04-14.</p>
+<p>Today is 2020-04-18.</p>
 <h3 id="keyboard">Keyboard</h3>
 <p>Copy text with <kbd>Ctrl</kbd>+<kbd>C</kbd>. Save web image in Photoshop with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.</p>
 <h3 id="strike-out">Strike out</h3>
