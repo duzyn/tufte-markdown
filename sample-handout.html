@@ -1,44 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="David Peng">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="David Peng" />
   <title>Tufte Handout Sample</title>
-  <style>code{white-space: pre;}</style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.7.2/tufte.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css@1.7.2/latex.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      font-size: 16px;
-    }
-
-    body {
-      font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif SC", serif;
-    }
-
-    .sans { 
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
-      letter-spacing: 0.03em; 
-      }
-
-    .fullwidth table {
-      width: 100%; 
-    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duzyn/duzyn.github.io/assets/css/blog.css" />
   <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
-<article>
-<section>
-<header>
+<article> <section>
+<header id="title-block-header">
 <h1 class="title">Tufte Handout Sample</h1>
-<p class="subtitle author">David Peng</p>
+<p class="author">David Peng</p>
 </header>
 <p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
 <p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
@@ -98,7 +83,6 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 </div>
 <h2 id="tables">Tables</h2>
 <p>Normal table example:</p>
-<div>
 <p><span class="marginnote">Some cars</span></p>
 <table>
 <thead>
@@ -141,7 +125,6 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 </tr>
 </tbody>
 </table>
-</div>
 <p>Fullwidth table example:</p>
 <div class="fullwidth">
 <table>
@@ -417,11 +400,9 @@ Many thanks go to Edward Tufte for leading the way with his work. It is only thr
 
 !define(table)(
 !ifeq(!format)(html)(
-&lt;div&gt;
 &lt;span class=&quot;marginnote&quot;&gt;!2&lt;/span&gt;
 
 !csv(!1)
-&lt;/div&gt;
 )
 
 !ifeq(!format)(pdf)(
@@ -773,41 +754,50 @@ ECHO.
 <pre class="sh"><code>#!/bin/bash
 
 # Build README
-echo &quot;README.txt -&gt; README.md&quot;
-pp \
-    -html \
-    -import=tufte-markdown.pp \
-    README.txt \
-    &gt;README.md
+buildReadme() {
+    echo &quot;README.txt -&gt; README.md&quot;
+    pp  -html \
+        -import=tufte-markdown.pp \
+        README.txt \
+        &gt;README.md
+}
 
 # Build sample handout HTML
-echo &quot;sample-handout.txt -&gt; sample-handout.html&quot;
-pp \
-    -html \
-    -import=tufte-markdown.pp \
-    sample-handout.txt | \
-pandoc \
-    --standalone \
-    --template=templates/tufte.html5 \
-    --no-highlight \
-    --output=sample-handout.html
+buildHtml() {
+    echo &quot;sample-handout.txt -&gt; sample-handout.html&quot;
+    pp  -html \
+        -import=tufte-markdown.pp \
+        sample-handout.txt | \
+    pandoc --from=markdown \
+        --to=html5 \
+        --standalone \
+        --no-highlight \
+        --css=https://cdn.jsdelivr.net/gh/duzyn/duzyn.github.io/assets/css/blog.css \
+        --variable=include-before:&quot;&lt;article&gt; &lt;section&gt;&quot; \
+        --variable=include-after:&quot;&lt;/section&gt; &lt;/article&gt;&quot; \
+        --output=sample-handout.html
+}
 
 # Build sample handout PDF
 # tufte-handout supports section and subsection only
-echo &quot;sample-handout.txt -&gt; sample-handout.pdf&quot;
-pp \
-    -pdf \
-    -import=tufte-markdown.pp \
-    sample-handout.txt | \
-pandoc \
-    --from=markdown+raw_tex \
-    --pdf-engine=xelatex \
-    --template=templates/tufte-handout.latex \
-    --no-highlight \
-    --shift-heading-level-by=-1 \
-    --metadata=documentclass:tufte-handout \
-    --metadata=CJKmainfont:&quot;Noto Serif CJK SC&quot; \
-    --output=sample-handout.pdf
+buildPdf() {
+    echo &quot;sample-handout.txt -&gt; sample-handout.pdf&quot;
+    pp  -pdf \
+        -import=tufte-markdown.pp \
+        sample-handout.txt | \
+    pandoc --from=markdown+raw_tex \
+        --pdf-engine=xelatex \
+        --template=templates/tufte-handout.latex \
+        --no-highlight \
+        --shift-heading-level-by=-1 \
+        --metadata=documentclass:tufte-handout \
+        --metadata=CJKmainfont:&quot;Noto Serif CJK SC&quot; \
+        --output=sample-handout.pdf
+}
+
+buildReadme
+buildHtml
+buildPdf
 </code></pre>
 <h2 id="chinese">Chinese</h2>
 <p>春江花月夜</p>
@@ -896,7 +886,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <li><a href="https://rstudio.github.io/tufte/cn/">R Markdown Tufte Style</a></li>
 <li><a href="https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex">RStudio Pandoc template: tufte-handout.tex</a></li>
 </ul>
-</section>
-</article>
+</section> </article>
 </body>
 </html>

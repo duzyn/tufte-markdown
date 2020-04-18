@@ -225,11 +225,9 @@
 
 !define(table)(
 !ifeq(!format)(html)(
-<div>
 <span class="marginnote">!2</span>
 
 !csv(!1)
-</div>
 )
 
 !ifeq(!format)(pdf)(
