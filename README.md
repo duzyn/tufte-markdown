@@ -1,7 +1,5 @@
 # Tufte Markdown
 
-[中文](https://www.pengdaiwu.com/articles/tufte-markdown)
-
 Tufte Markdown providers tools to style web articles or paper handouts using the
 ideas demonstrated by Edward Tufte's books and handouts. Tufte's style is known
 for its simplicity, extensive use of sidenotes, tight integration of graphics
