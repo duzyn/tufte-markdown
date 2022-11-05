@@ -350,6 +350,551 @@ class="latex-sub">e</span>X</span> file depend on the format.</p>
 !import(html/today.pp)
 !import(html/u.pp)
 </code></pre>
+<p>See each macros below:</p>
+<pre><code>!comment(
+// Tufte style Markdown macros
+)
+!import(tufte/figure.pp)
+!import(tufte/fullwidth.pp)
+!import(tufte/fullwidthfigure.pp)
+!import(tufte/latex.pp)
+!import(tufte/marginfigure.pp)
+!import(tufte/marginnote.pp)
+!import(tufte/newthought.pp)
+!import(tufte/sidenote.pp)
+!import(tufte/table.pp)
+
+!comment(
+// HTML tags macros
+)
+!import(html/a.pp)
+!import(html/abbr.pp)
+!import(html/center.pp)
+!import(html/em.pp)
+!import(html/flushleft.pp)
+!import(html/flushright.pp)
+!import(html/img.pp)
+!import(html/kbd.pp)
+!import(html/mark.pp)
+!import(html/newpage.pp)
+!import(html/strike.pp)
+!import(html/strong.pp)
+!import(html/textcolor.pp)
+!import(html/today.pp)
+!import(html/u.pp)
+</code></pre>
+<pre><code>!comment(
+// Audio (Only for HTML)
+// Usage: !audio(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
+// Use html5media: https://github.com/etianen/html5media
+// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;
+// &lt;/script&gt;
+)
+
+!define(A)(1)
+!define(audio)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+  &lt;label for=&quot;audio-!A&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;audio-!A&quot; class=&quot;margin-toggle&quot;/&gt;
+  &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+  &lt;audio controls&gt;
+    &lt;source src=&quot;!2&quot;&gt;
+    !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
+    !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
+    !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
+  &lt;/audio&gt;
+&lt;/div&gt;
+!add(A)(1)
+)
+)</code></pre>
+<pre><code>!comment(
+// Figure
+// Usage: !figure(CAPTION)(FILENAME)
+)
+
+!define(F)(1)
+!define(figure)(
+!ifeq(!format)(html)(
+&lt;figure&gt;
+  &lt;label for=&quot;figure-!F&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;figure-!F&quot; class=&quot;margin-toggle&quot;/&gt;
+  &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+  &lt;img src=&quot;!2&quot; alt=&quot;!1&quot; /&gt;
+&lt;/figure&gt;
+!add(F)(1)
+)
+
+!ifeq(!format)(pdf)(
+\begin{figure}
+  \includegraphics{!2}
+  \caption{!1}
+\end{figure}
+)
+)</code></pre>
+<pre><code>!comment(
+// Fullwidth block
+// Usage: !fullwidth(TEXT)
+)
+
+!define(fullwidth)(
+!ifeq(!format)(html)(
+&lt;div class=&quot;fullwidth&quot;&gt;
+  &lt;p&gt;!1&lt;/p&gt;
+&lt;/div&gt;
+)
+
+!ifeq(!format)(pdf)(
+\begin{fullwidth}
+  !1
+\end{fullwidth}
+)
+)</code></pre>
+<pre><code>!comment(
+// Fullwidth figure
+// Usage: !fullwidthfigure(CAPTION)(FILENAME)
+)
+
+!define(fullwidthfigure)(
+!ifeq(!format)(html)(
+&lt;figure class=&quot;fullwidth&quot;&gt;
+  &lt;img src=&quot;!2&quot; alt=&quot;!1&quot;/&gt;
+&lt;/figure&gt;
+&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+)
+
+!ifeq(!format)(pdf)(
+\begin{figure*}
+  \includegraphics{!2}
+  \caption{!1}
+\end{figure*}
+)
+)</code></pre>
+<pre><code>!comment(
+// Fullwidth Video (Only for HTML)
+// Usage: !fullwidthvideo(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
+// Use html5media: https://github.com/etianen/html5media
+// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;
+// &lt;/script&gt;
+)
+
+!define(fullwidthvideo)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+  &lt;video controls class=&quot;fullwidth&quot;&gt;
+    &lt;source src=&quot;!2&quot;&gt;
+    !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
+    !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
+    !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+)
+)</code></pre>
+<pre><code>!comment(
+// LaTeX
+// Usage: !latex
+)
+
+!define(latex)(
+!ifeq(!format)(html)(
+&lt;span class=&quot;latex&quot;&gt;L&lt;span class=&quot;latex-sup&quot;&gt;a&lt;/span&gt;T&lt;span class=&quot;latex-sub&quot;&gt;e&lt;/span&gt;X&lt;/span&gt;
+)
+
+!ifeq(!format)(pdf)(
+\LaTeX
+)
+)
+
+!comment(
+// TeX
+// Usage: !tex
+)
+
+!define(tex)(
+!ifeq(!format)(html)(
+&lt;span class=&quot;latex&quot;&gt;T&lt;span class=&quot;latex-sub&quot;&gt;e&lt;/span&gt;X&lt;/span&gt;
+)
+
+!ifeq(!format)(pdf)(
+\TeX
+)
+)
+
+!comment(
+// CTeX
+// Usage: !ctex
+)
+
+!define(ctex)(
+!ifeq(!format)(html)(
+&lt;span class=&quot;latex&quot;&gt;CT&lt;span class=&quot;latex-sub&quot;&gt;e&lt;/span&gt;X&lt;/span&gt;
+)
+
+!ifeq(!format)(pdf)(
+\CTeX
+)
+)
+</code></pre>
+<pre><code>!comment(
+// Margin figure
+// Usage: !marginfigure(CAPTION)(FILENAME)
+)
+
+!define(MF)(1)
+!define(marginfigure)(
+!ifeq(!format)(html)(
+&lt;label for=&quot;marginfigure-!MF&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;marginfigure-!MF&quot; class=&quot;margin-toggle&quot;/&gt;
+&lt;span class=&quot;marginnote&quot;&gt;&lt;img src=&quot;!2&quot; alt=&quot;!1&quot;/&gt;!1&lt;/span&gt;
+!add(MF)(1)
+)
+
+!ifeq(!format)(pdf)(
+\begin{marginfigure}
+  \includegraphics{!2}
+  \caption{!1}
+\end{marginfigure}
+)
+)</code></pre>
+<pre><code>!comment(
+// Margin note
+// Usage: !marginnote(TEXT)
+)
+
+!define(MN)(1)
+!define(marginnote)(
+!ifeq(!format)(html)(
+&lt;label for=&quot;marginnote-!MN&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;marginnote-!MN&quot; class=&quot;margin-toggle&quot;/&gt;
+&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+!add(MN)(1)
+)
+
+!ifeq(!format)(pdf)(
+\marginnote{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+//  New thought
+//  Usage: !newthought(TEXT)
+)
+
+!define(newthought)(
+!ifeq(!format)(html)(
+&lt;span class=&quot;newthought&quot;&gt;!1&lt;/span&gt;
+)
+
+!ifeq(!format)(pdf)(
+\newthought{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// Side note
+// Usage: !sidenote(TEXT)
+)
+
+!define(SN)(1)
+!define(sidenote)(
+!ifeq(!format)(html)(
+&lt;label for=&quot;sidenote-!SN&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;sidenote-!SN&quot; class=&quot;margin-toggle&quot;/&gt;
+&lt;span class=&quot;sidenote&quot;&gt;!1&lt;/span&gt;
+!add(SN)(1)
+)
+
+!ifeq(!format)(pdf)(
+\sidenote{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// Table
+// Usage: !table(CSV_FILENAME)(CAPTION)
+)
+
+!define(table)(
+!ifeq(!format)(html)(
+&lt;div style=&quot;width: 55%&quot;&gt;
+&lt;span class=&quot;marginnote&quot;&gt;!2&lt;/span&gt;
+
+!csv(!1)
+&lt;/div&gt;
+)
+
+!ifeq(!format)(pdf)(
+!csv(!1)
+:   !2
+)
+)</code></pre>
+<pre><code>!comment(
+// Video (Only for HTML)
+// Usage: !video(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
+// Use html5media: https://github.com/etianen/html5media
+// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;
+// &lt;/script&gt;
+)
+
+!define(V)(1)
+!define(video)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+  &lt;label for=&quot;video-!V&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;video-!V&quot; class=&quot;margin-toggle&quot;/&gt;
+  &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
+  &lt;video controls&gt;
+    &lt;source src=&quot;!2&quot;&gt;
+    !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
+    !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
+    !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
+  &lt;/video&gt;
+&lt;/div&gt;
+!add(V)(1)
+)
+)</code></pre>
+<pre><code>!comment(
+// a
+// Usage: !a(TEXT)(URL)
+)
+
+!define(a)(
+!ifeq(!format)(html)(
+&lt;a href=&quot;!2&quot;&gt;!1&lt;/a&gt;
+)
+
+!ifeq(!format)(pdf)(
+\href{!2}{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// abbr
+// Usage: !abbr(TITLE)(TEXT)
+)
+
+!define(abbr)(
+!ifeq(!format)(html)(
+&lt;abbr title=&quot;!1&quot;&gt;!2&lt;/abbr&gt;
+)
+
+!ifeq(!format)(pdf)(
+!2\footnote{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// center
+// Usage: !center(TEXT)
+)
+
+!define(center)(
+!ifeq(!format)(html)(
+&lt;div style=&quot;margin: 0 auto&quot;&gt;
+  &lt;p style=&quot;text-align: center&quot;&gt;!1&lt;/p&gt;
+&lt;/div&gt;
+)
+
+!ifeq(!format)(pdf)(
+\begin{center}
+  !1
+\end{center}
+)
+)</code></pre>
+<pre><code>!comment(
+// em
+// Usage: !em(TEXT)
+)
+
+!define(em)(
+!ifeq(!format)(html)(
+&lt;em&gt;!1&lt;/em&gt;
+)
+
+!ifeq(!format)(pdf)(
+\emph{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// flushleft
+// Usage: !flushleft(TEXT)
+)
+
+!define(flushleft)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+  &lt;p style=&quot;text-align: left&quot;&gt;!1&lt;/p&gt;
+&lt;/div&gt;
+)
+
+!ifeq(!format)(pdf)(
+\begin{flushleft}
+  !1
+\end{flushleft}
+)
+)</code></pre>
+<pre><code>!comment(
+// flushright
+// Usage: !flushright(TEXT)
+)
+
+!define(flushright)(
+!ifeq(!format)(html)(
+&lt;div&gt;
+  &lt;p style=&quot;text-align: right&quot;&gt;!1&lt;/p&gt;
+&lt;/div&gt;
+)
+
+!ifeq(!format)(pdf)(
+\begin{flushright}
+  !1
+\end{flushright}
+)
+)</code></pre>
+<pre><code>!comment(
+// img
+// Usage: !img(ALT_TEXT)(FILENAME)
+)
+
+!define(img)(
+!ifeq(!format)(html)(
+&lt;img src=&quot;!2&quot; alt=&quot;!1&quot; /&gt;
+)
+
+!ifeq(!format)(pdf)(
+\includegraphics{!2}
+)
+)</code></pre>
+<pre><code>!comment(
+// kbd
+// Usage: !kbd(KEY_1)(KEY_2)(KEY_3)(KEY_4)
+)
+
+!define(kbd)(
+!ifeq(!format)(html)(
+&lt;kbd&gt;!1&lt;/kbd&gt;
+!ifdef(2)(+ &lt;kbd&gt;!2&lt;/kbd&gt;)
+!ifdef(3)(+ &lt;kbd&gt;!3&lt;/kbd&gt;)
+!ifdef(4)(+ &lt;kbd&gt;!4&lt;/kbd&gt;)
+)
+
+!ifeq(!format)(pdf)(
+\texttt{!1}
+!ifdef(2)(+ \texttt{!2})
+!ifdef(3)(+ \texttt{!3})
+!ifdef(4)(+ \texttt{!4})
+)
+)</code></pre>
+<pre><code>!comment(
+// mark
+// Usage: !mark(TEXT)
+)
+
+!define(mark)(
+!ifeq(!format)(html)(
+&lt;mark&gt;!1&lt;/mark&gt;
+)
+
+!comment(
+// \usepackage{soul}
+)
+!ifeq(!format)(pdf)(
+\hl{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// newpage
+// Usage: !newpage
+)
+
+!define(newpage)(
+!ifeq(!format)(html)(
+&lt;div style=&quot;page-break-after: always&quot;&gt;&lt;/div&gt;
+)
+
+!ifeq(!format)(pdf)(
+\newpage
+)
+)</code></pre>
+<pre><code>!comment(
+// strike
+// Usage: !strike(TEXT)
+)
+
+!define(strike)(
+!ifeq(!format)(html)(
+&lt;strike&gt;!1&lt;/strike&gt;
+)
+
+!ifeq(!format)(pdf)(
+\sout{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// strong
+// Usage: !strong(TEXT)
+)
+
+!define(strong)(
+!ifeq(!format)(html)(
+&lt;strong&gt;!1&lt;/strong&gt;
+)
+
+!ifeq(!format)(pdf)(
+\textbf{!1}
+)
+)</code></pre>
+<pre><code>!comment(
+// textcolor
+// Usage: !textcolor(TEXT)
+)
+
+!define(textcolor)(
+!ifeq(!format)(html)(
+&lt;span style=&quot;color:!1&quot;&gt;!2&lt;/span&gt;
+)
+
+!comment(
+// \usepackage{color}
+)
+!ifeq(!format)(pdf)(
+\textcolor{!1}{!2}
+)
+)</code></pre>
+<pre><code>!comment(
+// today
+// Usage: !today
+)
+
+!define(today)(
+!ifeq(!format)(html)(
+!ifeq(!os)(windows)(
+!powershell(Get-Date -Format yyyy-MM-dd)
+)
+
+!ifeq(!os)(darwin)(
+!sh(date &quot;+%Y-%m-%d&quot;)
+)
+
+!ifeq(!os)(linux)(
+!sh(date &quot;+%Y-%m-%d&quot;)
+)
+)
+
+!ifeq(!format)(pdf)(
+\today
+)
+)</code></pre>
+<pre><code>!comment(
+// u
+// Usage: !u(TEXT)
+)
+
+!define(u)(
+!ifeq(!format)(html)(
+&lt;u&gt;!1&lt;/u&gt;
+)
+
+!ifeq(!format)(pdf)(
+\underline{!1}
+)
+)</code></pre>
 <h2 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to
 convert Markdown to HTML and PDF</h2>
 <p>See example below:</p>

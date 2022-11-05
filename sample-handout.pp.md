@@ -239,6 +239,37 @@ See example below:
 
 !source(macros/main.pp)
 
+See each macros below:
+
+!source(macros/main.pp)
+!source(macros/tufte/audio.pp)
+!source(macros/tufte/figure.pp)
+!source(macros/tufte/fullwidth.pp)
+!source(macros/tufte/fullwidthfigure.pp)
+!source(macros/tufte/fullwidthvideo.pp)
+!source(macros/tufte/latex.pp)
+!source(macros/tufte/marginfigure.pp)
+!source(macros/tufte/marginnote.pp)
+!source(macros/tufte/newthought.pp)
+!source(macros/tufte/sidenote.pp)
+!source(macros/tufte/table.pp)
+!source(macros/tufte/video.pp)
+!source(macros/html/a.pp)
+!source(macros/html/abbr.pp)
+!source(macros/html/center.pp)
+!source(macros/html/em.pp)
+!source(macros/html/flushleft.pp)
+!source(macros/html/flushright.pp)
+!source(macros/html/img.pp)
+!source(macros/html/kbd.pp)
+!source(macros/html/mark.pp)
+!source(macros/html/newpage.pp)
+!source(macros/html/strike.pp)
+!source(macros/html/strong.pp)
+!source(macros/html/textcolor.pp)
+!source(macros/html/today.pp)
+!source(macros/html/u.pp)
+
 # Use Pandoc to convert Markdown to HTML and PDF
 
 See example below:
