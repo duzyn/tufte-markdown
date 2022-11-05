@@ -1,0 +1,25 @@
+body {
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Noto Serif SC", serif;
+}
+
+p.author,
+p.date {
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1;
+}
+
+div.table-wrapper {
+  font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", "Noto Sans SC", sans-serif;
+}
+
+.sans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Noto Sans SC", sans-serif;
+}
+
+code, pre>code, kbd {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}

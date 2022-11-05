@@ -4,14 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",
+            "label": "Build HTML and PDF",
             "type": "shell",
-            "command": "watchexec -r -e txt,pp,csv,html5,latex,sh -w . sh build.sh",
+            "command": "bash build.sh",
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": []
+            }
         }
     ]
 }

@@ -1,0 +1,20 @@
+from: markdown
+to: html5
+standalone: true
+shift-heading-level-by: 1
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+css:
+  - https://cdn.jsdelivr.net/npm/tufte-css@1.8.0/tufte.min.css
+  - https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css/latex.min.css
+  - https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc@4.5.12/chinese-simplified-400.css
+  - https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@4.5.12/chinese-simplified-400.css
+  - ./stylesheets/tufte-custom.css
+highlight-style: null
+variables:
+  include-before: <article><section>
+  include-after: </section></article>
+metadata:
+  lang: zh-CN
+  document-css: false

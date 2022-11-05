@@ -1,0 +1,31 @@
+!comment(
+// Tufte style Markdown macros
+)
+!import(tufte/figure.pp)
+!import(tufte/fullwidth.pp)
+!import(tufte/fullwidthfigure.pp)
+!import(tufte/latex.pp)
+!import(tufte/marginfigure.pp)
+!import(tufte/marginnote.pp)
+!import(tufte/newthought.pp)
+!import(tufte/sidenote.pp)
+!import(tufte/table.pp)
+
+!comment(
+// HTML tags macros
+)
+!import(html/a.pp)
+!import(html/abbr.pp)
+!import(html/center.pp)
+!import(html/em.pp)
+!import(html/flushleft.pp)
+!import(html/flushright.pp)
+!import(html/img.pp)
+!import(html/kbd.pp)
+!import(html/mark.pp)
+!import(html/newpage.pp)
+!import(html/strike.pp)
+!import(html/strong.pp)
+!import(html/textcolor.pp)
+!import(html/today.pp)
+!import(html/u.pp)

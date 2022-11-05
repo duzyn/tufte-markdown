@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
@@ -9,820 +9,366 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duzyn/duzyn.github.io/assets/css/blog.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tufte-css@1.8.0/tufte.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/edwardtufte/tufte-css/latex.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc@4.5.12/chinese-simplified-400.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@4.5.12/chinese-simplified-400.css" />
+  <link rel="stylesheet" href="./stylesheets/tufte-custom.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
-<article> <section>
+<article><section>
 <header id="title-block-header">
 <h1 class="title">Tufte Handout Sample</h1>
 <p class="author">David Peng</p>
 </header>
-<p>This sample text is from Dave Liepmann’s <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
-<p>Tufte CSS provides tools to style web articles using the ideas demonstrated by Edward Tufte’s books and handouts. Tufte’s style is known for its simplicity, extensive use of sidenotes, tight integration of graphics with text, and carefully chosen typography.</p>
-<p>Tufte CSS was created by <a href="http://www.daveliepmann.com">Dave Liepmann</a> and is now an Edward Tufte project. The original idea was cribbed from <a href="https://tufte-latex.github.io/tufte-latex/">Tufte-<span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span></a> and <a href="http://rmarkdown.rstudio.com/tufte_handout_format.html">R Markdown’s Tufte Handout format</a>. We give hearty thanks to all the people who have contributed to those projects.</p>
-<p>If you see anything that Tufte CSS could improve, we welcome your contribution in the form of an issue or pull request on the GitHub project: <a href="https://github.com/edwardtufte/tufte-css">tufte-css</a>. Please note the <a href="https://github.com/edwardtufte/tufte-css#contributing">contribution guidelines</a>.</p>
-<p>Finally, a reminder about the goal of this project. The web is not print. Webpages are not books. Therefore, the goal of Tufte CSS is not to say “websites should look like this interpretation of Tufte’s books” but rather “here are some techniques Tufte developed that we’ve found useful in print; maybe you can find a way to make them useful on the web”. Tufte CSS is merely a sketch of one way to implement this particular set of ideas. It should be a starting point, not a design goal, because any project should present their information as best suits their particular circumstances.</p>
+<p>This sample text is from Dave Liepmann’s <a
+href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a>.</p>
+<p>Tufte CSS provides tools to style web articles using the ideas
+demonstrated by Edward Tufte’s books and handouts. Tufte’s style is
+known for its simplicity, extensive use of sidenotes, tight integration
+of graphics with text, and carefully chosen typography.</p>
+<p>Tufte CSS was created by <a href="http://www.daveliepmann.com">Dave
+Liepmann</a> and is now an Edward Tufte project. The original idea was
+cribbed from <a
+href="https://tufte-latex.github.io/tufte-latex/">Tufte-<span
+class="latex">L<span class="latex-sup">a</span>T<span
+class="latex-sub">e</span>X</span></a> and <a
+href="http://rmarkdown.rstudio.com/tufte_handout_format.html">R
+Markdown’s Tufte Handout format</a>. We give hearty thanks to all the
+people who have contributed to those projects.</p>
+<p>If you see anything that Tufte CSS could improve, we welcome your
+contribution in the form of an issue or pull request on the GitHub
+project: <a
+href="https://github.com/edwardtufte/tufte-css">tufte-css</a>. Please
+note the <a
+href="https://github.com/edwardtufte/tufte-css#contributing">contribution
+guidelines</a>.</p>
+<p>Finally, a reminder about the goal of this project. The web is not
+print. Webpages are not books. Therefore, the goal of Tufte CSS is not
+to say “websites should look like this interpretation of Tufte’s books”
+but rather “here are some techniques Tufte developed that we’ve found
+useful in print; maybe you can find a way to make them useful on the
+web”. Tufte CSS is merely a sketch of one way to implement this
+particular set of ideas. It should be a starting point, not a design
+goal, because any project should present their information as best suits
+their particular circumstances.</p>
 <h2 id="getting-started">Getting Started</h2>
-<p>To use Tufte CSS, copy <code>tufte.css</code> and the <code>et-book</code> directory of font files to your project directory, then add the following to your HTML document’s <code>head</code> block:</p>
+<p>To use Tufte CSS, copy <code>tufte.css</code> and the
+<code>et-book</code> directory of font files to your project directory,
+then add the following to your HTML document’s <code>head</code>
+block:</p>
 <pre class="html"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;tufte.css&quot;/&gt;</code></pre>
-<p>Now you just have to use the provided CSS rules, and the Tufte CSS conventions described in this document. For best results, View Source and Inspect Element frequently.</p>
+<p>Now you just have to use the provided CSS rules, and the Tufte CSS
+conventions described in this document. For best results, View Source
+and Inspect Element frequently.</p>
 <h2 id="fundamentals">Fundamentals</h2>
 <h3 id="sections-and-headings">Sections and Headings</h3>
-<p>Organize your document with an <code>article</code> element inside your <code>body</code> tag. Inside that, use <code>section</code> tags around each logical grouping of text and headings.</p>
-<p>Tufte CSS uses <code>h1</code> for the document title, <code>p</code> with class <code>subtitle</code> for the document subtitle, <code>h2</code> for section headings, and <code>h3</code> for low-level headings. More specific headings are not supported. If you feel the urge to reach for a heading of level 4 or greater, consider redesigning your document.</p>
-<p>As a bonus, this excerpt regarding the use of headings provides an example of block quotes. In Tufte CSS they are just lightly styled, semantically correct HTML using <code>blockquote</code> and <code>footer</code> elements. See page 20 of <a href="https://www.edwardtufte.com/tufte/books_vdqi">The Visual Display of Quantitative Information</a> for an example in print.</p>
-<p><span class="newthought">In his later books</span> <label for="sidenote-1" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-1" class="margin-toggle"/> <span class="sidenote"><em><a href="http://www.edwardtufte.com/tufte/books_be">Beautiful Evidence</a></em></span>, Tufte starts each section with a bit of vertical space, a non-indented paragraph, and the first few words of the sentence set in small caps. For this we use a span with the class <code>newthought</code>, as demonstrated at the beginning of this paragraph. Vertical spacing is accomplished separately through <code>&lt;section&gt;</code> tags. Be consistent: though we do so in this paragraph for the purpose of demonstration, do not alternate use of header elements and the <code>newthought</code> technique. Pick one approach and stick to it.</p>
+<p>Organize your document with an <code>article</code> element inside
+your <code>body</code> tag. Inside that, use <code>section</code> tags
+around each logical grouping of text and headings.</p>
+<p>Tufte CSS uses <code>h1</code> for the document title, <code>p</code>
+with class <code>subtitle</code> for the document subtitle,
+<code>h2</code> for section headings, and <code>h3</code> for low-level
+headings. More specific headings are not supported. If you feel the urge
+to reach for a heading of level 4 or greater, consider redesigning your
+document.</p>
+<p>As a bonus, this excerpt regarding the use of headings provides an
+example of block quotes. In Tufte CSS they are just lightly styled,
+semantically correct HTML using <code>blockquote</code> and
+<code>footer</code> elements. See page 20 of <a
+href="https://www.edwardtufte.com/tufte/books_vdqi">The Visual Display
+of Quantitative Information</a> for an example in print.</p>
+<p><span class="newthought">In his later books</span>
+<label for="sidenote-1" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sidenote-1" class="margin-toggle"/> <span
+class="sidenote"><em><a href="http://www.edwardtufte.com/tufte/books_be">Beautiful
+Evidence</a></em></span>, Tufte starts each section with a bit of
+vertical space, a non-indented paragraph, and the first few words of the
+sentence set in small caps. For this we use a span with the class
+<code>newthought</code>, as demonstrated at the beginning of this
+paragraph. Vertical spacing is accomplished separately through
+<code>&lt;section&gt;</code> tags. Be consistent: though we do so in
+this paragraph for the purpose of demonstration, do not alternate use of
+header elements and the <code>newthought</code> technique. Pick one
+approach and stick to it.</p>
 <h3 id="text">Text</h3>
-<p>Although paper handouts obviously have a pure white background, the web is better served by the use of slightly off-white and off-black colors. Tufte CSS uses <code>#fffff8</code> and <code>#111111</code> because they are nearly indistinguishable from their ‘pure’ cousins, but dial down the harsh contrast. We stick to the greyscale for text, reserving color for specific, careful use in figures and images.</p>
-<p>In print, Tufte has used the proprietary Monotype Bembo <label for="sidenote-2" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-2" class="margin-toggle"/> <span class="sidenote">See Tufte’s comment in the <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt">Tufte book fonts</a> thread.</span> font. A similar effect is achieved in digital formats with the now open-source <a href="https://github.com/edwardtufte/et-book">ETBook</a>, which Tufte CSS supplies with a <code>@font-face</code> reference to a .ttf file. In case ETBook somehow doesn’t work, Tufte CSS shifts gracefully to other serif fonts like Palatino and Georgia.</p>
-<p>Also notice how Tufte CSS includes separate font files for bold (strong) and italic (emphasis), instead of relying on the browser to mechanically transform the text. This is typographic best practice.</p>
-<p>If you prefer sans-serifs, use the <code>sans</code> class. It relies on Gill Sans, Tufte’s sans-serif font of choice.</p>
-<p>Links in Tufte CSS match the body text in color and do not change on mouseover or when clicked. Here is a <a href="#">dummy example</a> that goes nowhere. These links are underlined, since this is the most widely recognized indicator of clickable text. <label for="marginnote-1" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-1" class="margin-toggle"/> <span class="marginnote">Blue text, while also a widely recognizable clickable-text indicator, is crass and distracting. Luckily, it is also rendered unnecessary by the use of underlining.</span> However, because most browsers’ default underlining does not clear descenders and is so thick and distracting, the underline effect is instead achieved using CSS trickery involving background gradients instead of standard <code>text-decoration</code>. Credit goes to Adam Schwartz for that technique.</p>
-<p>As always, these design choices are merely one approach that Tufte CSS provides by default. Other approaches, such as changing color on click or mouseover, or using highlighting or color instead of underlining to denote links, could also be made to work. The goal is to make sentences readable without interference from links, as well as to make links immediately identifiable even by casual web users.</p>
-<h2 id="sidenotes-footnotes-and-marginal-notes">Sidenotes: footnotes and marginal notes</h2>
-<p>One of the most distinctive features of Tufte’s style is his extensive use of sidenotes.<label for="sidenote-3" class="margin-toggle sidenote-number"></label> <input type="checkbox" id="sidenote-3" class="margin-toggle"/> <span class="sidenote">This is a sidenote.</span> Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page, but instead display off to the side in the margin. Perhaps you have noticed their use in this document already. You are very astute.</p>
-<p>Sidenotes are a great example of the web not being like print. On sufficiently large viewports, Tufte CSS uses the margin for sidenotes, margin notes, and small figures. On smaller viewports, elements that would go in the margin are hidden until the user toggles them into view. The goal is to present related but not necessary information such as asides or citations <em>as close as possible</em> to the text that references them. At the same time, this secondary information should stay out of the way of the eye, not interfering with the progression of ideas in the main text.</p>
-<p>Sidenotes consist of two elements: a superscript reference number that goes inline with the text, and a sidenote with content. To add the former, just put a label and dummy checkbox into the text where you want the reference to go, like so:</p>
+<p>Although paper handouts obviously have a pure white background, the
+web is better served by the use of slightly off-white and off-black
+colors. Tufte CSS uses <code>#fffff8</code> and <code>#111111</code>
+because they are nearly indistinguishable from their ‘pure’ cousins, but
+dial down the harsh contrast. We stick to the greyscale for text,
+reserving color for specific, careful use in figures and images.</p>
+<p>In print, Tufte has used the proprietary Monotype Bembo
+<label for="sidenote-2" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sidenote-2" class="margin-toggle"/> <span
+class="sidenote">See Tufte’s comment in the
+<a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt">Tufte
+book fonts</a> thread.</span> font. A similar effect is achieved in
+digital formats with the now open-source <a
+href="https://github.com/edwardtufte/et-book">ETBook</a>, which Tufte
+CSS supplies with a <code>@font-face</code> reference to a .ttf file. In
+case ETBook somehow doesn’t work, Tufte CSS shifts gracefully to other
+serif fonts like Palatino and Georgia.</p>
+<p>Also notice how Tufte CSS includes separate font files for bold
+(strong) and italic (emphasis), instead of relying on the browser to
+mechanically transform the text. This is typographic best practice.</p>
+<p>If you prefer sans-serifs, use the <code>sans</code> class. It relies
+on Gill Sans, Tufte’s sans-serif font of choice.</p>
+<p>Links in Tufte CSS match the body text in color and do not change on
+mouseover or when clicked. Here is a <a href="#">dummy example</a> that
+goes nowhere. These links are underlined, since this is the most widely
+recognized indicator of clickable text.
+<label for="marginnote-1" class="margin-toggle">⊕</label>
+<input type="checkbox" id="marginnote-1" class="margin-toggle"/> <span
+class="marginnote">Blue text, while also a widely recognizable
+clickable-text indicator, is crass and distracting. Luckily, it is also
+rendered unnecessary by the use of underlining.</span> However, because
+most browsers’ default underlining does not clear descenders and is so
+thick and distracting, the underline effect is instead achieved using
+CSS trickery involving background gradients instead of standard
+<code>text-decoration</code>. Credit goes to Adam Schwartz for that
+technique.</p>
+<p>As always, these design choices are merely one approach that Tufte
+CSS provides by default. Other approaches, such as changing color on
+click or mouseover, or using highlighting or color instead of
+underlining to denote links, could also be made to work. The goal is to
+make sentences readable without interference from links, as well as to
+make links immediately identifiable even by casual web users.</p>
+<h2 id="sidenotes-footnotes-and-marginal-notes">Sidenotes: footnotes and
+marginal notes</h2>
+<p>One of the most distinctive features of Tufte’s style is his
+extensive use of
+sidenotes.<label for="sidenote-3" class="margin-toggle sidenote-number"></label>
+<input type="checkbox" id="sidenote-3" class="margin-toggle"/> <span
+class="sidenote">This is a sidenote.</span> Sidenotes are like
+footnotes, except they don’t force the reader to jump their eye to the
+bottom of the page, but instead display off to the side in the margin.
+Perhaps you have noticed their use in this document already. You are
+very astute.</p>
+<p>Sidenotes are a great example of the web not being like print. On
+sufficiently large viewports, Tufte CSS uses the margin for sidenotes,
+margin notes, and small figures. On smaller viewports, elements that
+would go in the margin are hidden until the user toggles them into view.
+The goal is to present related but not necessary information such as
+asides or citations <em>as close as possible</em> to the text that
+references them. At the same time, this secondary information should
+stay out of the way of the eye, not interfering with the progression of
+ideas in the main text.</p>
+<p>Sidenotes consist of two elements: a superscript reference number
+that goes inline with the text, and a sidenote with content. To add the
+former, just put a label and dummy checkbox into the text where you want
+the reference to go, like so:</p>
 <pre class="html"><code>&lt;label for=&quot;sn-demo&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;sn-demo&quot; class=&quot;margin-toggle&quot;/&gt;</code></pre>
-<p>You must manually assign a reference <code>id</code> to each side or margin note, replacing “sn-demo” in the <code>for</code> and the <code>id</code> attribute values with an appropriate descriptor. It is useful to use prefixes like <code>sn-</code> for sidenotes and <code>mn-</code> for margin notes.</p>
-<p>Immediately adjacent to that sidenote reference in the main text goes the sidenote content itself, in a <code>span</code> with class <code>sidenote</code>. This tag is also inserted directly in the middle of the body text, but is either pushed into the margin or hidden by default. Make sure to position your sidenotes correctly by keeping the sidenote-number label close to the sidenote itself.</p>
-<p>If you want a sidenote without footnote-style numberings, then you want a margin note. <label for="marginnote-2" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-2" class="margin-toggle"/> <span class="marginnote">This is a margin note. Notice there isn’t a number preceding the note.</span> On large screens, a margin note is just a sidenote that omits the reference number. This lessens the distracting effect taking away from the flow of the main text, but can increase the cognitive load of matching a margin note to its referent text. However, on small screens, a margin note is like a sidenote except its viewability-toggle is a symbol rather than a reference number. This document currently uses the symbol (<code>&amp;#8853;</code>), but it’s up to you.</p>
-<p>Margin notes are created just like sidenotes, but with the <code>marginnote</code> class for the content and the <code>margin-toggle</code> class for the label and dummy checkbox. For instance, here is the code for the margin note used in the previous paragraph:</p>
+<p>You must manually assign a reference <code>id</code> to each side or
+margin note, replacing “sn-demo” in the <code>for</code> and the
+<code>id</code> attribute values with an appropriate descriptor. It is
+useful to use prefixes like <code>sn-</code> for sidenotes and
+<code>mn-</code> for margin notes.</p>
+<p>Immediately adjacent to that sidenote reference in the main text goes
+the sidenote content itself, in a <code>span</code> with class
+<code>sidenote</code>. This tag is also inserted directly in the middle
+of the body text, but is either pushed into the margin or hidden by
+default. Make sure to position your sidenotes correctly by keeping the
+sidenote-number label close to the sidenote itself.</p>
+<p>If you want a sidenote without footnote-style numberings, then you
+want a margin note.
+<label for="marginnote-2" class="margin-toggle">⊕</label>
+<input type="checkbox" id="marginnote-2" class="margin-toggle"/> <span
+class="marginnote">This is a margin note. Notice there isn’t a number
+preceding the note.</span> On large screens, a margin note is just a
+sidenote that omits the reference number. This lessens the distracting
+effect taking away from the flow of the main text, but can increase the
+cognitive load of matching a margin note to its referent text. However,
+on small screens, a margin note is like a sidenote except its
+viewability-toggle is a symbol rather than a reference number. This
+document currently uses the symbol (<code>&amp;#8853;</code>), but it’s
+up to you.</p>
+<p>Margin notes are created just like sidenotes, but with the
+<code>marginnote</code> class for the content and the
+<code>margin-toggle</code> class for the label and dummy checkbox. For
+instance, here is the code for the margin note used in the previous
+paragraph:</p>
 <pre class="html"><code>&lt;label for=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;mn-demo&quot; class=&quot;margin-toggle&quot;/&gt;
 &lt;span class=&quot;marginnote&quot;&gt;
-    This is a margin note. Notice there isn’t a number preceding the note.
+    This is a margin note. Notice there isn&#39;t a number preceding the note.
 &lt;/span&gt;</code></pre>
-<p>Figures in the margin are created as margin notes, as demonstrated in the next section.</p>
+<p>Figures in the margin are created as margin notes, as demonstrated in
+the next section.</p>
 <h2 id="figures">Figures</h2>
-<p>Tufte emphasizes tight integration of graphics with text. Data, graphs, and figures are kept with the text that discusses them. In print, this means they are not relegated to a separate page. On the web, that means readability of graphics and their accompanying text without extra clicks, tab-switching, or scrolling.</p>
-<p>Figures should try to use the <code>figure</code> element, which by default are constrained to the main column. Don’t wrap figures in a paragraph tag. Any label or margin note goes in a regular margin note inside the figure. For example, most of the time one should introduce a figure directly into the main flow of discussion, like so:</p>
-<p><label for="marginnote-3" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-3" class="margin-toggle"/> <span class="marginnote">From Edward Tufte, <em>Visual Display of Quantitative Information</em>, page 92.</span> <img src="img/exports-imports.png" alt="Exports and Imports to and from Denmark & Norway from 1700 to
+<p>Tufte emphasizes tight integration of graphics with text. Data,
+graphs, and figures are kept with the text that discusses them. In
+print, this means they are not relegated to a separate page. On the web,
+that means readability of graphics and their accompanying text without
+extra clicks, tab-switching, or scrolling.</p>
+<p>Figures should try to use the <code>figure</code> element, which by
+default are constrained to the main column. Don’t wrap figures in a
+paragraph tag. Any label or margin note goes in a regular margin note
+inside the figure. For example, most of the time one should introduce a
+figure directly into the main flow of discussion, like so:</p>
+<p><label for="marginnote-3" class="margin-toggle">⊕</label>
+<input type="checkbox" id="marginnote-3" class="margin-toggle"/> <span
+class="marginnote">From Edward Tufte, <em>Visual Display of Quantitative
+Information</em>, page 92.</span>
+<img src="./img/exports-imports.png" alt="Exports and Imports to and from Denmark & Norway from 1700 to
 1780" /></p>
-<p><label for="marginnote-4" class="margin-toggle">⊕</label> <input type="checkbox" id="marginnote-4" class="margin-toggle"/> <span class="marginnote"><img src="img/rhino.png" alt="Image of a Rhinoceros" />F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological Literature,” <em>Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice</em>, ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s <em>Visual Explanations</em>.</span> But tight integration of graphics with text is central to Tufte’s work even when those graphics are ancillary to the main body of a text. In many of those cases, a margin figure may be most appropriate. To place figures in the margin, just wrap an image (or whatever) in a margin note inside a <code>p</code> tag, as seen to the right of this paragraph.</p>
-<p>If you need a full-width figure, give it the <code>fullwidth</code> class. Make sure that’s inside an <code>article</code>, and it will take up (almost) the full width of the screen. This approach is demonstrated below using Edward Tufte’s English translation of the Napoleon’s March data visualization. From <em>Beautiful Evidence</em>, page 122-124.</p>
+<p><label for="marginnote-4" class="margin-toggle">⊕</label>
+<input type="checkbox" id="marginnote-4" class="margin-toggle"/> <span
+class="marginnote"><img src="./img/rhino.png" alt="Image of a Rhinoceros" />F.J.
+Cole, “The History of Albrecht Dürer’s Rhinoceros in Zooological
+Literature,” <em>Science, Medicine, and History: Essays on the Evolution
+of Scientific Thought and Medical Practice</em>, ed. E. Ashworth
+Underwood, 337-356. From page 71 of Edward Tufte’s <em>Visual
+Explanations</em>.</span> But tight integration of graphics with text is
+central to Tufte’s work even when those graphics are ancillary to the
+main body of a text. In many of those cases, a margin figure may be most
+appropriate. To place figures in the margin, just wrap an image (or
+whatever) in a margin note inside a <code>p</code> tag, as seen to the
+right of this paragraph.</p>
+<p>If you need a full-width figure, give it the <code>fullwidth</code>
+class. Make sure that’s inside an <code>article</code>, and it will take
+up (almost) the full width of the screen. This approach is demonstrated
+below using Edward Tufte’s English translation of the Napoleon’s March
+data visualization. From <em>Beautiful Evidence</em>, page 122-124.</p>
 <figure class="fullwidth">
-<img src="img/napoleons-march.png" alt="Figurative map of the successive losses of the French Army in
+<img src="./img/napoleons-march.png" alt="Figurative map of the successive losses of the French Army in
 the Russian campaign, 1812-1813"/>
 </figure>
-<p><span class="marginnote">Figurative map of the successive losses of the French Army in the Russian campaign, 1812-1813</span></p>
+<p><span class="marginnote">Figurative map of the successive losses of
+the French Army in the Russian campaign, 1812-1813</span></p>
+<h2 id="tables">Tables</h2>
+<p>Table example:</p>
+<div style="width: 55%">
+<p><span class="marginnote">Some cars</span></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 41%" />
+<col style="width: 36%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Year</th>
+<th style="text-align: left;">Make</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: right;">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1997</td>
+<td style="text-align: left;">Ford</td>
+<td style="text-align: left;">E350</td>
+<td style="text-align: left;">ac, abs, moon</td>
+<td style="text-align: right;">3000.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1999</td>
+<td style="text-align: left;">Chevy</td>
+<td style="text-align: left;">Venture “Extended Edition”</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">4900.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1999</td>
+<td style="text-align: left;">Chevy</td>
+<td style="text-align: left;">Venture “Extended Edition, Very
+Large”</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">5000.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1996</td>
+<td style="text-align: left;">Jeep</td>
+<td style="text-align: left;">Grand Cherokee</td>
+<td style="text-align: left;">MUST SELL! air, moon roof, loaded</td>
+<td style="text-align: right;">4799.00</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="full-width-text-blocks">Full-width text blocks</h2>
 <div class="fullwidth">
 <p>
-Many thanks go to Edward Tufte for leading the way with his work. It is only through his kind and careful editing that this project accomplishes what it does. All errors of implementation are of course mine.
+Many thanks go to Edward Tufte for leading the way with his work. It is
+only through his kind and careful editing that this project accomplishes
+what it does. All errors of implementation are of course mine.
 </p>
 </div>
-<h2 id="tables">Tables</h2>
-<p>Normal table example:</p>
-<p><span class="marginnote">Some cars</span></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Year</th>
-<th style="text-align: left;">Make</th>
-<th style="text-align: left;">Model</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: right;">Price</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1997</td>
-<td style="text-align: left;">Ford</td>
-<td style="text-align: left;">E350</td>
-<td style="text-align: left;">ac, abs, moon</td>
-<td style="text-align: right;">3000.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1999</td>
-<td style="text-align: left;">Chevy</td>
-<td style="text-align: left;">Venture “Extended Edition”</td>
-<td style="text-align: left;"></td>
-<td style="text-align: right;">4900.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1999</td>
-<td style="text-align: left;">Chevy</td>
-<td style="text-align: left;">Venture “Extended Edition, Very Large”</td>
-<td style="text-align: left;"></td>
-<td style="text-align: right;">5000.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1996</td>
-<td style="text-align: left;">Jeep</td>
-<td style="text-align: left;">Grand Cherokee</td>
-<td style="text-align: left;">MUST SELL! air, moon roof, loaded</td>
-<td style="text-align: right;">4799.00</td>
-</tr>
-</tbody>
-</table>
-<p>Fullwidth table example:</p>
-<div class="fullwidth">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Year</th>
-<th style="text-align: left;">Make</th>
-<th style="text-align: left;">Model</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: right;">Price</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1997</td>
-<td style="text-align: left;">Ford</td>
-<td style="text-align: left;">E350</td>
-<td style="text-align: left;">ac, abs, moon</td>
-<td style="text-align: right;">3000.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1999</td>
-<td style="text-align: left;">Chevy</td>
-<td style="text-align: left;">Venture “Extended Edition”</td>
-<td style="text-align: left;"></td>
-<td style="text-align: right;">4900.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1999</td>
-<td style="text-align: left;">Chevy</td>
-<td style="text-align: left;">Venture “Extended Edition, Very Large”</td>
-<td style="text-align: left;"></td>
-<td style="text-align: right;">5000.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1996</td>
-<td style="text-align: left;">Jeep</td>
-<td style="text-align: left;">Grand Cherokee</td>
-<td style="text-align: left;">MUST SELL! air, moon roof, loaded</td>
-<td style="text-align: right;">4799.00</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><span class="marginnote">Some cars</span></p>
-<h2 id="use-pp-to-preprocess-markdown">Use pp to preprocess Markdown</h2>
-<p>We can use a list of macros defined below to generate a HTML or <span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span> file depend on the format.</p>
+<h2 id="use-pp-to-preprocess-markdown">Use pp to preprocess
+Markdown</h2>
+<p>We can use a list of macros defined below to generate a HTML or <span
+class="latex">L<span class="latex-sup">a</span>T<span
+class="latex-sub">e</span>X</span> file depend on the format.</p>
 <p>See example below:</p>
-<pre class="c"><code>!comment(
-// TUFTE STYLE
+<pre><code>!comment(
+// Tufte style Markdown macros
 )
+!import(tufte/figure.pp)
+!import(tufte/fullwidth.pp)
+!import(tufte/fullwidthfigure.pp)
+!import(tufte/latex.pp)
+!import(tufte/marginfigure.pp)
+!import(tufte/marginnote.pp)
+!import(tufte/newthought.pp)
+!import(tufte/sidenote.pp)
+!import(tufte/table.pp)
 
 !comment(
-// New thought
-// Usage: !newthought(TEXT)
-)
-
-!define(newthought)(
-!ifeq(!format)(html)(
-&lt;span class=&quot;newthought&quot;&gt;!1&lt;/span&gt;
-)
-
-!ifeq(!format)(pdf)(
-\newthought{!1}
-)
-)
-
-
-!comment(
-// Side note
-// Usage: !sidenote(TEXT)
-)
-
-!define(SIDENOTE)(1)
-!define(sidenote)(
-!ifeq(!format)(html)(
-&lt;label for=&quot;sidenote-!SIDENOTE&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;sidenote-!SIDENOTE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;sidenote&quot;&gt;!1&lt;/span&gt;
-!add(SIDENOTE)
-)
-
-!ifeq(!format)(pdf)(
-\sidenote{!1}
-)
-)
-
-
-!comment(
-// Margin note
-// Usage: !marginnote(TEXT)
-)
-
-!define(MARGINNOTE)(1)
-!define(marginnote)(
-!ifeq(!format)(html)(
-&lt;label for=&quot;marginnote-!MARGINNOTE&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;marginnote-!MARGINNOTE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
-!add(MARGINNOTE)
-)
-
-!ifeq(!format)(pdf)(
-\marginnote{!1}
-)
-)
-
-
-!comment(
-// Figure
-// Usage: !figure(CAPTION)(FILENAME)
-)
-
-!define(FIGURE)(1)
-!define(figure)(
-!ifeq(!format)(html)(
-&lt;figure&gt;
-&lt;label for=&quot;figure-!FIGURE&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;figure-!FIGURE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
-&lt;img src=&quot;!2&quot; alt=&quot;!1&quot; /&gt;
-&lt;/figure&gt;
-!add(FIGURE)
-)
-
-!ifeq(!format)(pdf)(
-\begin{figure}
-\includegraphics{!2}
-\caption{!1}
-\end{figure}
-)
-)
-
-
-!comment(
-// Margin figure
-// Usage: !marginfigure(CAPTION)(FILENAME)
-)
-
-!define(MARGINFIGURE)(1)
-!define(marginfigure)(
-!ifeq(!format)(html)(
-&lt;label for=&quot;marginfigure-!MARGINFIGURE&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;marginfigure-!MARGINFIGURE&quot; class=&quot;margin-toggle&quot;/&gt;
-&lt;span class=&quot;marginnote&quot;&gt;&lt;img src=&quot;!2&quot; alt=&quot;!1&quot;/&gt;!1&lt;/span&gt;
-!add(MARGINFIGURE)
-)
-
-!ifeq(!format)(pdf)(
-\begin{marginfigure}
-\includegraphics{!2}
-\caption{!1}
-\end{marginfigure}
-)
-)
-
-
-!comment(
-// Fullwidth figure
-// Usage: !fullwidthfigure(CAPTION)(FILENAME)
-)
-
-!define(fullwidthfigure)(
-!ifeq(!format)(html)(
-&lt;figure class=&quot;fullwidth&quot;&gt;
-&lt;img src=&quot;!2&quot; alt=&quot;!1&quot;/&gt;
-&lt;/figure&gt;
-&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
-)
-
-!ifeq(!format)(pdf)(
-\begin{figure*}
-\includegraphics{!2}
-\caption{!1}
-\end{figure*}
-)
-)
-
-
-!comment(
-// Fullwidth block
-// Usage: !fullwidth(TEXT)
-)
-
-!define(fullwidth)(
-!ifeq(!format)(html)(
-&lt;div class=&quot;fullwidth&quot;&gt;&lt;p&gt;!1&lt;/p&gt;&lt;/div&gt;
-)
-
-!ifeq(!format)(pdf)(
-\begin{fullwidth}
-!1
-\end{fullwidth}
-)
-)
-
-
-!comment(
-// Video (Only for HTML)
-// Usage: !video(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
-// Use html5media: https://github.com/etianen/html5media
-// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;&lt;/script&gt;
-)
-
-!define(VIDEO)(1)
-!define(video)(
-!ifeq(!format)(html)(
-&lt;div&gt;
-    &lt;label for=&quot;video-!VIDEO&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-    &lt;input type=&quot;checkbox&quot; id=&quot;video-!VIDEO&quot; class=&quot;margin-toggle&quot;/&gt;
-    &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
-    &lt;video controls&gt;
-        &lt;source src=&quot;!2&quot;&gt;
-        !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
-        !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
-        !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
-    &lt;/video&gt;
-&lt;/div&gt;
-!add(VIDEO)
-)
-)
-
-
-!comment(
-// Fullwidth Video (Only for HTML)
-// Usage: !fullwidthvideo(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
-)
-
-!define(fullwidthvideo)(
-!ifeq(!format)(html)(
-&lt;div&gt;
-    &lt;video controls class=&quot;fullwidth&quot;&gt;
-        &lt;source src=&quot;!2&quot;&gt;
-        !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
-        !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
-        !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
-    &lt;/video&gt;
-&lt;/div&gt;
-&lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
-)
-)
-
-
-!comment(
-// Audio (Only for HTML)
-// Usage: !audio(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
-// Use html5media: https://github.com/etianen/html5media
-// &lt;script src=&quot;https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js&quot;&gt;&lt;/script&gt;
-)
-
-!define(AUDIO)(1)
-!define(audio)(
-!ifeq(!format)(html)(
-&lt;div&gt;
-    &lt;label for=&quot;audio-!AUDIO&quot; class=&quot;margin-toggle&quot;&gt;&amp;#8853;&lt;/label&gt;
-    &lt;input type=&quot;checkbox&quot; id=&quot;audio-!AUDIO&quot; class=&quot;margin-toggle&quot;/&gt;
-    &lt;span class=&quot;marginnote&quot;&gt;!1&lt;/span&gt;
-    &lt;audio controls&gt;
-        &lt;source src=&quot;!2&quot;&gt;
-        !ifdef(3)(&lt;source src=&quot;!3&quot;&gt;)
-        !ifdef(4)(&lt;source src=&quot;!4&quot;&gt;)
-        !ifdef(5)(&lt;source src=&quot;!5&quot;&gt;)
-    &lt;/audio&gt;
-&lt;/div&gt;
-!add(AUDIO)
-)
-)
-
-!comment(
-// Table
-// Usage: !table(CSV_FILENAME)(CAPTION)
-)
-
-!define(table)(
-!ifeq(!format)(html)(
-&lt;span class=&quot;marginnote&quot;&gt;!2&lt;/span&gt;
-
-!csv(!1)
-)
-
-!ifeq(!format)(pdf)(
-!csv(!1)
-:   !2
-)
-)
-
-
-!comment(
-// Fullwidth table
-// Usage: !fullwidthtable(CSV_FILENAME)(CAPTION)
-)
-
-!define(fullwidthtable)(
-!ifeq(!format)(html)(
-&lt;div class=&quot;fullwidth&quot;&gt;!csv(!1)&lt;/div&gt;
-&lt;span class=&quot;marginnote&quot;&gt;!2&lt;/span&gt;
-)
-
-!ifeq(!format)(pdf)(
-`\begin{fullwidth}`{=latex}
-
-!csv(!1)
-:   !2
-
-`\end{fullwidth}`{=latex}
-)
-)
-
-
-!comment(
-// LaTeX
-// Usage: !latex
-)
-
-!define(latex)(
-!ifeq(!format)(html)(
-&lt;span class=&quot;latex&quot;&gt;L&lt;span class=&quot;latex-sup&quot;&gt;a&lt;/span&gt;T&lt;span class=&quot;latex-sub&quot;&gt;e&lt;/span&gt;X&lt;/span&gt;
-)
-
-!ifeq(!format)(pdf)(
-\LaTeX
-)
-)
-
-
-!comment(
-// HTML TAGS
-)
-
-
-!comment(
-// a
-// Usage: !a(TEXT)(URL)
-)
-
-!define(a)(
-!ifeq(!format)(html)(
-&lt;a href=&quot;!2&quot;&gt;!1&lt;/a&gt;
-)
-
-!ifeq(!format)(pdf)(
-\href{!2}{!1}
-)
-)
-
-
-!comment(
-// abbr
-// Usage: !abbr(TITLE)(TEXT)
-)
-
-!define(abbr)(
-!ifeq(!format)(html)(
-&lt;abbr title=&quot;!1&quot;&gt;!2&lt;/abbr&gt;
-)
-
-!ifeq(!format)(pdf)(
-!2\footnote{!1}
-)
-)
-
-
-!comment(
-// em
-// Usage: !em(TEXT)
-)
-
-!define(em)(
-!ifeq(!format)(html)(
-&lt;em&gt;!1&lt;/em&gt;
-)
-
-!ifeq(!format)(pdf)(
-\emph{!1}
-)
-)
-
-
-!comment(
-// img
-// Usage: !img(ALT_TEXT)(FILENAME)
-)
-
-!define(img)(
-!ifeq(!format)(html)(
-&lt;img src=&quot;!2&quot; alt=&quot;!1&quot; /&gt;
-)
-
-!ifeq(!format)(pdf)(
-\includegraphics{!2}
-)
-)
-
-
-!comment(
-// kbd
-// Usage: !kbd(KEY_1)(KEY_2)(KEY_3)(KEY_4)
-)
-
-!define(kbd)(
-!ifeq(!format)(html)(
-&lt;kbd&gt;!1&lt;/kbd&gt;!ifdef(2)(+&lt;kbd&gt;!2&lt;/kbd&gt;)!ifdef(3)(+&lt;kbd&gt;!3&lt;/kbd&gt;)!ifdef(4)(+&lt;kbd&gt;!4&lt;/kbd&gt;)
-)
-
-!ifeq(!format)(pdf)(
-\texttt{!1}!ifdef(2)(+\texttt{!2})!ifdef(3)(+\texttt{!3})!ifdef(4)(+\texttt{!4})
-)
-)
-
-
-!comment(
-// mark
-// Usage: !mark(TEXT)
-)
-
-!define(mark)(
-!ifeq(!format)(html)(
-&lt;mark&gt;!1&lt;/mark&gt;
-)
-
-!comment(// \usepackage{soul})
-!ifeq(!format)(pdf)(
-\hl{!1}
-)
-)
-
-
-!comment(
-// newpage
-// Usage: !newpage
-)
-
-!define(newpage)(
-!ifeq(!format)(html)(
-&lt;div style=&quot;page-break-after: always&quot;&gt;&lt;/div&gt;
-)
-
-!ifeq(!format)(pdf)(
-\newpage
-)
-)
-
-
-!comment(
-// strike
-// Usage: !strike(TEXT)
-)
-
-!define(strike)(
-!ifeq(!format)(html)(
-&lt;strike&gt;!1&lt;/strike&gt;
-)
-
-!ifeq(!format)(pdf)(
-\sout{!1}
-)
-)
-
-
-!comment(
-// strong
-// Usage: !strong(TEXT)
-)
-
-!define(strong)(
-!ifeq(!format)(html)(
-&lt;strong&gt;!1&lt;/strong&gt;
-)
-
-!ifeq(!format)(pdf)(
-\textbf{!1}
-)
-)
-
-
-!comment(
-// center
-// Usage: !center(TEXT)
-)
-
-!define(center)(
-!ifeq(!format)(html)(
-&lt;div style=&quot;margin: 0 auto&quot;&gt;&lt;p style=&quot;text-align: center&quot;&gt;!1&lt;/p&gt;&lt;/div&gt;
-)
-
-!ifeq(!format)(pdf)(
-\begin{center}
-!1
-\end{center}
-)
-)
-
-
-!comment(
-// flushleft
-// Usage: !flushleft(TEXT)
-)
-
-!define(flushleft)(
-!ifeq(!format)(html)(
-&lt;div&gt;&lt;p style=&quot;text-align: left&quot;&gt;!1&lt;/p&gt;&lt;/div&gt;
-)
-
-!ifeq(!format)(pdf)(
-\begin{flushleft}
-!1
-\end{flushleft}
-)
-)
-
-
-!comment(
-// flushright
-// Usage: !flushright(TEXT)
-)
-
-!define(flushright)(
-!ifeq(!format)(html)(
-&lt;div&gt;&lt;p style=&quot;text-align: right&quot;&gt;!1&lt;/p&gt;&lt;/div&gt;
-)
-
-!ifeq(!format)(pdf)(
-\begin{flushright}
-!1
-\end{flushright}
-)
-)
-
-
-!comment(
-// textcolor
-// Usage: !textcolor(TEXT)
-)
-
-!define(textcolor)(
-!ifeq(!format)(html)(
-&lt;span style=&quot;color:!1&quot;&gt;!2&lt;/span&gt;
-)
-
-!comment(// \usepackage{color})
-!ifeq(!format)(pdf)(
-\textcolor{!1}{!2}
-)
-)
-
-
-!comment(
-// today
-// Usage: !today
-)
-
-!define(today)(
-!ifeq(!format)(html)(
-!ifeq(!os)(windows)(
-!cmd(
-@ECHO OFF
-:: Based on https://ss64.com/nt/syntax-getdate.html
-:: Check WMIC is available
-WMIC.EXE Alias /? &gt;NUL 2&gt;&amp;1 || GOTO Syntax
-
-:: Use WMIC to retrieve date and time
-FOR /F &quot;skip=1 tokens=1-6&quot; %%G IN (&#39;WMIC Path Win32_LocalTime Get Day^,Hour^,Minute^,Month^,Second^,Year /Format:table&#39;) DO (
-    IF NOT &quot;%%~L&quot;==&quot;&quot; (
-        SET year=%%L
-        SET month=00%%J
-        SET day=00%%G
-        SET hour=00%%H
-        SET minute=00%%I
-    )
-)
-
-:: Pad digits with leading zeros
-SET month=%month:~-2%
-SET day=%day:~-2%
-SET hour=%hour:~-2%
-SET minute=%minute:~-2%
-
-:: Display the date/time in ISO 8601 format:
-:: SET isoDate=%year%-%month%-%day% %hour%:%minute%
-SET isoDate=%year%-%month%-%day%
-ECHO %isoDate%
-
-:: Done
-GOTO:EOF
-
-:Syntax
-ECHO SortDate.bat, Version 5.01 for Windows XP Pro and later
-ECHO Displays date and time in YYYY-MM-DD and HH:mm:SS format,
-ECHO completely independent of Windows&#39; Regional Settings or
-ECHO language, and without the use of temporary files.
-ECHO.
-)
-)
-
-!ifeq(!os)(darwin)(
-!sh(date &quot;+%Y-%m-%d&quot;)
-)
-
-!ifeq(!os)(linux)(
-!sh(date &quot;+%Y-%m-%d&quot;)
-)
-)
-
-!ifeq(!format)(pdf)(
-\today
-)
-)
-
-
-!comment(
-// u
-// Usage: !u(TEXT)
-)
-
-!define(u)(
-!ifeq(!format)(html)(
-&lt;u&gt;!1&lt;/u&gt;
-)
-
-!ifeq(!format)(pdf)(
-\underline{!1}
-)
-)
+// HTML tags macros
+)
+!import(html/a.pp)
+!import(html/abbr.pp)
+!import(html/center.pp)
+!import(html/em.pp)
+!import(html/flushleft.pp)
+!import(html/flushright.pp)
+!import(html/img.pp)
+!import(html/kbd.pp)
+!import(html/mark.pp)
+!import(html/newpage.pp)
+!import(html/strike.pp)
+!import(html/strong.pp)
+!import(html/textcolor.pp)
+!import(html/today.pp)
+!import(html/u.pp)
 </code></pre>
-<h2 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to convert Markdown to HTML and PDF</h2>
+<h2 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to
+convert Markdown to HTML and PDF</h2>
 <p>See example below:</p>
-<pre class="sh"><code>#!/bin/bash
+<pre class="bash"><code>#!/bin/bash
+echo &quot;Converting README&quot;
+pp README.pp.md &gt; README.md
 
-# Build README
-buildReadme() {
-    echo &quot;README.txt -&gt; README.md&quot;
-    pp  -html \
-        -import=tufte-markdown.pp \
-        README.txt \
-        &gt;README.md
-}
+echo &quot;Converting to HTML&quot;
+pp -html -import=macros/main.pp sample-handout.pp.md \
+  | pandoc -d ./defaults/html.yml -o sample-handout.html
 
-# Build sample handout HTML
-buildHtml() {
-    echo &quot;sample-handout.txt -&gt; sample-handout.html&quot;
-    pp  -html \
-        -import=tufte-markdown.pp \
-        sample-handout.txt | \
-    pandoc --from=markdown \
-        --to=html5 \
-        --standalone \
-        --no-highlight \
-        --css=https://cdn.jsdelivr.net/gh/duzyn/duzyn.github.io/assets/css/blog.css \
-        --variable=include-before:&quot;&lt;article&gt; &lt;section&gt;&quot; \
-        --variable=include-after:&quot;&lt;/section&gt; &lt;/article&gt;&quot; \
-        --output=sample-handout.html
-}
-
-# Build sample handout PDF
-# tufte-handout supports section and subsection only
-buildPdf() {
-    echo &quot;sample-handout.txt -&gt; sample-handout.pdf&quot;
-    pp  -pdf \
-        -import=tufte-markdown.pp \
-        sample-handout.txt | \
-    pandoc --from=markdown+raw_tex \
-        --pdf-engine=xelatex \
-        --template=templates/tufte-handout.latex \
-        --no-highlight \
-        --shift-heading-level-by=-1 \
-        --metadata=documentclass:tufte-handout \
-        --metadata=CJKmainfont:&quot;Noto Serif CJK SC&quot; \
-        --output=sample-handout.pdf
-}
-
-buildReadme
-buildHtml
-buildPdf
+echo &quot;Converting to PDF&quot;
+pp -pdf -import=macros/main.pp sample-handout.pp.md \
+  | pandoc -d ./defaults/pdf.yml -o sample-handout.pdf
 </code></pre>
-<h2 id="chinese">Chinese</h2>
-<p>春江花月夜</p>
-<p>春江潮水连海平，海上明月共潮生。<br />
-滟滟随波千万里，何处春江无月明！<br />
-江流宛转绕芳甸，月照花林皆似霰。<br />
-空里流霜不觉飞，汀上白沙看不见。<br />
-江天一色无纤尘，皎皎空中孤月轮。<br />
-江畔何人初见月？江月何年初照人？<br />
-人生代代无穷已，江月年年望相似。<br />
-不知江月待何人，但见长江送流水。<br />
-白云一片去悠悠，青枫浦上不胜愁。<br />
-谁家今夜扁舟子？何处相思明月楼？<br />
-可怜楼上月徘徊，应照离人妆镜台。<br />
-玉户帘中卷不去，捣衣砧上拂还来。<br />
-此时相望不相闻，愿逐月华流照君。<br />
-鸿雁长飞光不度，鱼龙潜跃水成文。<br />
-昨夜闲潭梦落花，可怜春半不还家。<br />
-江水流春去欲尽，江潭落月复西斜。<br />
-斜月沉沉藏海雾，碣石潇湘无限路。<br />
-不知乘月几人归，落月摇情满江树。</p>
 <h2 id="some-html-tags">Some HTML tags</h2>
 <h3 id="image">Image</h3>
 <p>You can include a image file like this:</p>
-<p><img src="img/rhino.png" alt="Rhino" /></p>
+<p><img src="./img/rhino.png" alt="Rhino" /></p>
 <h3 id="strong">Strong</h3>
 <p>This is a <strong>strong</strong> text.</p>
 <h3 id="emphasis">Emphasis</h3>
@@ -838,7 +384,13 @@ buildPdf
 <p>
 <div>
 <p style="text-align: left">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
 </p>
 </div>
 </p>
@@ -848,7 +400,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <p>
 <div>
 <p style="text-align: right">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
 </p>
 </div>
 </p>
@@ -858,34 +416,55 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <p>
 <div style="margin: 0 auto">
 <p style="text-align: center">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
 </p>
 </div>
 </p>
 </div>
 <h3 id="links">Links</h3>
-<p><a href="https://google.com">Google</a> is the biggest search engine in the world.</p>
+<p><a href="https://google.com">Google</a> is the biggest search engine
+in the world.</p>
 <h3 id="new-page">New page</h3>
 <p>Start a new page below.</p>
 <div style="page-break-after: always">
 
 </div>
 <h3 id="today">Today</h3>
-<p>Today is 2020-04-18.</p>
+<p>Today is 2022-11-05.</p>
 <h3 id="keyboard">Keyboard</h3>
-<p>Copy text with <kbd>Ctrl</kbd>+<kbd>C</kbd>. Save web image in Photoshop with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.</p>
+<p>Copy text with <kbd>Ctrl</kbd> + <kbd>C</kbd>. Save web image in
+Photoshop with <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> +
+<kbd>S</kbd>.</p>
 <h3 id="strike-out">Strike out</h3>
 <p>This is a <strike>strike out</strike> text.</p>
 <h3 id="highlight">Highlight</h3>
 <p>This ia a <mark>HIGHLIGHTED</mark> text.</p>
+<h3 id="latex"><span class="latex">L<span
+class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span></h3>
+<p><span class="latex">L<span class="latex-sup">a</span>T<span
+class="latex-sub">e</span>X</span></p>
+<p><span class="latex">T<span class="latex-sub">e</span>X</span></p>
 <h2 id="read-more">Read more</h2>
 <ul>
-<li><a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a></li>
-<li><a href="https://tufte-latex.github.io/tufte-latex/">Tufte-<span class="latex">L<span class="latex-sup">a</span>T<span class="latex-sub">e</span>X</span></a></li>
-<li><a href="https://rstudio.github.io/tufte/">RStudio Tufte Handout</a></li>
-<li><a href="https://rstudio.github.io/tufte/cn/">R Markdown Tufte Style</a></li>
-<li><a href="https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex">RStudio Pandoc template: tufte-handout.tex</a></li>
+<li><a href="https://edwardtufte.github.io/tufte-css/">Tufte
+CSS</a></li>
+<li><a href="https://tufte-latex.github.io/tufte-latex/">Tufte-<span
+class="latex">L<span class="latex-sup">a</span>T<span
+class="latex-sub">e</span>X</span></a></li>
+<li><a href="https://rstudio.github.io/tufte/">RStudio Tufte
+Handout</a></li>
+<li><a href="https://rstudio.github.io/tufte/cn/">R Markdown Tufte
+Style</a></li>
+<li><a
+href="https://github.com/rstudio/tufte/blob/master/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex">RStudio
+Pandoc template: tufte-handout.tex</a></li>
 </ul>
-</section> </article>
+</section></article>
 </body>
 </html>

@@ -1,0 +1,11 @@
+from: markdown+raw_tex
+to: pdf
+pdf-engine: xelatex
+citeproc: true
+template: ./templates/tufte-handout.tex
+highlight-style: null
+variables:
+  documentclass: tufte-handout
+  papersize: a4
+  colorlinks: true
+  mainfont: ETBembo
