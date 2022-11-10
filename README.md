@@ -7,8 +7,8 @@ with text, and carefully chosen typography.
 
 # Demo
 
-See [HTML Demo](sample-handout.html), [PDF Demo](sample-handout.pdf) and
-[Markdown source file](sample-handout.pp.md).
+See [HTML Demo](docs/sample-handout.html), [PDF Demo](docs/sample-handout.pdf) and
+[Markdown source file](docs/sample-handout.pp.md).
 
 ## Usage
 
@@ -16,7 +16,7 @@ Write a markdown article including [pp](https://github.com/CDSoft/pp) macros,
 then use pp to preprocess the markdown and pipe it to
 [Pandoc](http://pandoc.org), Pandoc convert Markdown to HTML or LaTeX document.
 
-You can see a full list of macros in [main.pp](macros/main.pp)
+You can see a full list of macros in [main.pp](docs/macros/main.pp)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !comment(
@@ -647,7 +647,7 @@ You can see a full list of macros in [main.pp](macros/main.pp)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-See example [build.sh](build.sh).
+See example [build.sh](docs/build.sh).
 
 ## Read more
 

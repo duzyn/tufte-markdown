@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Converting README"
-pp README.pp.md > README.md
+pp README.pp.md > ../README.md
 
 echo "Converting to HTML"
 pp -html -import=macros/main.pp sample-handout.pp.md \
