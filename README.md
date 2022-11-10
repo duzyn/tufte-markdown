@@ -5,14 +5,6 @@ ideas demonstrated by Edward Tufte's books and handouts. Tufte's style is known
 for its simplicity, extensive use of sidenotes, tight integration of graphics
 with text, and carefully chosen typography.
 
-<<<<<<< HEAD
-# Demo
-
-See [HTML Demo](docs/sample-handout.html), [PDF Demo](docs/sample-handout.pdf) and
-[Markdown source file](docs/sample-handout.pp.md).
-
-=======
->>>>>>> parent of aef0834 (reedit readme and sample)
 ## Usage
 
 Write a markdown article including [pp](https://github.com/CDSoft/pp) macros,

@@ -354,12 +354,14 @@ class="latex-sub">e</span>X</span> file depend on the format.</p>
 convert Markdown to HTML and PDF</h2>
 <p>See example below:</p>
 <pre class="bash"><code>#!/bin/bash
+export PATH=$HOME/.local/bin:$PATH
+
 echo &quot;Converting README&quot;
-pp README.pp.md &gt; README.md
+pp README.pp.md &gt; ../README.md
 
 echo &quot;Converting to HTML&quot;
 pp -html -import=macros/main.pp sample-handout.pp.md \
-  | pandoc -d ./defaults/html.yml -o sample-handout.html
+  | pandoc -d ./defaults/html.yml -o index.html
 
 echo &quot;Converting to PDF&quot;
 pp -pdf -import=macros/main.pp sample-handout.pp.md \
@@ -436,7 +438,7 @@ in the world.</p>
 
 </div>
 <h3 id="today">Today</h3>
-<p>Today is 2022-11-05.</p>
+<p>Today is 2022-11-10.</p>
 <h3 id="keyboard">Keyboard</h3>
 <p>Copy text with <kbd>Ctrl</kbd> + <kbd>C</kbd>. Save web image in
 Photoshop with <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> +
