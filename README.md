@@ -5,11 +5,14 @@ ideas demonstrated by Edward Tufte's books and handouts. Tufte's style is known
 for its simplicity, extensive use of sidenotes, tight integration of graphics
 with text, and carefully chosen typography.
 
+<<<<<<< HEAD
 # Demo
 
 See [HTML Demo](docs/sample-handout.html), [PDF Demo](docs/sample-handout.pdf) and
 [Markdown source file](docs/sample-handout.pp.md).
 
+=======
+>>>>>>> parent of aef0834 (reedit readme and sample)
 ## Usage
 
 Write a markdown article including [pp](https://github.com/CDSoft/pp) macros,
@@ -58,8 +61,7 @@ You can see a full list of macros in [main.pp](docs/macros/main.pp)
 // Audio (Only for HTML)
 // Usage: !audio(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
 // Use html5media: https://github.com/etianen/html5media
-// <script src="https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js">
-// </script>
+// <script src="https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js"></script>
 )
 
 !define(A)(1)
@@ -156,9 +158,6 @@ You can see a full list of macros in [main.pp](docs/macros/main.pp)
 !comment(
 // Fullwidth Video (Only for HTML)
 // Usage: !fullwidthvideo(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
-// Use html5media: https://github.com/etianen/html5media
-// <script src="https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js">
-// </script>
 )
 
 !define(fullwidthvideo)(
@@ -334,8 +333,7 @@ You can see a full list of macros in [main.pp](docs/macros/main.pp)
 // Video (Only for HTML)
 // Usage: !video(CAPTION)(FILENAME1)(FILENAME2)(FILENAME3)(FILENAME4)
 // Use html5media: https://github.com/etianen/html5media
-// <script src="https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js">
-// </script>
+// <script src="https://cdn.jsdelivr.net/npm/html5media@1.2.1/dist/api/1.2.1/html5media.min.js"></script>
 )
 
 !define(V)(1)
