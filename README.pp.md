@@ -11,7 +11,7 @@ Write a markdown article including [pp](https://github.com/CDSoft/pp) macros,
 then use pp to preprocess the markdown and pipe it to
 [Pandoc](http://pandoc.org), Pandoc convert Markdown to HTML or LaTeX document.
 
-You can see a full list of macros in [main.pp](docs/macros/main.pp)
+You can see a full list of macros in [main.pp](./macros/main.pp)
 
 !source(macros/main.pp)
 !source(macros/tufte/audio.pp)
@@ -42,7 +42,7 @@ You can see a full list of macros in [main.pp](docs/macros/main.pp)
 !source(macros/html/today.pp)
 !source(macros/html/u.pp)
 
-See example [justfile](.justfile).
+See example [justfile](./.justfile).
 
 ## Read more
 
