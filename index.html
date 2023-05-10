@@ -356,13 +356,13 @@ class="latex-sub">e</span>X</span> file depend on the format.</p>
 <h2 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to
 convert Markdown to HTML and PDF</h2>
 <p>See example below:</p>
-<pre><code>default: update readme html pdf
+<pre><code>default: update markdown html pdf
 
 update:
     curl -o templates/tufte-handout.tex \
         https://cdn.jsdelivr.net/gh/rstudio/tufte/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex
 
-readme:
+markdown:
     pp README.pp.md &gt; README.md
 
 html:

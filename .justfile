@@ -1,10 +1,10 @@
-default: update readme html pdf
+default: update markdown html pdf
 
 update:
     curl -o templates/tufte-handout.tex \
         https://cdn.jsdelivr.net/gh/rstudio/tufte/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex
 
-readme:
+markdown:
     pp README.pp.md > README.md
 
 html:
