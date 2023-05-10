@@ -42,7 +42,7 @@ You can see a full list of macros in [main.pp](docs/macros/main.pp)
 !source(macros/html/today.pp)
 !source(macros/html/u.pp)
 
-See example [build.sh](docs/build.sh).
+See example [justfile](.justfile).
 
 ## Read more
 

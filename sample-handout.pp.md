@@ -243,7 +243,7 @@ See example below:
 
 See example below:
 
-!source(build.sh)
+!source(.justfile)
 
 # Some HTML tags
 

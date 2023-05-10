@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
@@ -321,15 +321,18 @@ class="latex-sub">e</span>X</span> file depend on the format.</p>
 <pre><code>!comment(
 // Tufte style Markdown macros
 )
+!import(tufte/audio.pp)
 !import(tufte/figure.pp)
 !import(tufte/fullwidth.pp)
 !import(tufte/fullwidthfigure.pp)
+!import(tufte/fullwidthvideo.pp)
 !import(tufte/latex.pp)
 !import(tufte/marginfigure.pp)
 !import(tufte/marginnote.pp)
 !import(tufte/newthought.pp)
 !import(tufte/sidenote.pp)
 !import(tufte/table.pp)
+!import(tufte/video.pp)
 
 !comment(
 // HTML tags macros
@@ -353,20 +356,22 @@ class="latex-sub">e</span>X</span> file depend on the format.</p>
 <h2 id="use-pandoc-to-convert-markdown-to-html-and-pdf">Use Pandoc to
 convert Markdown to HTML and PDF</h2>
 <p>See example below:</p>
-<pre class="bash"><code>#!/bin/bash
-export PATH=$HOME/.local/bin:$PATH
+<pre><code>default: update readme html pdf
 
-echo &quot;Converting README&quot;
-pp README.pp.md &gt; ../README.md
+update:
+    curl -o templates/tufte-handout.tex \
+        https://cdn.jsdelivr.net/gh/rstudio/tufte/inst/rmarkdown/templates/tufte_handout/resources/tufte-handout.tex
 
-echo &quot;Converting to HTML&quot;
-pp -html -import=macros/main.pp sample-handout.pp.md \
-  | pandoc -d ./defaults/html.yml -o index.html
+readme:
+    pp README.pp.md &gt; README.md
 
-echo &quot;Converting to PDF&quot;
-pp -pdf -import=macros/main.pp sample-handout.pp.md \
-  | pandoc -d ./defaults/pdf.yml -o sample-handout.pdf
-</code></pre>
+html:
+    pp -html -import=macros/main.pp sample-handout.pp.md | \
+        pandoc -d defaults/html.yml -o index.html
+
+pdf:
+    pp -pdf -import=macros/main.pp sample-handout.pp.md | \
+        pandoc -d defaults/pdf.yml -o sample-handout.pdf</code></pre>
 <h2 id="some-html-tags">Some HTML tags</h2>
 <h3 id="image">Image</h3>
 <p>You can include a image file like this:</p>
@@ -438,7 +443,7 @@ in the world.</p>
 
 </div>
 <h3 id="today">Today</h3>
-<p>Today is 2022-11-10.</p>
+<p>Today is 2023-05-10.</p>
 <h3 id="keyboard">Keyboard</h3>
 <p>Copy text with <kbd>Ctrl</kbd> + <kbd>C</kbd>. Save web image in
 Photoshop with <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> +

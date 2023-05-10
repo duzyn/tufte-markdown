@@ -1,15 +1,18 @@
 !comment(
 // Tufte style Markdown macros
 )
+!import(tufte/audio.pp)
 !import(tufte/figure.pp)
 !import(tufte/fullwidth.pp)
 !import(tufte/fullwidthfigure.pp)
+!import(tufte/fullwidthvideo.pp)
 !import(tufte/latex.pp)
 !import(tufte/marginfigure.pp)
 !import(tufte/marginnote.pp)
 !import(tufte/newthought.pp)
 !import(tufte/sidenote.pp)
 !import(tufte/table.pp)
+!import(tufte/video.pp)
 
 !comment(
 // HTML tags macros

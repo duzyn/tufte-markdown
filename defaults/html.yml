@@ -16,5 +16,4 @@ variables:
   include-before: <article><section>
   include-after: </section></article>
 metadata:
-  lang: zh-CN
   document-css: false
